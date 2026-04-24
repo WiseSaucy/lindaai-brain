@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LindaAI — Pitch Deck</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1e;
+  --bg-deep: #050710;
+  --blue: #2b7fff;
+  --blue-bright: #4da3ff;
+  --purple: #7c5cff;
+  --cyan: #00d4ff;
+  --gold: #f59e0b;
+  --white: #ffffff;
+  --body: #a0a8c0;
+  --muted: #6b7596;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; background: var(--bg-deep); color: var(--white); font-family: var(--font-body); }
+body { position: relative; }
+
+/* Atmospheric background */
+.bg-glow {
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(43,127,255,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(124,92,255,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0,212,255,0.08) 0%, transparent 70%);
+  z-index: 0; pointer-events: none;
+  animation: glowPulse 12s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+.stars {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20% 15%, white, transparent),
+    radial-gradient(1px 1px at 60% 40%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 35% 85%, rgba(77,163,255,0.9), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(124,92,255,0.8), transparent);
+  background-size: 100% 100%;
+  animation: twinkle 8s ease-in-out infinite;
+}
+@keyframes twinkle { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* Slide container */
+.deck { position: relative; width: 100vw; height: 100vh; z-index: 1; }
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(20px);
+}
+.slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ═══════════════ SLIDE 1 — TITLE ═══════════════ */
+.slide-title h1 {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 16vw, 240px);
+  font-weight: 800;
+  letter-spacing: -6px;
+  line-height: 0.9;
+  background: linear-gradient(180deg, #ffffff 0%, var(--blue-bright) 60%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  animation: slideUp 1.2s ease 0.3s both;
+}
+.slide-title .divider {
+  width: 180px; height: 5px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  margin: 24px 0 32px;
+  border-radius: 4px;
+  animation: expand 1s ease 0.7s both;
+}
+.slide-title h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 500;
+  color: var(--body);
+  letter-spacing: 0.5px;
+  animation: slideUp 1.2s ease 0.8s both;
+}
+.slide-title p {
+  margin-top: 24px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 600px;
+  animation: slideUp 1.2s ease 1s both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes expand {
+  from { width: 0; opacity: 0; }
+  to { width: 180px; opacity: 1; }
+}
+
+/* ═══════════════ SLIDE — PROBLEM ═══════════════ */
+.slide-content {
+  max-width: 1100px;
+}
+.slide-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.slide-content .eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 24px;
+}
+.slide-content .big-text {
+  font-size: clamp(28px, 4vw, 48px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--body);
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.3;
+}
+.slide-content .accent { color: var(--blue-bright); }
+.slide-content .accent-purple { color: var(--purple); }
+.slide-content .accent-gold { color: var(--gold); }
+
+/* Stat grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 40px;
+}
+.stat-card {
+  padding: 32px 24px;
+  background: rgba(43,127,255,0.08);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+.stat-big {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--blue-bright), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 14px;
+  color: var(--body);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Feature row */
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+.feat-card {
+  padding: 36px 28px;
+  background: rgba(10,14,30,0.6);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+.feat-emoji { font-size: 44px; margin-bottom: 16px; }
+.feat-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.feat-card p { color: var(--body); font-size: 15px; line-height: 1.6; }
+
+/* Tier comparison */
+.tier-compare {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  width: 100%;
+  margin-top: 40px;
+}
+.tier-box {
+  padding: 24px 20px;
+  background: rgba(10,14,30,0.7);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+}
+.tier-box.featured { border-color: var(--gold); background: rgba(245,158,11,0.08); }
+.tier-box h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.tier-box .price {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--blue-bright);
+  margin-bottom: 16px;
+}
+.tier-box.featured .price { color: var(--gold); }
+.tier-box ul { list-style: none; padding: 0; text-align: left; }
+.tier-box li {
+  font-size: 13px;
+  color: var(--body);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(43,127,255,0.15);
+}
+.tier-box li:last-child { border-bottom: none; }
+
+/* Agent grid */
+.agents-showcase {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  max-width: 1100px;
+  margin-top: 32px;
+}
+.agent-chip {
+  padding: 16px 12px;
+  background: rgba(43,127,255,0.08);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+  animation: fadeIn 0.5s ease both;
+}
+.agent-chip:nth-child(n) { animation-delay: calc(var(--i, 0) * 50ms); }
+.agent-chip strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--blue-bright);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.agent-chip span {
+  display: block;
+  font-size: 12px;
+  color: var(--body);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Terminal slide */
+.terminal-slide {
+  max-width: 800px;
+  background: #050710;
+  border: 1px solid var(--blue);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 80px rgba(43,127,255,0.3);
+  margin-top: 40px;
+  text-align: left;
+}
+.terminal-slide-header {
+  padding: 14px 20px;
+  background: rgba(43,127,255,0.15);
+  border-bottom: 1px solid rgba(43,127,255,0.3);
+  font-family: 'SF Mono', monospace;
+  font-size: 12px;
+  color: var(--body);
+}
+.terminal-slide-body {
+  padding: 32px;
+  font-family: 'SF Mono', monospace;
+  font-size: 15px;
+  line-height: 2;
+}
+.cmd { color: var(--white); }
+.cmd::before { content: '> '; color: var(--blue-bright); }
+.out {
+  color: var(--body);
+  padding: 4px 0 16px 16px;
+  border-left: 2px solid var(--blue);
+  margin: 8px 0 16px 8px;
+}
+
+/* Final CTA */
+.slide-final h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--blue-bright) 50%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+.slide-final p {
+  font-size: 24px;
+  color: var(--body);
+  margin-bottom: 48px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 20px 56px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  border: none;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 12px 40px rgba(43,127,255,0.5);
+  transition: all 0.3s;
+}
+.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(43,127,255,0.7); }
+
+/* ═══════════════ CONTROLS ═══════════════ */
+.controls {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; padding: 10px 14px;
+  background: rgba(10,14,30,0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 999px;
+  z-index: 100;
+}
+.ctrl-btn {
+  width: 40px; height: 40px;
+  border: none; background: transparent;
+  color: var(--blue-bright);
+  font-size: 18px; cursor: pointer;
+  border-radius: 50%; transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.ctrl-btn:hover { background: rgba(43,127,255,0.2); }
+.progress {
+  display: flex; gap: 6px; align-items: center; padding: 0 12px;
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(160,168,192,0.3);
+  transition: all 0.3s; cursor: pointer;
+}
+.dot.active { background: var(--blue-bright); width: 24px; border-radius: 4px; }
+.slide-count {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--body);
+  padding: 0 16px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Branding */
+.branding {
+  position: fixed; top: 20px; right: 24px;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--blue-bright);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  background: rgba(10,14,30,0.7);
+  backdrop-filter: blur(10px);
+  padding: 8px 14px;
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 999px;
+  z-index: 100;
+  text-decoration: none;
+}
+.branding img { border-radius: 4px; }
+
+/* Logo in title slide */
+.logo-hero {
+  width: 120px; height: 120px;
+  border-radius: 24px;
+  margin-bottom: 32px;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 20px 60px rgba(43,127,255,0.4);
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stat-grid, .feature-row, .tier-compare { grid-template-columns: repeat(2, 1fr); }
+  .agents-showcase { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 500px) {
+  .stat-grid, .feature-row, .tier-compare, .agents-showcase { grid-template-columns: 1fr; }
+  .slide { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="stars"></div>
+
+<a href="index.html" class="branding">
+  <img src="assets/logo.png" alt="LindaAI" width="24" height="24">
+  <span>LindaAI-Brain.com</span>
+</a>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1 — TITLE -->
+  <div class="slide slide-title active">
+    <img src="assets/logo.png" alt="LindaAI" class="logo-hero">
+    <h1>LindaAI</h1>
+    <div class="divider"></div>
+    <h2>Your AI Operating System</h2>
+    <p>Built for business owners who want results — not complexity.</p>
+  </div>
+
+  <!-- SLIDE 2 — THE PROBLEM -->
+  <div class="slide slide-content">
+    <div class="eyebrow">The Problem</div>
+    <h2>You're juggling <span class="accent">10 different AI tools</span></h2>
+    <div class="big-text">ChatGPT for copy. Notion for notes. Jasper for content. Separate apps for leads, meetings, invoices, research. <span class="accent-purple">All disconnected.</span></div>
+  </div>
+
+  <!-- SLIDE 3 — THE SOLUTION -->
+  <div class="slide slide-content">
+    <div class="eyebrow">The Solution</div>
+    <h2>One AI. <span class="accent">Fifty+ skills.</span><br>Everything connected.</h2>
+    <div class="big-text">LindaAI installs into Claude Code with one command. Your skills, agents, voice, and mobile access — all in one operating system.</div>
+  </div>
+
+  <!-- SLIDE 4 — STATS -->
+  <div class="slide slide-content">
+    <h2>What You Get</h2>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-big">50+</div><div class="stat-label">AI Skills</div></div>
+      <div class="stat-card"><div class="stat-big">19</div><div class="stat-label">Specialist Agents</div></div>
+      <div class="stat-card"><div class="stat-big">6</div><div class="stat-label">Voice Personalities</div></div>
+      <div class="stat-card"><div class="stat-big">3</div><div class="stat-label">Platforms</div></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — KEY FEATURES -->
+  <div class="slide slide-content">
+    <h2>Built For Speed</h2>
+    <div class="feature-row">
+      <div class="feat-card">
+        <div class="feat-emoji">⚡</div>
+        <h3>30-Second Install</h3>
+        <p>Drag one file into Claude Code. Type "Run LindaAI". Paste your license. Done.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-emoji">🔄</div>
+        <h3>Auto-Updates</h3>
+        <p>Run <code>/linda-sync</code> anytime. New skills install automatically. No re-download.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-emoji">💾</div>
+        <h3>Your Data Stays</h3>
+        <p>Runs locally. Persistent brain folder. Nothing on our servers except your license.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — AGENTS -->
+  <div class="slide slide-content">
+    <div class="eyebrow">Platinum Exclusive</div>
+    <h2>19 <span class="accent">Specialist Agents</span></h2>
+    <div class="agents-showcase">
+      <div class="agent-chip" style="--i:0"><strong>Bandit</strong><span>Deal Hunter</span></div>
+      <div class="agent-chip" style="--i:1"><strong>Inkslinger</strong><span>Content Machine</span></div>
+      <div class="agent-chip" style="--i:2"><strong>Sheriff</strong><span>Inbox Sentinel</span></div>
+      <div class="agent-chip" style="--i:3"><strong>Doc</strong><span>Customer Support</span></div>
+      <div class="agent-chip" style="--i:4"><strong>Drawl</strong><span>Copywriter</span></div>
+      <div class="agent-chip" style="--i:5"><strong>Wrangler</strong><span>Biz Dev</span></div>
+      <div class="agent-chip" style="--i:6"><strong>Tally</strong><span>Data Analyst</span></div>
+      <div class="agent-chip" style="--i:7"><strong>Mercantile</strong><span>Ecommerce</span></div>
+      <div class="agent-chip" style="--i:8"><strong>Closer</strong><span>Sales Manager</span></div>
+      <div class="agent-chip" style="--i:9"><strong>Grit</strong><span>Personal Dev</span></div>
+      <div class="agent-chip" style="--i:10"><strong>Scout</strong><span>Recruiter</span></div>
+      <div class="agent-chip" style="--i:11"><strong>Compass</strong><span>SEO</span></div>
+      <div class="agent-chip" style="--i:12"><strong>Holler</strong><span>Social Media</span></div>
+      <div class="agent-chip" style="--i:13"><strong>Ranger</strong><span>Virtual Asst</span></div>
+      <div class="agent-chip" style="--i:14"><strong>Pony</strong><span>Email Marketer</span></div>
+      <div class="agent-chip" style="--i:15"><strong>Mender</strong><span>Credit Repair</span></div>
+      <div class="agent-chip" style="--i:16"><strong>Ledger</strong><span>Tax Filing</span></div>
+      <div class="agent-chip" style="--i:17"><strong>Bullhorn</strong><span>Ad Manager</span></div>
+      <div class="agent-chip" style="--i:18"><strong>🐓 Rooster</strong><span>Daily Motivator</span></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 — VOICE + BRIDGES -->
+  <div class="slide slide-content">
+    <h2>Talk To It. Text It. <span class="accent-purple">Live With It.</span></h2>
+    <div class="feature-row">
+      <div class="feat-card">
+        <div class="feat-emoji">🎤</div>
+        <h3>Voice Pack</h3>
+        <p><strong>6 personalities</strong>: Country, Hiphop/Slang, Regular × Male/Female. Toggle speaking with /voice. Full pause, rewind, scrub controls.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-emoji">📱</div>
+        <h3>Telegram Bridge</h3>
+        <p>Chat with LindaAI from anywhere. Owner-locked security. 2-minute setup. Free forever.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-emoji">💬</div>
+        <h3>Discord Bridge</h3>
+        <p>DM or @mention in any server. Team-friendly. Same 2-minute setup as Telegram.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8 — INSTALL DEMO -->
+  <div class="slide slide-content">
+    <h2>Install in <span class="accent">30 Seconds</span></h2>
+    <div class="terminal-slide">
+      <div class="terminal-slide-header">Claude Code — LindaAI Install</div>
+      <div class="terminal-slide-body">
+        <div class="cmd">Run LindaAI</div>
+        <div class="out">🤠 Howdy! Paste your license key from Gumroad...</div>
+        <div class="cmd">WISE-PLATINUM-X7K2-JF9D-LQ8M</div>
+        <div class="out">✓ Validated. Tier: Platinum.<br>✓ 50 skills + 19 agents + Voice Pack installed.<br>🤠 LindaAI has your back, partner.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9 — PRICING -->
+  <div class="slide slide-content">
+    <h2>Pick Your Tier</h2>
+    <div class="tier-compare">
+      <div class="tier-box">
+        <h3>Bronze</h3>
+        <div class="price">$500</div>
+        <ul>
+          <li>10 essential skills</li>
+          <li>Cross-platform</li>
+          <li>Auto-updates</li>
+          <li>Lifetime access</li>
+        </ul>
+      </div>
+      <div class="tier-box">
+        <h3>Silver</h3>
+        <div class="price">$1K</div>
+        <ul>
+          <li>20 skills</li>
+          <li>Swap 3 in 14 days</li>
+          <li>Growth-stage tools</li>
+          <li>Lifetime access</li>
+        </ul>
+      </div>
+      <div class="tier-box">
+        <h3>Gold</h3>
+        <div class="price">$1.5K</div>
+        <ul>
+          <li>32 skills</li>
+          <li>📱 Mobile bridges</li>
+          <li>Real estate toolkit</li>
+          <li>Swap 5 in 14 days</li>
+        </ul>
+      </div>
+      <div class="tier-box featured">
+        <h3>Platinum ✦</h3>
+        <div class="price">$4K</div>
+        <ul>
+          <li>50+ skills</li>
+          <li>19 AI agents</li>
+          <li>🎤 Voice Pack FREE</li>
+          <li>📱 All bridges</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10 — FINAL CTA -->
+  <div class="slide slide-final">
+    <h2>Ready to rip?</h2>
+    <p>One payment. Lifetime access. LindaAI has your back.</p>
+    <a href="https://wisecertified.gumroad.com" class="cta-btn">Get LindaAI →</a>
+    <p style="margin-top: 40px; font-size: 15px; color: var(--muted);">LindaAI-Brain.com · support@lindaai.com · © 2026</p>
+  </div>
+
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="ctrl-btn" onclick="prevSlide()" aria-label="Previous">◀</button>
+  <button class="ctrl-btn" onclick="togglePlay()" id="playBtn" aria-label="Play/Pause">⏸</button>
+  <span class="slide-count"><span id="current">1</span>/<span id="total">10</span></span>
+  <div class="progress" id="progress"></div>
+  <button class="ctrl-btn" onclick="nextSlide()" aria-label="Next">▶</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let currentIdx = 0;
+let autoPlay = true;
+let autoInterval;
+
+document.getElementById('total').textContent = total;
+
+// Build progress dots
+const progressEl = document.getElementById('progress');
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  progressEl.appendChild(dot);
+}
+
+function goTo(idx) {
+  slides[currentIdx].classList.remove('active');
+  currentIdx = (idx + total) % total;
+  slides[currentIdx].classList.add('active');
+  document.getElementById('current').textContent = currentIdx + 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+}
+
+function nextSlide() { goTo(currentIdx + 1); restartAuto(); }
+function prevSlide() { goTo(currentIdx - 1); restartAuto(); }
+
+function togglePlay() {
+  autoPlay = !autoPlay;
+  document.getElementById('playBtn').textContent = autoPlay ? '⏸' : '▶';
+  if (autoPlay) restartAuto();
+  else clearInterval(autoInterval);
+}
+
+function restartAuto() {
+  clearInterval(autoInterval);
+  if (autoPlay) {
+    autoInterval = setInterval(() => goTo(currentIdx + 1), 7000);
+  }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+  if (e.key === 'ArrowLeft') prevSlide();
+  if (e.key === 'Escape') window.location.href = 'index.html';
+});
+
+// Start autoplay
+restartAuto();
+</script>
+
+</body>
+</html>
