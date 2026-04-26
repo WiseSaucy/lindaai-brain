@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
    LindaAI — Brand stylesheet
    Navy midnight + royal blue + purple-cyan accents
-   © 2026 LindaAI — Built by Daniel Wise
+   © 2024–2026 LindaAI — Built by Daniel Wise
    ════════════════════════════════════════════════════════════════ */
 
 :root {
@@ -55,6 +55,20 @@ body::before {
   background: radial-gradient(circle, rgba(43,127,255,0.18) 0%, rgba(124,92,255,0.08) 40%, transparent 70%);
   pointer-events: none;
   z-index: 0;
+}
+
+/* Brand watermark — bottom-right, every page */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 96px;
+  height: 73px;
+  background: url('assets/logo-watermark.png') center / contain no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .container {
