@@ -251,6 +251,8 @@ body { position: relative; }
   border-bottom: 1px solid rgba(43,127,255,0.15);
 }
 .tier-box li:last-child { border-bottom: none; }
+.tier-box .tier-blurb { color: var(--blue-bright); font-size: 13px; margin: -6px 0 10px; font-weight: 600; }
+.tier-box li em { color: var(--gold); font-style: normal; font-weight: 600; }
 
 /* Agent grid */
 .agents-showcase {
@@ -261,27 +263,82 @@ body { position: relative; }
   margin-top: 32px;
 }
 .agent-chip {
-  padding: 16px 12px;
+  padding: 14px 10px 12px;
   background: rgba(43,127,255,0.08);
   border: 1px solid rgba(43,127,255,0.3);
-  border-radius: 12px;
+  border-radius: 14px;
   text-align: center;
   transition: all 0.3s;
   animation: fadeIn 0.5s ease both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
+.agent-chip:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(43,127,255,0.18); }
 .agent-chip:nth-child(n) { animation-delay: calc(var(--i, 0) * 50ms); }
+.agent-chip img.avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(43,127,255,0.5);
+  object-fit: cover;
+  background: var(--bg-deep);
+}
 .agent-chip strong {
   display: block;
   font-family: var(--font-display);
   color: var(--blue-bright);
   font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 4px;
+  font-size: 15px;
 }
 .agent-chip span {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--body);
+}
+
+/* Commands grid (skill + avatar) */
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 18px;
+  max-width: 1200px;
+  margin-top: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 4px 8px;
+}
+.cmd-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  background: rgba(124,92,255,0.06);
+  border: 1px solid rgba(124,92,255,0.25);
+  border-radius: 10px;
+  text-align: left;
+  font-size: 13px;
+  animation: fadeIn 0.4s ease both;
+}
+.cmd-row:nth-child(n) { animation-delay: calc(var(--i, 0) * 25ms); }
+.cmd-row img {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(124,92,255,0.5);
+  flex: 0 0 36px;
+}
+.cmd-row > div { min-width: 0; flex: 1; }
+.cmd-row .cmd-name {
+  font-family: var(--font-display);
+  color: var(--white);
+  font-weight: 600;
+  word-break: break-word;
+  line-height: 1.25;
+}
+.cmd-row .cmd-agent {
+  font-size: 11px;
+  color: var(--muted);
+  word-break: break-word;
+  line-height: 1.3;
 }
 
 @keyframes fadeIn {
@@ -429,10 +486,15 @@ body { position: relative; }
 @media (max-width: 900px) {
   .stat-grid, .feature-row, .tier-compare { grid-template-columns: repeat(2, 1fr); }
   .agents-showcase { grid-template-columns: repeat(3, 1fr); }
+  .commands-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 500px) {
-  .stat-grid, .feature-row, .tier-compare, .agents-showcase { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .stat-grid, .feature-row, .tier-compare, .agents-showcase { grid-template-columns: repeat(2, 1fr); }
+  .commands-grid { grid-template-columns: 1fr; max-height: 65vh; }
   .slide { padding: 20px; }
+  .agent-chip img.avatar { width: 52px; height: 52px; }
+  .cmd-row { font-size: 12px; padding: 7px 10px; }
+  .cmd-row img { width: 32px; height: 32px; flex: 0 0 32px; }
 }
 </style>
 </head>
@@ -475,7 +537,7 @@ body { position: relative; }
   <div class="slide slide-content">
     <h2>What You Get</h2>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-big">50+</div><div class="stat-label">AI Skills</div></div>
+      <div class="stat-card"><div class="stat-big">51</div><div class="stat-label">AI Skills</div></div>
       <div class="stat-card"><div class="stat-big">19</div><div class="stat-label">Specialist Agents</div></div>
       <div class="stat-card"><div class="stat-big">6</div><div class="stat-label">Voice Personalities</div></div>
       <div class="stat-card"><div class="stat-big">3</div><div class="stat-label">Platforms</div></div>
@@ -509,26 +571,33 @@ body { position: relative; }
     <div class="eyebrow">Platinum Exclusive</div>
     <h2>19 <span class="accent">Specialist Agents</span></h2>
     <div class="agents-showcase">
-      <div class="agent-chip" style="--i:0"><strong>Bandit</strong><span>Deal Hunter</span></div>
-      <div class="agent-chip" style="--i:1"><strong>Inkslinger</strong><span>Content Machine</span></div>
-      <div class="agent-chip" style="--i:2"><strong>Sheriff</strong><span>Inbox Sentinel</span></div>
-      <div class="agent-chip" style="--i:3"><strong>Doc</strong><span>Customer Support</span></div>
-      <div class="agent-chip" style="--i:4"><strong>Drawl</strong><span>Copywriter</span></div>
-      <div class="agent-chip" style="--i:5"><strong>Wrangler</strong><span>Biz Dev</span></div>
-      <div class="agent-chip" style="--i:6"><strong>Tally</strong><span>Data Analyst</span></div>
-      <div class="agent-chip" style="--i:7"><strong>Mercantile</strong><span>Ecommerce</span></div>
-      <div class="agent-chip" style="--i:8"><strong>Closer</strong><span>Sales Manager</span></div>
-      <div class="agent-chip" style="--i:9"><strong>Grit</strong><span>Personal Dev</span></div>
-      <div class="agent-chip" style="--i:10"><strong>Scout</strong><span>Recruiter</span></div>
-      <div class="agent-chip" style="--i:11"><strong>Compass</strong><span>SEO</span></div>
-      <div class="agent-chip" style="--i:12"><strong>Holler</strong><span>Social Media</span></div>
-      <div class="agent-chip" style="--i:13"><strong>Ranger</strong><span>Virtual Asst</span></div>
-      <div class="agent-chip" style="--i:14"><strong>Pony</strong><span>Email Marketer</span></div>
-      <div class="agent-chip" style="--i:15"><strong>Mender</strong><span>Credit Repair</span></div>
-      <div class="agent-chip" style="--i:16"><strong>Ledger</strong><span>Tax Filing</span></div>
-      <div class="agent-chip" style="--i:17"><strong>Bullhorn</strong><span>Ad Manager</span></div>
-      <div class="agent-chip" style="--i:18"><strong>🐓 Rooster</strong><span>Daily Motivator</span></div>
+      <div class="agent-chip" style="--i:0"><img class="avatar" src="assets/avatars/bandit.png" alt="Bandit"><strong>Bandit</strong><span>Deal Hunter</span></div>
+      <div class="agent-chip" style="--i:1"><img class="avatar" src="assets/avatars/inkslinger.png" alt="Inkslinger"><strong>Inkslinger</strong><span>Content Machine</span></div>
+      <div class="agent-chip" style="--i:2"><img class="avatar" src="assets/avatars/sheriff.png" alt="Sheriff"><strong>Sheriff</strong><span>Inbox Sentinel</span></div>
+      <div class="agent-chip" style="--i:3"><img class="avatar" src="assets/avatars/doc.png" alt="Doc"><strong>Doc</strong><span>Customer Support</span></div>
+      <div class="agent-chip" style="--i:4"><img class="avatar" src="assets/avatars/drawl.png" alt="Drawl"><strong>Drawl</strong><span>Copywriter</span></div>
+      <div class="agent-chip" style="--i:5"><img class="avatar" src="assets/avatars/Wrangler.png" alt="Wrangler"><strong>Wrangler</strong><span>Biz Dev</span></div>
+      <div class="agent-chip" style="--i:6"><img class="avatar" src="assets/avatars/tally.png" alt="Tally"><strong>Tally</strong><span>Data Analyst</span></div>
+      <div class="agent-chip" style="--i:7"><img class="avatar" src="assets/avatars/mercantile.png" alt="Mercantile"><strong>Mercantile</strong><span>Ecommerce</span></div>
+      <div class="agent-chip" style="--i:8"><img class="avatar" src="assets/avatars/closer.png" alt="Closer"><strong>Closer</strong><span>Sales Manager</span></div>
+      <div class="agent-chip" style="--i:9"><img class="avatar" src="assets/avatars/grit.png" alt="Grit"><strong>Grit</strong><span>Personal Dev</span></div>
+      <div class="agent-chip" style="--i:10"><img class="avatar" src="assets/avatars/scout.png" alt="Scout"><strong>Scout</strong><span>Recruiter</span></div>
+      <div class="agent-chip" style="--i:11"><img class="avatar" src="assets/avatars/compass.png" alt="Compass"><strong>Compass</strong><span>SEO</span></div>
+      <div class="agent-chip" style="--i:12"><img class="avatar" src="assets/avatars/holler.png" alt="Holler"><strong>Holler</strong><span>Social Media</span></div>
+      <div class="agent-chip" style="--i:13"><img class="avatar" src="assets/avatars/ranger.png" alt="Ranger"><strong>Ranger</strong><span>Virtual Asst</span></div>
+      <div class="agent-chip" style="--i:14"><img class="avatar" src="assets/avatars/pony.png" alt="Pony"><strong>Pony</strong><span>Email Marketer</span></div>
+      <div class="agent-chip" style="--i:15"><img class="avatar" src="assets/avatars/mender.png" alt="Mender"><strong>Mender</strong><span>Credit Repair</span></div>
+      <div class="agent-chip" style="--i:16"><img class="avatar" src="assets/avatars/ledger.png" alt="Ledger"><strong>Ledger</strong><span>Tax Filing</span></div>
+      <div class="agent-chip" style="--i:17"><img class="avatar" src="assets/avatars/bullhorn.png" alt="Bullhorn"><strong>Bullhorn</strong><span>Ad Manager</span></div>
+      <div class="agent-chip" style="--i:18"><img class="avatar" src="assets/avatars/rooster.png" alt="Rooster"><strong>Rooster</strong><span>Daily Motivator</span></div>
     </div>
+  </div>
+
+  <!-- SLIDE 6.5 — COMMANDS & THEIR AVATARS -->
+  <div class="slide slide-content">
+    <div class="eyebrow">Every Command Has An Avatar</div>
+    <h2>Meet Your <span class="accent">LindaAI Team</span></h2>
+    <div class="commands-grid" id="commands-grid"></div>
   </div>
 
   <!-- SLIDE 7 — VOICE + BRIDGES -->
@@ -537,8 +606,8 @@ body { position: relative; }
     <div class="feature-row">
       <div class="feat-card">
         <div class="feat-emoji">🎤</div>
-        <h3>Voice Pack</h3>
-        <p><strong>6 personalities</strong>: Country, Hiphop/Slang, Regular × Male/Female. Toggle speaking with /voice. Full pause, rewind, scrub controls.</p>
+        <h3>Voice Pack — Linda Talks Back</h3>
+        <p>Pick <strong>Country</strong>, <strong>Hip-Hop/Slang</strong>, or <strong>Regular</strong> (M/F). LindaAI <strong>reads every response out loud</strong> the second she answers — like an assistant in the room. Toggle with /voice. Pause/rewind/scrub controls.</p>
       </div>
       <div class="feat-card">
         <div class="feat-emoji">📱</div>
@@ -574,42 +643,62 @@ body { position: relative; }
       <div class="tier-box">
         <h3>Bronze</h3>
         <div class="price">$500</div>
+        <p class="tier-blurb"><strong>10 skills</strong></p>
         <ul>
-          <li>10 essential skills</li>
-          <li>Cross-platform</li>
-          <li>Auto-updates</li>
-          <li>Lifetime access</li>
+          <li>/linda-brief · daily briefing</li>
+          <li>/linda-write · email drafter</li>
+          <li>/linda-followup · commitments</li>
+          <li>/linda-triage · inbox triage</li>
+          <li>/linda-invoice · invoices</li>
+          <li>/linda-content · social posts</li>
+          <li>/linda-leads · CRM</li>
+          <li>/linda-recap · weekly review</li>
+          <li>+ 2 more · Auto-updates</li>
         </ul>
       </div>
       <div class="tier-box">
         <h3>Silver</h3>
         <div class="price">$1K</div>
+        <p class="tier-blurb"><strong>20 skills</strong> + Skill Picker</p>
         <ul>
-          <li>20 skills</li>
-          <li>Swap 3 in 14 days</li>
-          <li>Growth-stage tools</li>
-          <li>Lifetime access</li>
+          <li><em>Everything in Bronze</em> +10:</li>
+          <li>/linda-spy · competitor</li>
+          <li>/linda-market · research</li>
+          <li>/linda-meetingprep · briefs</li>
+          <li>/linda-onboard · clients</li>
+          <li>/linda-finance · snapshot</li>
+          <li>/linda-sop · build SOPs</li>
+          <li>🎯 Swap any 3 in 14 days</li>
         </ul>
       </div>
       <div class="tier-box">
         <h3>Gold</h3>
         <div class="price">$1.5K</div>
+        <p class="tier-blurb"><strong>32 skills</strong> + Mobile</p>
         <ul>
-          <li>32 skills</li>
-          <li>📱 Mobile bridges</li>
-          <li>Real estate toolkit</li>
-          <li>Swap 5 in 14 days</li>
+          <li><em>Everything in Silver</em> +12:</li>
+          <li>/linda-deal · deal analyzer</li>
+          <li>/linda-rent · rental analysis</li>
+          <li>/linda-seller · outreach</li>
+          <li>/linda-loi · LOI Blaster ✉️</li>
+          <li>/linda-kpi · dashboard</li>
+          <li>📱 Telegram + Discord</li>
+          <li>🎯 Swap any 5 in 14 days</li>
         </ul>
       </div>
       <div class="tier-box featured">
         <h3>Platinum ✦</h3>
-        <div class="price">$4K</div>
+        <div class="price">$3K</div>
+        <p class="tier-blurb"><strong>50+ skills · 19 agents</strong></p>
         <ul>
-          <li>50+ skills</li>
-          <li>19 AI agents</li>
-          <li>🎤 Voice Pack FREE</li>
-          <li>📱 All bridges</li>
-          <li>Priority support</li>
+          <li><em>Everything in Gold</em> +20:</li>
+          <li>/linda-grant + tracker + budget</li>
+          <li>/linda-airbnb + /linda-coliving</li>
+          <li>/linda-swot · /linda-contract</li>
+          <li>/linda-license · /linda-gumroad</li>
+          <li>🤠 19 named AI agents</li>
+          <li>🎤 Voice Pack FREE — reads every reply (Country/Hip-Hop/Regular × M/F)</li>
+          <li>📱 All bridges · ⚡ Priority</li>
         </ul>
       </div>
     </div>
@@ -620,7 +709,7 @@ body { position: relative; }
     <h2>Ready to rip?</h2>
     <p>One payment. Lifetime access. LindaAI has your back.</p>
     <a href="https://wisecertified.gumroad.com" class="cta-btn">Get LindaAI →</a>
-    <p style="margin-top: 40px; font-size: 15px; color: var(--muted);">LindaAI-Brain.com · support@lindaai.com · © 2026</p>
+    <p style="margin-top: 40px; font-size: 15px; color: var(--muted);">LindaAI-Brain.com · support@lindaai.com · © 2024–2026</p>
   </div>
 
 </div>
@@ -669,6 +758,33 @@ function togglePlay() {
   if (autoPlay) restartAuto();
   else clearInterval(autoInterval);
 }
+
+// ── Build the Commands & Avatars slide using customer-facing /linda-* names ──
+Promise.all([
+  fetch('assets/avatar-map.json').then(r => r.json()),
+  fetch('assets/rename-maps.json').then(r => r.json())
+]).then(([map, rename]) => {
+  const grid = document.getElementById('commands-grid');
+  if (!grid) return;
+  const customer = rename.customer || {};
+  const skills = Object.keys(map.skill_to_agent);
+  skills.forEach((skill, i) => {
+    const agentKey = map.skill_to_agent[skill];
+    const agent = map.agents[agentKey];
+    if (!agent) return;
+    const display = customer[skill] || skill;
+    const row = document.createElement('div');
+    row.className = 'cmd-row';
+    row.style.setProperty('--i', i);
+    row.innerHTML = `
+      <img src="assets/avatars/${agent.png}" alt="${agentKey}">
+      <div>
+        <div class="cmd-name">/${display}</div>
+        <div class="cmd-agent">${agentKey[0].toUpperCase() + agentKey.slice(1)} — ${agent.role}</div>
+      </div>`;
+    grid.appendChild(row);
+  });
+}).catch(e => console.warn('command grid load failed:', e));
 
 function restartAuto() {
   clearInterval(autoInterval);
