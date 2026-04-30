@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
    LindaAI — Brand stylesheet
    Navy midnight + royal blue + purple-cyan accents
-   © 2026 LindaAI — Built by Daniel Wise
+   © 2024–2026 LindaAI — Built by Daniel Wise
    ════════════════════════════════════════════════════════════════ */
 
 :root {
@@ -55,6 +55,20 @@ body::before {
   background: radial-gradient(circle, rgba(43,127,255,0.18) 0%, rgba(124,92,255,0.08) 40%, transparent 70%);
   pointer-events: none;
   z-index: 0;
+}
+
+/* Brand watermark — bottom-right, every page */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 96px;
+  height: 73px;
+  background: url('assets/logo-watermark.png') center / contain no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .container {
@@ -402,6 +416,44 @@ body::before {
   font-size: 14px;
   margin-bottom: 24px;
 }
+.tier-summary {
+  background: rgba(43,127,255,0.08);
+  border: 1px solid rgba(43,127,255,0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-body);
+  margin-bottom: 14px;
+}
+.tier-summary strong { color: var(--accent-bright); }
+.tier-skills {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-body);
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  padding: 12px 14px !important;
+  margin-bottom: 12px !important;
+}
+.tier-skills li {
+  padding: 3px 0 !important;
+  border: none !important;
+  list-style: none;
+}
+.tier-skills li:first-child { color: var(--accent-bright); font-weight: 600; }
+.tier-skills em { color: var(--accent-purple); font-style: normal; font-weight: 600; }
+.tier-extras {
+  list-style: none;
+  padding: 0 !important;
+  margin-bottom: 16px !important;
+  font-size: 13px;
+}
+.tier-extras li {
+  padding: 5px 0 !important;
+  border: none !important;
+  color: var(--text-body);
+}
 .tier ul {
   list-style: none;
   padding: 0;
@@ -466,26 +518,44 @@ body::before {
 /* ═══════════════════ AGENTS GRID ═══════════════════ */
 .agents-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
 }
 .agent {
-  padding: 18px 20px;
+  padding: 18px 16px;
   background: var(--bg-card);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-body);
   transition: all 0.2s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
-.agent:hover { border-color: var(--accent-blue); background: var(--bg-elevated); }
+.agent:hover { border-color: var(--accent-blue); background: var(--bg-elevated); transform: translateY(-3px); }
+.agent .agent-avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-blue);
+  box-shadow: 0 4px 14px rgba(43,127,255,0.25);
+  background: var(--bg-elevated);
+}
 .agent strong {
   display: block;
   color: var(--accent-bright);
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 2px;
+}
+.agent span {
+  display: block;
+  color: var(--text-muted, #94a3b8);
+  font-size: 12px;
 }
 .rooster-agent {
   background: linear-gradient(135deg, var(--bg-card), rgba(245,158,11,0.08));
