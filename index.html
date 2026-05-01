@@ -421,6 +421,42 @@
 </footer>
 
 <script>
+// Layer 5 anti-abuse: browser fingerprint — combination of stable signals.
+// Sent to API which dedupes against fingerprint hashes from past 30 days.
+async function getBrowserFingerprint() {
+  // Quick localStorage pre-check — block obvious repeat attempts on same browser
+  if (localStorage.getItem('lindaai_trial_used')) {
+    return localStorage.getItem('lindaai_trial_used');
+  }
+  const parts = [
+    navigator.userAgent,
+    navigator.language,
+    screen.width + 'x' + screen.height + 'x' + screen.colorDepth,
+    new Date().getTimezoneOffset(),
+    navigator.hardwareConcurrency || '',
+    navigator.deviceMemory || '',
+    navigator.platform || '',
+  ];
+  // Canvas fingerprint
+  try {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#f60';
+    ctx.fillRect(125,1,62,20);
+    ctx.fillStyle = '#069';
+    ctx.fillText('LindaAI 🤠', 2, 15);
+    parts.push(canvas.toDataURL().slice(-100));
+  } catch(e) {}
+  const raw = parts.join('||');
+  // SHA-256 hash
+  const buf = new TextEncoder().encode(raw);
+  const hashBuf = await crypto.subtle.digest('SHA-256', buf);
+  const hex = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  return hex;
+}
+
 async function submitTrial(e) {
   e.preventDefault();
   const name = document.getElementById('trial-name').value.trim();
@@ -433,13 +469,16 @@ async function submitTrial(e) {
   msg.textContent = '';
   msg.className = 'trial-msg';
   try {
+    const fingerprint = await getBrowserFingerprint();
     const res = await fetch('https://lindaai-api-production.up.railway.app/v1/trial/signup', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({name, email})
+      body: JSON.stringify({name, email, fingerprint})
     });
     const data = await res.json();
     if (data.success) {
+      // Mark this browser as having claimed a trial — first line of defense
+      try { localStorage.setItem('lindaai_trial_used', data.key); } catch(e) {}
       msg.className = 'trial-msg success';
       msg.innerHTML = data.already_had
         ? `🤠 You already have a trial key — we just re-sent it to <strong>${email}</strong>. Check your inbox + spam folder.`
