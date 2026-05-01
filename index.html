@@ -23,6 +23,7 @@
       <span>LindaAI</span>
     </a>
     <div class="nav-links">
+      <a href="#trial" style="color:var(--accent-bright); font-weight:700;">Free Trial</a>
       <a href="#tiers">Tiers</a>
       <a href="#agents">Agents</a>
       <a href="#install">Install</a>
@@ -41,8 +42,8 @@
     <p class="hero-subtitle">Built for Business Owners Who Want<br><span class="accent">Results — Not Complexity</span></p>
     <p class="hero-text">Drop one file into Claude Code. Type "Run LindaAI." Get 50+ AI skills, 19 specialist agents, voice personalities, and mobile access in 30 seconds. One payment. Lifetime access.</p>
     <div class="hero-actions">
-      <a href="#tiers" class="btn btn-primary">See Pricing</a>
-      <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+      <a href="#trial" class="btn btn-primary">Try Free for 7 Days</a>
+      <a href="#tiers" class="btn btn-secondary">See Pricing</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Skills</span></div>
@@ -98,6 +99,24 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ FREE TRIAL ═══════════════════════ -->
+<section id="trial" class="section">
+  <div class="container container-narrow">
+    <div class="trial-card">
+      <div class="trial-badge">FREE 7-DAY TRIAL</div>
+      <h2 class="section-heading" style="margin-top:8px;">Try LindaAI Free for 7 Days</h2>
+      <p class="section-sub">No credit card. No commitment. Pick any 3 skills, run them on your real work, and see what LindaAI feels like in your business. Upgrade anytime within 7 days to lock it in.</p>
+      <form id="trial-form" class="trial-form" onsubmit="return submitTrial(event)">
+        <input type="text" id="trial-name" placeholder="Your name" required maxlength="80">
+        <input type="email" id="trial-email" placeholder="your@email.com" required maxlength="120">
+        <button type="submit" class="btn btn-primary btn-lg" id="trial-btn">Start My Free Trial →</button>
+      </form>
+      <p id="trial-msg" class="trial-msg"></p>
+      <p style="font-size:13px; color:var(--text-muted, #94a3b8); margin-top:18px;">After 7 days, your trial key stops validating. No auto-charge — your card was never on file.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════ TIERS / PRICING ═══════════════════════ -->
 <section id="tiers" class="section section-alt">
   <div class="container">
@@ -123,6 +142,7 @@
           <li>/linda-recap — weekly review</li>
         </ul>
         <ul class="tier-extras">
+          <li>🎯 Pick any 10 of 15 essentials (custom-fit)</li>
           <li>✓ Cross-platform (Mac/Win/Linux)</li>
           <li>✓ Auto-updates via /linda-sync</li>
           <li>✓ Persistent brain folder</li>
@@ -400,5 +420,45 @@
   </div>
 </footer>
 
+<script>
+async function submitTrial(e) {
+  e.preventDefault();
+  const name = document.getElementById('trial-name').value.trim();
+  const email = document.getElementById('trial-email').value.trim();
+  const btn = document.getElementById('trial-btn');
+  const msg = document.getElementById('trial-msg');
+  if (!name || !email) return false;
+  btn.disabled = true;
+  btn.textContent = 'Sending you a key...';
+  msg.textContent = '';
+  msg.className = 'trial-msg';
+  try {
+    const res = await fetch('https://lindaai-api-production.up.railway.app/v1/trial/signup', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({name, email})
+    });
+    const data = await res.json();
+    if (data.success) {
+      msg.className = 'trial-msg success';
+      msg.innerHTML = data.already_had
+        ? `🤠 You already have a trial key — we just re-sent it to <strong>${email}</strong>. Check your inbox + spam folder.`
+        : `🤠 Yeeee Hawww! Your 7-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}. Check your inbox.`;
+      btn.textContent = 'Trial sent ✓';
+    } else {
+      msg.className = 'trial-msg error';
+      msg.textContent = data.detail || 'Something went wrong. Please try again or email support@lindaai-brain.com.';
+      btn.disabled = false;
+      btn.textContent = 'Start My Free Trial →';
+    }
+  } catch(err) {
+    msg.className = 'trial-msg error';
+    msg.textContent = 'Network hiccup — try again in a moment, or email support@lindaai-brain.com.';
+    btn.disabled = false;
+    btn.textContent = 'Start My Free Trial →';
+  }
+  return false;
+}
+</script>
 </body>
 </html>
