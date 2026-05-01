@@ -432,6 +432,36 @@ body { position: relative; }
   display: flex; align-items: center; justify-content: center;
 }
 .ctrl-btn:hover { background: rgba(43,127,255,0.2); }
+
+/* Close (exit deck) button — top-right */
+.close-deck {
+  position: fixed; top: 24px; right: 24px;
+  width: 48px; height: 48px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(10,14,30,0.7);
+  backdrop-filter: blur(20px);
+  color: #fff; font-size: 22px; cursor: pointer;
+  border-radius: 50%; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-weight: 300;
+}
+.close-deck:hover {
+  background: rgba(220,38,38,0.85);
+  border-color: rgba(255,255,255,0.4);
+  transform: scale(1.08);
+}
+.close-deck::after {
+  content: 'Exit';
+  position: absolute; right: 56px; top: 50%; transform: translateY(-50%);
+  font-size: 13px; font-weight: 600; color: #fff;
+  background: rgba(10,14,30,0.85);
+  padding: 6px 10px; border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.close-deck:hover::after { opacity: 1; }
 .progress {
   display: flex; gap: 6px; align-items: center; padding: 0 12px;
 }
@@ -713,6 +743,9 @@ body { position: relative; }
   </div>
 
 </div>
+
+<!-- CLOSE / EXIT DECK BUTTON — top-right -->
+<a href="index.html" class="close-deck" aria-label="Close pitch deck and return to site" title="Exit">×</a>
 
 <!-- CONTROLS -->
 <div class="controls">
