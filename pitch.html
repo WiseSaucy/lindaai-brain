@@ -7,6 +7,7 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme-blue-black.css">
 <style>
 :root {
   --bg: #0a0e1e;
@@ -380,6 +381,92 @@ body { position: relative; }
   margin: 8px 0 16px 8px;
 }
 
+/* Industry Packs grid */
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 32px;
+}
+.pack-card {
+  padding: 18px 14px;
+  background: rgba(43,127,255,0.08);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all 0.3s;
+  animation: fadeIn 0.5s ease both;
+}
+.pack-card:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(43,127,255,0.18); }
+.pack-card .pack-emoji { font-size: 36px; line-height: 1; margin-bottom: 10px; }
+.pack-card .pack-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue-bright);
+  margin-bottom: 8px;
+}
+.pack-card .pack-tag {
+  font-size: 12px;
+  color: var(--body);
+  line-height: 1.4;
+}
+.pack-card .pack-flag {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* 30-Day Trial slide */
+.trial-hero {
+  max-width: 1000px;
+}
+.trial-hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--white) 0%, var(--blue-bright) 60%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+.trial-hero .trial-sub {
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: var(--body);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+.trial-bullets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 40px;
+}
+.trial-bullet {
+  padding: 22px 18px;
+  background: rgba(10,14,30,0.6);
+  border: 1px solid rgba(43,127,255,0.3);
+  border-radius: 14px;
+  font-size: 15px;
+  color: var(--body);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+.trial-bullet strong { color: var(--blue-bright); display: block; font-family: var(--font-display); font-size: 17px; margin-bottom: 6px; }
+
 /* Final CTA */
 .slide-final h2 {
   font-family: var(--font-display);
@@ -740,7 +827,7 @@ body { position: relative; }
     <p>Try free for <span class="accent">7 days</span> — no card, no commitment.<br>Or buy lifetime access today.</p>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:32px;">
       <a href="https://lindaai-brain.com/#trial" class="cta-btn">Start Free Trial →</a>
-      <a href="https://wisecertified.gumroad.com" class="cta-btn" style="background:transparent; border:2px solid var(--blue-bright); color:var(--blue-bright);">Get LindaAI →</a>
+      <a href="checkout.html?tier=platinum" class="cta-btn" style="background:transparent; border:2px solid var(--blue-bright); color:var(--blue-bright);">Get LindaAI →</a>
     </div>
     <p style="margin-top: 40px; font-size: 15px; color: var(--muted);">LindaAI-Brain.com · support@lindaai-brain.com · © 2024–2026</p>
   </div>
