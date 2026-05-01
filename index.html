@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-blue-black.css">
 </head>
 <body>
 
@@ -28,7 +29,7 @@
       <a href="#agents">Agents</a>
       <a href="#install">Install</a>
       <a href="#faq">FAQ</a>
-      <a href="https://wisecertified.gumroad.com" class="btn btn-sm">Buy Now</a>
+      <a href="checkout.html?tier=platinum" class="btn btn-sm">Buy Now</a>
     </div>
   </div>
 </nav>
@@ -42,7 +43,7 @@
     <p class="hero-subtitle">Built for Business Owners Who Want<br><span class="accent">Results — Not Complexity</span></p>
     <p class="hero-text">Drop one file into Claude Code. Type "Run LindaAI." Get 50+ AI skills, 19 specialist agents, voice personalities, and mobile access in 30 seconds. One payment. Lifetime access.</p>
     <div class="hero-actions">
-      <a href="#trial" class="btn btn-primary">Try Free for 7 Days</a>
+      <a href="#trial" class="btn btn-primary">Try Free for 30 Days</a>
       <a href="#tiers" class="btn btn-secondary">See Pricing</a>
     </div>
     <div class="hero-stats">
@@ -99,20 +100,49 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ INDUSTRY PACKS ═══════════════════════ -->
+<section id="packs" class="section section-alt">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:18px;">
+      <span style="display:inline-block; padding:6px 16px; border:1px solid var(--accent-blue, #1e90ff); border-radius:999px; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent-bright, #4eb1ff);">Pack + Pick</span>
+    </div>
+    <h2 class="section-heading">Built For Your Industry</h2>
+    <p class="section-sub">10 industry packs. Pick the one that fits your business — then swap up to 12 skills with any others at your tier. Platinum unlocks every pack at once.</p>
+
+    <div class="packs-grid">
+      <div class="pack-card"><div class="pack-emoji">🏡</div><h3>Real Estate Pro</h3><p>Hunt, underwrite, market, and close deals. Property research, rent comps, BRRRR, LOI, dealpacks.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🏗️</div><h3>Construction PM</h3><p>Daily field reports, WIP tracking, project health. Change orders, submittals, owner reports.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🌿</div><h3>Landscaper</h3><p>Routes, estimates, crews, seasonal services. Property cards, visit logs, recurring service.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🔧</div><h3>HVAC / Plumbing</h3><p>Dispatch, service tickets, maintenance contracts. Parts inventory, warranty tracker, tech routing.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">💳</div><h3>Credit Repair</h3><p>FCRA-compliant disputes, client tracking, bureau response logger, credit coaching content.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🍽️</div><h3>Restaurant Owner</h3><p>Inventory, shift scheduling, review responses, menu engineering (Stars/Plowhorses/Puzzles/Dogs).</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🎬</div><h3>Content Creator</h3><p>Hooks, scripts, batch posting, brand deal pipeline, analytics rollup, thumbnail concepts.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">🧭</div><h3>Life Coach</h3><p>Client intake, session notes, program builder, accountability, coaching content.</p><span class="pack-tier">Bronze+</span></div>
+      <div class="pack-card"><div class="pack-emoji">💰</div><h3>Grant Hunter</h3><p>Find grants, check fit, write proposals, build budgets, track applications, SAM.gov registration.</p><span class="pack-tier">Silver+</span></div>
+      <div class="pack-card pack-card-flagship"><div class="pack-emoji">⚙️</div><h3>Operator <span style="color:var(--accent-bright,#4eb1ff); font-size:11px; font-weight:600; letter-spacing:1.5px; margin-left:6px; vertical-align:middle;">FLAGSHIP</span></h3><p>QuickBooks bookkeeping, tax prep, deductions, digital files, Monday.com + Notion sync, tenant locator, property manager finder, background checks, vendor mgmt, payroll, compliance, cash flow, master ops dashboard.</p><span class="pack-tier">Silver+</span></div>
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="#trial" class="btn btn-primary btn-lg">Try Any Pack Free for 30 Days</a>
+      <p style="font-size:13px; color:var(--text-muted, #94a3b8); margin-top:12px;">No credit card. Pick a pack, run it on your real work, decide if it's a fit.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════ FREE TRIAL ═══════════════════════ -->
 <section id="trial" class="section">
   <div class="container container-narrow">
     <div class="trial-card">
-      <div class="trial-badge">FREE 7-DAY TRIAL</div>
-      <h2 class="section-heading" style="margin-top:8px;">Try LindaAI Free for 7 Days</h2>
-      <p class="section-sub">No credit card. No commitment. Pick any 3 skills, run them on your real work, and see what LindaAI feels like in your business. Upgrade anytime within 7 days to lock it in.</p>
+      <div class="trial-badge">FREE 30-DAY TRIAL</div>
+      <h2 class="section-heading" style="margin-top:8px;">Try LindaAI Free for 30 Days</h2>
+      <p class="section-sub">No credit card. No commitment. Pick your industry pack, run it on your real work for a full month, and see what LindaAI feels like in your business. Upgrade anytime within 30 days to lock it in.</p>
       <form id="trial-form" class="trial-form" onsubmit="return submitTrial(event)">
         <input type="text" id="trial-name" placeholder="Your name" required maxlength="80">
         <input type="email" id="trial-email" placeholder="your@email.com" required maxlength="120">
         <button type="submit" class="btn btn-primary btn-lg" id="trial-btn">Start My Free Trial →</button>
       </form>
       <p id="trial-msg" class="trial-msg"></p>
-      <p style="font-size:13px; color:var(--text-muted, #94a3b8); margin-top:18px;">After 7 days, your trial key stops validating. No auto-charge — your card was never on file.</p>
+      <p style="font-size:13px; color:var(--text-muted, #94a3b8); margin-top:18px;">After 30 days, your trial key stops validating. No auto-charge — your card was never on file.</p>
     </div>
   </div>
 </section>
@@ -147,7 +177,7 @@
           <li>✓ Auto-updates via /linda-sync</li>
           <li>✓ Persistent brain folder</li>
         </ul>
-        <a href="https://wisecertified.gumroad.com" class="btn btn-tier">Get Bronze</a>
+        <a href="checkout.html?tier=bronze" class="btn btn-tier">Get Bronze</a>
       </div>
 
       <div class="tier">
@@ -171,7 +201,7 @@
         <ul class="tier-extras">
           <li>🎯 Swap any 3 skills in 14 days</li>
         </ul>
-        <a href="https://wisecertified.gumroad.com" class="btn btn-tier">Get Silver</a>
+        <a href="checkout.html?tier=silver" class="btn btn-tier">Get Silver</a>
       </div>
 
       <div class="tier tier-featured">
@@ -198,7 +228,7 @@
           <li>📱 Telegram + Discord bridges</li>
           <li>🎯 Swap any 5 skills in 14 days</li>
         </ul>
-        <a href="https://wisecertified.gumroad.com" class="btn btn-tier btn-primary">Get Gold</a>
+        <a href="checkout.html?tier=gold" class="btn btn-tier btn-primary">Get Gold</a>
       </div>
 
       <div class="tier tier-premium">
@@ -231,7 +261,7 @@
           <li>🐓 Daily Rooster motivator</li>
           <li>⚡ Priority support</li>
         </ul>
-        <a href="https://wisecertified.gumroad.com" class="btn btn-tier btn-gold">Get Platinum</a>
+        <a href="checkout.html?tier=platinum" class="btn btn-tier btn-gold">Get Platinum</a>
       </div>
 
     </div>
@@ -243,7 +273,7 @@
       </div>
       <div>
         <div class="addon-price">$19.99</div>
-        <a href="https://wisecertified.gumroad.com" class="btn btn-sm">Add On</a>
+        <a href="checkout.html?tier=voice" class="btn btn-sm">Add On</a>
       </div>
     </div>
   </div>
@@ -391,7 +421,7 @@
   <div class="container">
     <h2>Ready to work with a real AI operating system?</h2>
     <p>Join the business owners who chose results over complexity.</p>
-    <a href="https://wisecertified.gumroad.com" class="btn btn-primary btn-lg">Get LindaAI Now</a>
+    <a href="checkout.html?tier=platinum" class="btn btn-primary btn-lg">Get LindaAI Now</a>
     <p class="cta-note">Secure checkout · Lifetime access · One payment · No subscriptions</p>
   </div>
 </section>
@@ -482,7 +512,7 @@ async function submitTrial(e) {
       msg.className = 'trial-msg success';
       msg.innerHTML = data.already_had
         ? `🤠 You already have a trial key — we just re-sent it to <strong>${email}</strong>. Check your inbox + spam folder.`
-        : `🤠 Yeeee Hawww! Your 7-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}. Check your inbox.`;
+        : `🤠 Yeeee Hawww! Your 30-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}. Check your inbox.`;
       btn.textContent = 'Trial sent ✓';
     } else {
       msg.className = 'trial-msg error';

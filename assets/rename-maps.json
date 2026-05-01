@@ -1,5 +1,5 @@
 {
-  "_comment": "Skill rename maps. CUSTOMER applied at build time to Gakusei zips. PERSONAL applied to ~/.claude/skills/ for Boss47.",
+  "_comment": "Skill rename maps. CUSTOMER applied at build time to Gakusei zips. PERSONAL applied to ~/.claude/skills/ for the founder's personal install.",
   "customer": {
     "morning-briefing": "linda-brief",
     "email-drafter": "linda-mail",
