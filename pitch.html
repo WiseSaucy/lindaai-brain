@@ -10,16 +10,16 @@
 <link rel="stylesheet" href="theme-blue-black.css">
 <style>
 :root {
-  --bg: #0a0e1e;
-  --bg-deep: #050710;
-  --blue: #2b7fff;
-  --blue-bright: #4da3ff;
-  --purple: #7c5cff;
-  --cyan: #00d4ff;
-  --gold: #f59e0b;
+  --bg: #000000;
+  --bg-deep: #000000;
+  --blue: #1e90ff;
+  --blue-bright: #4eb1ff;
+  --purple: #1e90ff;     /* re-aliased to blue */
+  --cyan: #4eb1ff;       /* re-aliased to blue */
+  --gold: #1e90ff;       /* re-aliased to blue */
   --white: #ffffff;
-  --body: #a0a8c0;
-  --muted: #6b7596;
+  --body: #b8c5dc;
+  --muted: #5d6b87;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -31,9 +31,9 @@ body { position: relative; }
 .bg-glow {
   position: fixed; inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(43,127,255,0.25) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(124,92,255,0.2) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(0,212,255,0.08) 0%, transparent 70%);
+    radial-gradient(circle at 20% 30%, rgba(30,144,255,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(30,144,255,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(78,177,255,0.08) 0%, transparent 70%);
   z-index: 0; pointer-events: none;
   animation: glowPulse 12s ease-in-out infinite;
 }
@@ -47,8 +47,8 @@ body { position: relative; }
     radial-gradient(1px 1px at 20% 15%, white, transparent),
     radial-gradient(1px 1px at 60% 40%, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 35% 85%, rgba(77,163,255,0.9), transparent),
-    radial-gradient(1px 1px at 70% 20%, rgba(124,92,255,0.8), transparent);
+    radial-gradient(2px 2px at 35% 85%, rgba(78,177,255,0.9), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(30,144,255,0.8), transparent);
   background-size: 100% 100%;
   animation: twinkle 8s ease-in-out infinite;
 }
@@ -161,8 +161,8 @@ body { position: relative; }
 }
 .stat-card {
   padding: 32px 24px;
-  background: rgba(43,127,255,0.08);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(30,144,255,0.08);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 16px;
   backdrop-filter: blur(10px);
 }
@@ -194,8 +194,8 @@ body { position: relative; }
 }
 .feat-card {
   padding: 36px 28px;
-  background: rgba(10,14,30,0.6);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(10,15,28,0.6);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   text-align: left;
@@ -221,14 +221,14 @@ body { position: relative; }
 }
 .tier-box {
   padding: 24px 20px;
-  background: rgba(10,14,30,0.7);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(10,15,28,0.7);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 16px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: transform 0.3s;
 }
-.tier-box.featured { border-color: var(--gold); background: rgba(245,158,11,0.08); }
+.tier-box.featured { border-color: var(--gold); background: rgba(30,144,255,0.08); }
 .tier-box h3 {
   font-family: var(--font-display);
   font-size: 20px;
@@ -249,7 +249,7 @@ body { position: relative; }
   font-size: 13px;
   color: var(--body);
   padding: 6px 0;
-  border-bottom: 1px solid rgba(43,127,255,0.15);
+  border-bottom: 1px solid rgba(30,144,255,0.15);
 }
 .tier-box li:last-child { border-bottom: none; }
 .tier-box .tier-blurb { color: var(--blue-bright); font-size: 13px; margin: -6px 0 10px; font-weight: 600; }
@@ -265,8 +265,8 @@ body { position: relative; }
 }
 .agent-chip {
   padding: 14px 10px 12px;
-  background: rgba(43,127,255,0.08);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(30,144,255,0.08);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 14px;
   text-align: center;
   transition: all 0.3s;
@@ -276,12 +276,12 @@ body { position: relative; }
   align-items: center;
   gap: 6px;
 }
-.agent-chip:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(43,127,255,0.18); }
+.agent-chip:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(30,144,255,0.18); }
 .agent-chip:nth-child(n) { animation-delay: calc(var(--i, 0) * 50ms); }
 .agent-chip img.avatar {
   width: 64px; height: 64px;
   border-radius: 50%;
-  border: 2px solid rgba(43,127,255,0.5);
+  border: 2px solid rgba(30,144,255,0.5);
   object-fit: cover;
   background: var(--bg-deep);
 }
@@ -312,8 +312,8 @@ body { position: relative; }
 .cmd-row {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 12px;
-  background: rgba(124,92,255,0.06);
-  border: 1px solid rgba(124,92,255,0.25);
+  background: rgba(30,144,255,0.06);
+  border: 1px solid rgba(30,144,255,0.25);
   border-radius: 10px;
   text-align: left;
   font-size: 13px;
@@ -324,7 +324,7 @@ body { position: relative; }
   width: 36px; height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid rgba(124,92,255,0.5);
+  border: 1.5px solid rgba(30,144,255,0.5);
   flex: 0 0 36px;
 }
 .cmd-row > div { min-width: 0; flex: 1; }
@@ -350,18 +350,18 @@ body { position: relative; }
 /* Terminal slide */
 .terminal-slide {
   max-width: 800px;
-  background: #050710;
+  background: #000000;
   border: 1px solid var(--blue);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 80px rgba(43,127,255,0.3);
+  box-shadow: 0 20px 80px rgba(30,144,255,0.3);
   margin-top: 40px;
   text-align: left;
 }
 .terminal-slide-header {
   padding: 14px 20px;
-  background: rgba(43,127,255,0.15);
-  border-bottom: 1px solid rgba(43,127,255,0.3);
+  background: rgba(30,144,255,0.15);
+  border-bottom: 1px solid rgba(30,144,255,0.3);
   font-family: 'SF Mono', monospace;
   font-size: 12px;
   color: var(--body);
@@ -392,15 +392,15 @@ body { position: relative; }
 }
 .pack-card {
   padding: 18px 14px;
-  background: rgba(43,127,255,0.08);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(30,144,255,0.08);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 14px;
   backdrop-filter: blur(10px);
   text-align: center;
   transition: all 0.3s;
   animation: fadeIn 0.5s ease both;
 }
-.pack-card:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(43,127,255,0.18); }
+.pack-card:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(30,144,255,0.18); }
 .pack-card .pack-emoji { font-size: 36px; line-height: 1; margin-bottom: 10px; }
 .pack-card .pack-name {
   font-family: var(--font-display);
@@ -457,8 +457,8 @@ body { position: relative; }
 }
 .trial-bullet {
   padding: 22px 18px;
-  background: rgba(10,14,30,0.6);
-  border: 1px solid rgba(43,127,255,0.3);
+  background: rgba(10,15,28,0.6);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 14px;
   font-size: 15px;
   color: var(--body);
@@ -495,18 +495,18 @@ body { position: relative; }
   border: none;
   border-radius: 14px;
   text-decoration: none;
-  box-shadow: 0 12px 40px rgba(43,127,255,0.5);
+  box-shadow: 0 12px 40px rgba(30,144,255,0.5);
   transition: all 0.3s;
 }
-.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(43,127,255,0.7); }
+.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(30,144,255,0.7); }
 
 /* ═══════════════ CONTROLS ═══════════════ */
 .controls {
   position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
   display: flex; gap: 8px; padding: 10px 14px;
-  background: rgba(10,14,30,0.85);
+  background: rgba(10,15,28,0.85);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(43,127,255,0.3);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 999px;
   z-index: 100;
 }
@@ -518,14 +518,14 @@ body { position: relative; }
   border-radius: 50%; transition: background 0.2s;
   display: flex; align-items: center; justify-content: center;
 }
-.ctrl-btn:hover { background: rgba(43,127,255,0.2); }
+.ctrl-btn:hover { background: rgba(30,144,255,0.2); }
 
 /* Close (exit deck) button — top-left, clean of slide content */
 .close-deck {
   position: fixed; top: 32px; left: 32px;
   width: 44px; height: 44px;
   border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(10,14,30,0.65);
+  background: rgba(10,15,28,0.65);
   backdrop-filter: blur(20px);
   color: #fff; font-size: 20px; cursor: pointer;
   border-radius: 50%; z-index: 200;
@@ -545,7 +545,7 @@ body { position: relative; }
   content: '← Back to site';
   position: absolute; left: 56px; top: 50%; transform: translateY(-50%);
   font-size: 13px; font-weight: 600; color: #fff;
-  background: rgba(10,14,30,0.9);
+  background: rgba(10,15,28,0.9);
   padding: 6px 10px; border-radius: 6px;
   opacity: 0; pointer-events: none; transition: opacity 0.2s;
   white-space: nowrap;
@@ -578,10 +578,10 @@ body { position: relative; }
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 14px;
-  background: rgba(10,14,30,0.7);
+  background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
   padding: 8px 14px;
-  border: 1px solid rgba(43,127,255,0.3);
+  border: 1px solid rgba(30,144,255,0.3);
   border-radius: 999px;
   z-index: 100;
   text-decoration: none;
@@ -594,7 +594,7 @@ body { position: relative; }
   border-radius: 24px;
   margin-bottom: 32px;
   animation: float 4s ease-in-out infinite;
-  box-shadow: 0 20px 60px rgba(43,127,255,0.4);
+  box-shadow: 0 20px 60px rgba(30,144,255,0.4);
 }
 @keyframes float {
   0%,100% { transform: translateY(0); }
@@ -648,18 +648,18 @@ body { position: relative; }
   <!-- SLIDE 3 — THE SOLUTION -->
   <div class="slide slide-content">
     <div class="eyebrow">The Solution</div>
-    <h2>One AI. <span class="accent">Fifty+ skills.</span><br>Everything connected.</h2>
-    <div class="big-text">LindaAI installs into Claude Code with one command. Your skills, agents, voice, and mobile access — all in one operating system.</div>
+    <h2>One AI. <span class="accent">95+ skills.</span><br>Everything connected.</h2>
+    <div class="big-text">LindaAI installs into Claude Code with one command. Your skills, agents, voice, and mobile access — all in one operating system. Runs on your own Anthropic API key — typically under $20/month.</div>
   </div>
 
   <!-- SLIDE 4 — STATS -->
   <div class="slide slide-content">
     <h2>What You Get</h2>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-big">51</div><div class="stat-label">AI Skills</div></div>
+      <div class="stat-card"><div class="stat-big">95+</div><div class="stat-label">AI Skills</div></div>
+      <div class="stat-card"><div class="stat-big">10</div><div class="stat-label">Industry Packs</div></div>
       <div class="stat-card"><div class="stat-big">19</div><div class="stat-label">Specialist Agents</div></div>
       <div class="stat-card"><div class="stat-big">6</div><div class="stat-label">Voice Personalities</div></div>
-      <div class="stat-card"><div class="stat-big">3</div><div class="stat-label">Platforms</div></div>
     </div>
   </div>
 
@@ -669,8 +669,8 @@ body { position: relative; }
     <div class="feature-row">
       <div class="feat-card">
         <div class="feat-emoji">⚡</div>
-        <h3>30-Second Install</h3>
-        <p>Drag one file into Claude Code. Type "Run LindaAI". Paste your license. Done.</p>
+        <h3>5-Minute Install</h3>
+        <p>Unzip LindaAI, open it in Claude Code, run <code>python3 configure.py</code>. Wizard picks your tier + industry pack. Done.</p>
       </div>
       <div class="feat-card">
         <div class="feat-emoji">🔄</div>
@@ -743,15 +743,36 @@ body { position: relative; }
 
   <!-- SLIDE 8 — INSTALL DEMO -->
   <div class="slide slide-content">
-    <h2>Install in <span class="accent">30 Seconds</span></h2>
+    <h2>Install in <span class="accent">5 Minutes</span></h2>
     <div class="terminal-slide">
       <div class="terminal-slide-header">Claude Code — LindaAI Install</div>
       <div class="terminal-slide-body">
-        <div class="cmd">Run LindaAI</div>
-        <div class="out">🤠 Howdy! Paste your license key from the email sent to you from support@lindaai-brain.com</div>
-        <div class="cmd">LINDA-PLATINUM-X7K2-JF9D-LQ8M</div>
-        <div class="out">✓ Validated. Tier: Platinum.<br>✓ 50 skills + 19 agents + Voice Pack installed.<br>🤠 LindaAI has your back, partner.</div>
+        <div class="cmd">python3 configure.py</div>
+        <div class="out">🤠 Howdy! Welcome to LindaAI. Let's get you set up.</div>
+        <div class="cmd">Step 1 — Pick your tier: [1]</div>
+        <div class="cmd">Step 2 — Pick your pack: [2] 🏗️ Construction PM</div>
+        <div class="cmd">Step 3 — Keep all 12 skills? [y]</div>
+        <div class="out">✓ LindaAI installed. 95 skills ready. Yeeee Hawww!</div>
       </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8.5 — INDUSTRY PACKS -->
+  <div class="slide slide-content">
+    <div class="eyebrow">Built For Your Industry</div>
+    <h2>Pick Your <span class="accent">Pack</span></h2>
+    <div class="big-text" style="font-size:clamp(20px,2.4vw,26px); margin-bottom:20px;">10 industry packs. Pick the one that fits your business — swap skills anytime.</div>
+    <div class="pack-grid">
+      <div class="pack-card" style="--i:0"><div class="pack-emoji">🏡</div><div class="pack-name">Real Estate Pro</div><div class="pack-tag">Hunt, underwrite, market, and close deals</div></div>
+      <div class="pack-card" style="--i:1"><div class="pack-emoji">🏗️</div><div class="pack-name">Construction PM</div><div class="pack-tag">Daily field reports, WIP tracking, project health</div></div>
+      <div class="pack-card" style="--i:2"><div class="pack-emoji">🌿</div><div class="pack-name">Landscaper</div><div class="pack-tag">Routes, estimates, crews, seasonal services</div></div>
+      <div class="pack-card" style="--i:3"><div class="pack-emoji">🔧</div><div class="pack-name">HVAC / Plumbing</div><div class="pack-tag">Dispatch, service tickets, maintenance contracts</div></div>
+      <div class="pack-card" style="--i:4"><div class="pack-emoji">💳</div><div class="pack-name">Credit Repair</div><div class="pack-tag">Disputes, client tracking, bureau responses</div></div>
+      <div class="pack-card" style="--i:5"><div class="pack-emoji">🍽️</div><div class="pack-name">Restaurant Owner</div><div class="pack-tag">Inventory, shifts, reviews, menu engineering</div></div>
+      <div class="pack-card" style="--i:6"><div class="pack-emoji">🎬</div><div class="pack-name">Content Creator</div><div class="pack-tag">Hooks, scripts, batch posting, brand deals</div></div>
+      <div class="pack-card" style="--i:7"><div class="pack-emoji">🧭</div><div class="pack-name">Life Coach</div><div class="pack-tag">Client intake, session notes, programs, accountability</div></div>
+      <div class="pack-card" style="--i:8"><div class="pack-emoji">💰</div><div class="pack-name">Grant Hunter</div><div class="pack-tag">Find grants, write proposals, track applications</div><div class="pack-flag">Silver+</div></div>
+      <div class="pack-card" style="--i:9"><div class="pack-emoji">⚙️</div><div class="pack-name">Operator</div><div class="pack-tag">Books, taxes, vendors, tenants, Monday/Notion sync, background checks</div><div class="pack-flag">Silver+ · Flagship</div></div>
     </div>
   </div>
 
@@ -808,7 +829,7 @@ body { position: relative; }
       <div class="tier-box featured">
         <h3>Platinum ✦</h3>
         <div class="price">$3K</div>
-        <p class="tier-blurb"><strong>50+ skills · 19 agents</strong></p>
+        <p class="tier-blurb"><strong>95+ skills · 19 agents</strong></p>
         <ul>
           <li><em>Everything in Gold</em> +20:</li>
           <li>/linda-grant + tracker + budget</li>
@@ -823,10 +844,25 @@ body { position: relative; }
     </div>
   </div>
 
+  <!-- SLIDE 9.5 — 30-DAY FREE TRIAL -->
+  <div class="slide slide-content trial-hero">
+    <div class="eyebrow">No Risk · No Card</div>
+    <h2>Try LindaAI Free<br>for 30 Days</h2>
+    <div class="trial-sub">No credit card · Pick any industry pack · Run it on your real work</div>
+    <div class="trial-bullets">
+      <div class="trial-bullet"><strong>Pick a Pack</strong>Choose any industry pack at install — Real Estate, HVAC, Restaurant, Coach, anything.</div>
+      <div class="trial-bullet"><strong>Run Your Real Work</strong>30 full days. Real deals, real clients, real reports — see one full month-end cycle.</div>
+      <div class="trial-bullet"><strong>Lock It In</strong>Upgrade anytime in those 30 days. One-time payment. Lifetime access. No subscriptions.</div>
+    </div>
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+      <a href="index.html#trial" class="cta-btn">Start Your 30-Day Trial →</a>
+    </div>
+  </div>
+
   <!-- SLIDE 10 — FINAL CTA -->
   <div class="slide slide-final">
     <h2>Ready to rip?</h2>
-    <p>Try free for <span class="accent">7 days</span> — no card, no commitment.<br>Or buy lifetime access today.</p>
+    <p>Try free for <span class="accent">30 days</span> — no card, no commitment.<br>Or buy lifetime access today.</p>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:32px;">
       <a href="https://lindaai-brain.com/#trial" class="cta-btn">Start Free Trial →</a>
       <a href="checkout.html?tier=platinum" class="cta-btn" style="background:transparent; border:2px solid var(--blue-bright); color:var(--blue-bright);">Get LindaAI →</a>
