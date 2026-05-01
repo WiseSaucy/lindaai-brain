@@ -169,7 +169,7 @@ Use **Ideogram.ai** — 25 free images/day. You can do all 18 in a single sittin
 
 ---
 
-© 2026 LindaAI — Built by Daniel Wise
+© 2026 LindaAI — Built by Linda
 
 ---
 
