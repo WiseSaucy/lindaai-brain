@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LindaAI — Secure Checkout</title>
+<meta name="description" content="LindaAI Secure Checkout — review your tier and continue to Gumroad to complete purchase.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-blue-black.css">
+<style>
+  .checkout-wrap { padding: 80px 0 100px; min-height: calc(100vh - 200px); }
+  .checkout-card {
+    max-width: 720px; margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    box-shadow: 0 20px 60px rgba(43,127,255,0.18);
+    position: relative;
+  }
+  .checkout-card.tier-bronze   { border-color: #92400e; }
+  .checkout-card.tier-silver   { border-color: #9ca3af; }
+  .checkout-card.tier-gold     { border-color: #d4a017; }
+  .checkout-card.tier-platinum { border-color: var(--accent-gold); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(245,158,11,0.06) 100%); }
+  .checkout-eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    color: var(--accent-bright);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .checkout-tier {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .checkout-tagline { font-size: 17px; color: var(--text-body); margin-bottom: 28px; }
+  .checkout-price-row {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 28px;
+  }
+  .checkout-price {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+  .checkout-price-meta { color: var(--text-muted); font-size: 14px; }
+  .checkout-includes h3 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+  }
+  .checkout-includes ul { list-style: none; padding: 0; margin: 0 0 32px; }
+  .checkout-includes li {
+    padding: 9px 0 9px 28px;
+    position: relative;
+    color: var(--text-body);
+    font-size: 15px;
+    border-bottom: 1px solid rgba(43,127,255,0.08);
+  }
+  .checkout-includes li:last-child { border-bottom: none; }
+  .checkout-includes li::before {
+    content: '✓'; position: absolute; left: 0; top: 9px;
+    color: var(--accent-bright); font-weight: 700;
+  }
+  .checkout-cta {
+    display: block; width: 100%;
+    padding: 20px 24px;
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 700;
+    color: white; text-align: center; text-decoration: none;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    border: none; border-radius: var(--radius);
+    box-shadow: 0 12px 32px rgba(43,127,255,0.4);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .checkout-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(43,127,255,0.55); }
+  .checkout-card.tier-platinum .checkout-cta {
+    background: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+    color: #1a1a1a;
+    box-shadow: 0 12px 32px rgba(212,160,23,0.45);
+  }
+  .checkout-trust {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    justify-content: center;
+    margin-top: 24px;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .checkout-trust span::before { content: '🔒 '; }
+  .checkout-back {
+    display: inline-block; margin-bottom: 24px;
+    color: var(--text-muted); text-decoration: none;
+    font-size: 14px;
+  }
+  .checkout-back:hover { color: var(--accent-bright); }
+  .checkout-fineprint {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 13px; color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .checkout-fineprint a { color: var(--accent-bright); }
+  .tier-pill {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .pill-bronze   { background: #92400e; color: #fef3c7; }
+  .pill-silver   { background: #525252; color: #f5f5f5; }
+  .pill-gold     { background: #a16207; color: #fef9c3; }
+  .pill-platinum { background: linear-gradient(135deg, #581c87, #7c3aed); color: #f3e8ff; }
+  .pill-voice    { background: linear-gradient(135deg, #2b7fff, #7c5cff); color: white; }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="LindaAI" width="40" height="40">
+      <span>LindaAI</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#tiers">Tiers</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="mailto:support@lindaai.com">Support</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ CHECKOUT ═══ -->
+<section class="checkout-wrap">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <a href="index.html#tiers" class="checkout-back">← Back to all tiers</a>
+    </div>
+    <div id="checkout-card" class="checkout-card">
+      <div class="checkout-eyebrow">Secure Checkout · Step 1 of 2</div>
+      <span id="tier-pill" class="tier-pill">Loading…</span>
+      <h1 class="checkout-tier" id="tier-name">LindaAI</h1>
+      <p class="checkout-tagline" id="tier-tagline">Review your order, then continue to secure checkout.</p>
+
+      <div class="checkout-price-row">
+        <div class="checkout-price" id="tier-price">—</div>
+        <div class="checkout-price-meta">
+          <div><strong style="color:var(--text-primary)">One-time payment</strong></div>
+          <div>Lifetime access · No subscription</div>
+        </div>
+      </div>
+
+      <div class="checkout-includes">
+        <h3>What's Included</h3>
+        <ul id="tier-includes"></ul>
+      </div>
+
+      <a id="checkout-button" class="checkout-cta" target="_blank" rel="noopener">
+        Continue to Secure Checkout →
+      </a>
+
+      <div class="checkout-trust">
+        <span>Secure Gumroad checkout</span>
+        <span>Instant license delivery</span>
+        <span>Lifetime access</span>
+      </div>
+
+      <p class="checkout-fineprint">
+        You'll be redirected to Gumroad's secure payment page to complete your purchase.
+        Your license key will be emailed to you within seconds of payment.<br>
+        Questions? <a href="mailto:support@lindaai.com">support@lindaai.com</a><br>
+        <span style="opacity:0.7;">Digital product · All sales final · Pay once, own forever</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="LindaAI" width="32" height="32">
+        <span>LindaAI</span>
+      </div>
+      <p class="footer-tagline">Your AI Operating System</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#tiers">Tiers</a>
+      <a href="index.html#agents">Agents</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="mailto:support@lindaai.com">Support</a>
+    </div>
+    <div class="footer-legal">
+      <p>© 2024–2026 LindaAI — Built by Linda</p>
+      <p>LindaAI-Brain.com · <a href="mailto:support@lindaai.com">support@lindaai.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tier catalog — single source of truth for the checkout page.
+// Slugs verified against ~/Desktop/gumroad-products.json (2026-04-30).
+const TIERS = {
+  bronze: {
+    name: 'Bronze',
+    pill: 'pill-bronze',
+    cardClass: 'tier-bronze',
+    price: '$500',
+    tagline: 'The essentials. Get started fast.',
+    slug: 'lindaai-bronze',
+    includes: [
+      '10 essential AI skills (briefing, email, follow-ups, invoicing, content, more)',
+      'Rooster — daily motivator agent',
+      'Cross-platform installer (Mac / Windows / Linux)',
+      'Auto-updates via /linda-sync',
+      'Persistent brain folder',
+      'One payment · Lifetime access'
+    ]
+  },
+  silver: {
+    name: 'Silver',
+    pill: 'pill-silver',
+    cardClass: 'tier-silver',
+    price: '$1,000',
+    tagline: 'Scale your operation. 20 skills + Skill Picker.',
+    slug: 'lindaai-silver',
+    includes: [
+      'Everything in Bronze',
+      '+10 growth skills (competitor, market research, repurpose, deep research, SOPs)',
+      'Skill Picker — swap any 3 skills within 14 days',
+      'Cross-platform installer + auto-updates',
+      'Persistent brain folder',
+      'One payment · Lifetime access'
+    ]
+  },
+  gold: {
+    name: 'Gold',
+    pill: 'pill-gold',
+    cardClass: 'tier-gold',
+    price: '$1,500',
+    tagline: 'Real Estate Pro. Run your deal flow.',
+    slug: 'lindaai-gold',
+    includes: [
+      'Everything in Silver',
+      '+12 RE / ops skills (deal analyzer, rents, property research, seller outreach, LOI Blaster)',
+      'Telegram + Discord mobile bridges',
+      'KPI dashboard + pipeline sync',
+      'Skill Picker — swap any 5 skills within 14 days',
+      'One payment · Lifetime access'
+    ]
+  },
+  platinum: {
+    name: 'Platinum ✦',
+    pill: 'pill-platinum',
+    cardClass: 'tier-platinum',
+    price: '$3,000',
+    tagline: 'Full access. No compromises. Everything Boss47 uses.',
+    slug: 'lindaai-platinum',
+    includes: [
+      'Everything in Gold',
+      '50+ skills · 19 named AI agents (Bandit, Sheriff, Doc, Drawl, more)',
+      'Voice Pack FREE — Linda reads every reply (Country / Hip-Hop / Regular × M/F)',
+      'Telegram + Discord bridges · Daily Rooster motivator',
+      'Grant suite (writer, finder, tracker, budget) + SAM.gov setup',
+      'Priority support · One payment · Lifetime access'
+    ]
+  },
+  voice: {
+    name: 'Voice Pack',
+    pill: 'pill-voice',
+    cardClass: 'tier-bronze',
+    price: '$19.99',
+    tagline: 'Make Linda talk back. Add-on for Bronze / Silver / Gold (free with Platinum).',
+    slug: 'lindaai-voice-pack',
+    includes: [
+      '6 voice personalities (Country / Hip-Hop / Regular × M/F)',
+      'Reads every LindaAI response out loud',
+      'Toggle, pause, replay, save-to-audio, change speed',
+      'Works on macOS, Windows, Linux (no extra downloads)',
+      'Included FREE with Platinum'
+    ]
+  }
+};
+
+(function loadTier() {
+  const params = new URLSearchParams(window.location.search);
+  const key = (params.get('tier') || 'platinum').toLowerCase();
+  const tier = TIERS[key] || TIERS.platinum;
+
+  document.title = `LindaAI ${tier.name} — Secure Checkout`;
+
+  const card = document.getElementById('checkout-card');
+  card.className = 'checkout-card ' + tier.cardClass;
+
+  const pill = document.getElementById('tier-pill');
+  pill.className = 'tier-pill ' + tier.pill;
+  pill.textContent = tier.name.replace(' ✦', '');
+
+  document.getElementById('tier-name').textContent = 'LindaAI ' + tier.name;
+  document.getElementById('tier-tagline').textContent = tier.tagline;
+  document.getElementById('tier-price').textContent = tier.price;
+
+  const list = document.getElementById('tier-includes');
+  list.innerHTML = '';
+  tier.includes.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    list.appendChild(li);
+  });
+
+  const btn = document.getElementById('checkout-button');
+  btn.href = `https://wisecertified.gumroad.com/l/${tier.slug}?wanted=true`;
+})();
+</script>
+</body>
+</html>
