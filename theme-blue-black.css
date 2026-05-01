@@ -1,0 +1,78 @@
+/* ════════════════════════════════════════════════════════════════
+   LindaAI — BLUE & BLACK theme override (preview)
+   Pure black canvas + electric blue accents.
+   Drop AFTER style.css to activate. Remove the <link> to revert.
+   © 2024–2026 LindaAI
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Backgrounds — pure black + cool charcoals */
+  --bg-primary:   #000000;
+  --bg-secondary: #050810;
+  --bg-card:      #0a0f1c;
+  --bg-elevated:  #0f1626;
+
+  /* Borders — electric blue glow */
+  --border:       #1e90ff;
+  --border-soft:  #102a4c;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-body:    #b8c5dc;
+  --text-muted:   #5d6b87;
+
+  /* Accents — strict blue family, no purple / cyan / gold mixing */
+  --accent-blue:   #1e90ff;
+  --accent-bright: #4eb1ff;
+  --accent-purple: #1e90ff;   /* re-aliased to blue */
+  --accent-cyan:   #4eb1ff;   /* re-aliased to blue */
+  --accent-gold:   #1e90ff;   /* re-aliased to blue */
+  --accent-red:    #ff4757;
+  --accent-green:  #2ecc71;
+}
+
+/* Replace the radial purple glow with a pure blue spotlight */
+body::before {
+  background: radial-gradient(
+    circle,
+    rgba(30,144,255,0.22) 0%,
+    rgba(30,144,255,0.08) 40%,
+    transparent 70%
+  ) !important;
+}
+
+/* Hard-stop the body to true black */
+body {
+  background: #000000 !important;
+}
+
+/* Tier card borders + buttons — re-skin to electric blue */
+.tier-card,
+.btn-primary,
+.cta {
+  border-color: var(--accent-blue);
+}
+
+.btn-primary,
+.cta-primary,
+button.primary {
+  background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%) !important;
+  box-shadow: 0 0 24px rgba(30,144,255,0.35);
+}
+
+a, .link, .accent {
+  color: var(--accent-bright);
+}
+
+/* Subtle blue grid line on section dividers */
+hr, .divider {
+  border-color: rgba(30,144,255,0.25) !important;
+}
+
+/* Pricing block on checkout.html — give it the electric outline */
+.checkout-card,
+.tier-summary {
+  background: #0a0f1c !important;
+  border: 1px solid #1e90ff !important;
+  box-shadow: 0 0 32px rgba(30,144,255,0.18);
+}
