@@ -960,3 +960,77 @@ code {
   background: rgba(30,144,255,0.12);
   border-color: var(--accent-blue);
 }
+
+/* ════════════════════════════════════════════════════════════════
+   AGGRESSIVE MOBILE OVERFLOW GUARD — 2026-05-01 v2
+   Universal break-word + max-width caps to prevent any edge bleed
+   ════════════════════════════════════════════════════════════════ */
+
+* { max-width: 100%; }
+img, iframe, video, svg { max-width: 100%; height: auto; }
+iframe { max-width: 100%; }
+
+p, h1, h2, h3, h4, h5, h6, span, a, li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+/* Stronger phone breakpoint — 600px */
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+
+  .container, .container-narrow {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero { padding: 60px 0 40px !important; }
+  .hero-title {
+    font-size: clamp(48px, 16vw, 84px) !important;
+    letter-spacing: -1px;
+  }
+  .hero-subtitle {
+    font-size: clamp(17px, 5.5vw, 24px) !important;
+    padding: 0 !important;
+  }
+  .hero-text {
+    font-size: 14px !important;
+    padding: 0 !important;
+    line-height: 1.5;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    max-width: 100% !important;
+  }
+  .stat { padding: 14px 6px !important; }
+  .stat-num { font-size: 24px !important; }
+  .stat-label { font-size: 10px !important; letter-spacing: 0.8px; }
+  .hero-actions { flex-direction: column; gap: 10px; padding: 0 16px; }
+  .hero-actions .btn { width: 100%; padding: 14px 20px !important; }
+
+  .section, .video-section { padding: 60px 0 !important; }
+  .section-heading { font-size: clamp(26px, 7vw, 36px) !important; }
+  .section-sub { font-size: 15px !important; padding: 0 8px; }
+
+  .video-section iframe { height: 460px !important; }
+  .video-section > div { margin: 24px 0 !important; }
+
+  .packs-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .pack-card { padding: 18px 16px 50px !important; }
+
+  /* Tier cards stack to 1 col on phone */
+  .tiers { grid-template-columns: 1fr !important; }
+
+  /* Steps stack on phone */
+  .steps { grid-template-columns: 1fr !important; }
+}
+
+/* Even tighter — small phone (iPhone SE) */
+@media (max-width: 380px) {
+  .hero-title { font-size: clamp(40px, 14vw, 60px) !important; }
+  .stat-num { font-size: 22px !important; }
+  .hero-stats { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+}
