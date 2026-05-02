@@ -614,6 +614,35 @@ body { position: relative; }
   .cmd-row { font-size: 12px; padding: 7px 10px; }
   .cmd-row img { width: 32px; height: 32px; flex: 0 0 32px; }
 }
+/* ──────────── Tighter mobile breakpoint for tiny phones ──────────── */
+@media (max-width: 480px) {
+  .slide { padding: 14px 12px; overflow-y: auto; }
+  .stat-grid, .feature-row, .tier-compare, .agents-showcase { grid-template-columns: 1fr; gap: 12px; }
+  .pack-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; max-height: 70vh; overflow-y: auto; }
+  .pack-card { padding: 14px 10px; }
+  .pack-card .pack-emoji { font-size: 28px; }
+  .pack-card .pack-name { font-size: 14px; }
+  .pack-card .pack-desc { font-size: 11px; }
+  .stat-card { padding: 18px 14px; }
+  .stat-big { font-size: 44px; }
+  .feat-card { padding: 22px 18px; }
+  .feat-card h3 { font-size: 18px; }
+  .feat-card p { font-size: 13px; }
+  .tier-box { padding: 18px 14px; }
+  .tier-box h3 { font-size: 16px; }
+  .tier-box .price { font-size: 30px; }
+  .tier-box li { font-size: 11px; padding: 4px 0; }
+  .slide-content h2 { font-size: clamp(28px, 8vw, 42px); letter-spacing: -1px; }
+  .slide-content .big-text { font-size: clamp(20px, 5vw, 28px); }
+  .slide-content .eyebrow { font-size: 10px; padding: 4px 12px; }
+  .slide-title h1 { font-size: clamp(56px, 18vw, 90px); letter-spacing: -2px; }
+  .slide-title h2 { font-size: clamp(18px, 5vw, 26px); }
+  .slide-final h2 { font-size: clamp(28px, 8vw, 42px); }
+  .slide-count { font-size: 11px; }
+}
+@media (max-width: 768px) {
+  .pack-grid { grid-template-columns: repeat(3, 1fr); }
+}
 </style>
 </head>
 <body>
