@@ -516,9 +516,18 @@ async function submitTrial(e) {
       // Mark this browser as having claimed a trial — first line of defense
       try { localStorage.setItem('lindaai_trial_used', data.key); } catch(e) {}
       msg.className = 'trial-msg success';
-      msg.innerHTML = data.already_had
-        ? `🤠 You already have a trial key — we just re-sent it to <strong>${email}</strong>. Check your inbox + spam folder.`
-        : `🤠 Yeeee Hawww! Your 30-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}. Check your inbox.`;
+      const dl = data.download_url || 'https://github.com/WiseSaucy/lindaai-updates/releases/download/v1.5-trial/LindaAI-Bronze-v1.5.zip';
+      const top = data.already_had
+        ? `🤠 You already have a trial key — we re-sent it to <strong>${email}</strong>.`
+        : `🤠 Yeeee Hawww! Your 30-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}.`;
+      msg.innerHTML = `
+        <div style="margin-bottom:16px;">${top}</div>
+        <div style="background:rgba(43,127,255,0.10);border:1px solid rgba(43,127,255,0.4);border-radius:10px;padding:18px;margin-top:8px;">
+          <div style="font-size:14px;color:#a0a8c0;margin-bottom:10px;">Your license key:</div>
+          <div style="font-family:'Courier New',monospace;font-size:16px;font-weight:700;color:#4da3ff;letter-spacing:1px;margin-bottom:18px;">${data.key}</div>
+          <a href="${dl}" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#2b7fff,#7c5cff);color:#fff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(43,127,255,0.35);">📦 Download LindaAI Trial (10 MB)</a>
+          <div style="font-size:13px;color:#94a3b8;margin-top:12px;">Mac/Linux: double-click <code>install.command</code> · Windows: double-click <code>install.bat</code></div>
+        </div>`;
       btn.textContent = 'Trial sent ✓';
     } else {
       msg.className = 'trial-msg error';
