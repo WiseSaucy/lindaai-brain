@@ -11,14 +11,14 @@
 :root {
   --bg: #000000;
   --bg-deep: #000000;
-  --blue: #1e90ff;
-  --blue-bright: #4eb1ff;
-  --purple: #1e90ff;     /* re-aliased to blue */
-  --cyan: #4eb1ff;       /* re-aliased to blue */
-  --gold: #1e90ff;       /* re-aliased to blue */
+  --blue: #e5e4e2;
+  --blue-bright: #fafafa;
+  --purple: #e5e4e2;     /* re-aliased to blue */
+  --cyan: #fafafa;       /* re-aliased to blue */
+  --gold: #e5e4e2;       /* re-aliased to blue */
   --white: #ffffff;
-  --body: #b8c5dc;
-  --muted: #5d6b87;
+  --body: #f2f1ef;
+  --muted: #a0a0a0;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -30,9 +30,9 @@ body { position: relative; }
 .bg-glow {
   position: fixed; inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(30,144,255,0.25) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(30,144,255,0.2) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(78,177,255,0.08) 0%, transparent 70%);
+    radial-gradient(circle at 20% 30%, rgba(229,228,226,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(229,228,226,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(250,250,250,0.08) 0%, transparent 70%);
   z-index: 0; pointer-events: none;
   animation: glowPulse 12s ease-in-out infinite;
 }
@@ -46,8 +46,8 @@ body { position: relative; }
     radial-gradient(1px 1px at 20% 15%, white, transparent),
     radial-gradient(1px 1px at 60% 40%, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 35% 85%, rgba(78,177,255,0.9), transparent),
-    radial-gradient(1px 1px at 70% 20%, rgba(30,144,255,0.8), transparent);
+    radial-gradient(2px 2px at 35% 85%, rgba(250,250,250,0.9), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(229,228,226,0.8), transparent);
   background-size: 100% 100%;
   animation: twinkle 8s ease-in-out infinite;
 }
@@ -160,8 +160,8 @@ body { position: relative; }
 }
 .stat-card {
   padding: 32px 24px;
-  background: rgba(30,144,255,0.08);
-  border: 1px solid rgba(30,144,255,0.3);
+  background: rgba(229,228,226,0.08);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 16px;
   backdrop-filter: blur(10px);
 }
@@ -194,7 +194,7 @@ body { position: relative; }
 .feat-card {
   padding: 36px 28px;
   background: rgba(10,15,28,0.6);
-  border: 1px solid rgba(30,144,255,0.3);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   text-align: left;
@@ -221,13 +221,13 @@ body { position: relative; }
 .tier-box {
   padding: 24px 20px;
   background: rgba(10,15,28,0.7);
-  border: 1px solid rgba(30,144,255,0.3);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 16px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: transform 0.3s;
 }
-.tier-box.featured { border-color: var(--gold); background: rgba(30,144,255,0.08); }
+.tier-box.featured { border-color: var(--gold); background: rgba(229,228,226,0.08); }
 .tier-box h3 {
   font-family: var(--font-display);
   font-size: 20px;
@@ -248,7 +248,7 @@ body { position: relative; }
   font-size: 13px;
   color: var(--body);
   padding: 6px 0;
-  border-bottom: 1px solid rgba(30,144,255,0.15);
+  border-bottom: 1px solid rgba(229,228,226,0.15);
 }
 .tier-box li:last-child { border-bottom: none; }
 .tier-box .tier-blurb { color: var(--blue-bright); font-size: 13px; margin: -6px 0 10px; font-weight: 600; }
@@ -264,8 +264,8 @@ body { position: relative; }
 }
 .agent-chip {
   padding: 14px 10px 12px;
-  background: rgba(30,144,255,0.08);
-  border: 1px solid rgba(30,144,255,0.3);
+  background: rgba(229,228,226,0.08);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 14px;
   text-align: center;
   transition: all 0.3s;
@@ -275,12 +275,12 @@ body { position: relative; }
   align-items: center;
   gap: 6px;
 }
-.agent-chip:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(30,144,255,0.18); }
+.agent-chip:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(229,228,226,0.18); }
 .agent-chip:nth-child(n) { animation-delay: calc(var(--i, 0) * 50ms); }
 .agent-chip img.avatar {
   width: 64px; height: 64px;
   border-radius: 50%;
-  border: 2px solid rgba(30,144,255,0.5);
+  border: 2px solid rgba(229,228,226,0.5);
   object-fit: cover;
   background: var(--bg-deep);
 }
@@ -311,8 +311,8 @@ body { position: relative; }
 .cmd-row {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 12px;
-  background: rgba(30,144,255,0.06);
-  border: 1px solid rgba(30,144,255,0.25);
+  background: rgba(229,228,226,0.06);
+  border: 1px solid rgba(229,228,226,0.25);
   border-radius: 10px;
   text-align: left;
   font-size: 13px;
@@ -323,7 +323,7 @@ body { position: relative; }
   width: 36px; height: 36px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid rgba(30,144,255,0.5);
+  border: 1.5px solid rgba(229,228,226,0.5);
   flex: 0 0 36px;
 }
 .cmd-row > div { min-width: 0; flex: 1; }
@@ -353,14 +353,14 @@ body { position: relative; }
   border: 1px solid var(--blue);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 80px rgba(30,144,255,0.3);
+  box-shadow: 0 20px 80px rgba(229,228,226,0.3);
   margin-top: 40px;
   text-align: left;
 }
 .terminal-slide-header {
   padding: 14px 20px;
-  background: rgba(30,144,255,0.15);
-  border-bottom: 1px solid rgba(30,144,255,0.3);
+  background: rgba(229,228,226,0.15);
+  border-bottom: 1px solid rgba(229,228,226,0.3);
   font-family: 'SF Mono', monospace;
   font-size: 12px;
   color: var(--body);
@@ -391,15 +391,15 @@ body { position: relative; }
 }
 .pack-card {
   padding: 18px 14px;
-  background: rgba(30,144,255,0.08);
-  border: 1px solid rgba(30,144,255,0.3);
+  background: rgba(229,228,226,0.08);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 14px;
   backdrop-filter: blur(10px);
   text-align: center;
   transition: all 0.3s;
   animation: fadeIn 0.5s ease both;
 }
-.pack-card:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(30,144,255,0.18); }
+.pack-card:hover { transform: translateY(-3px); border-color: var(--blue-bright); background: rgba(229,228,226,0.18); }
 .pack-card .pack-emoji { font-size: 36px; line-height: 1; margin-bottom: 10px; }
 .pack-card .pack-name {
   font-family: var(--font-display);
@@ -457,7 +457,7 @@ body { position: relative; }
 .trial-bullet {
   padding: 22px 18px;
   background: rgba(10,15,28,0.6);
-  border: 1px solid rgba(30,144,255,0.3);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 14px;
   font-size: 15px;
   color: var(--body);
@@ -494,10 +494,10 @@ body { position: relative; }
   border: none;
   border-radius: 14px;
   text-decoration: none;
-  box-shadow: 0 12px 40px rgba(30,144,255,0.5);
+  box-shadow: 0 12px 40px rgba(229,228,226,0.5);
   transition: all 0.3s;
 }
-.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(30,144,255,0.7); }
+.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 60px rgba(229,228,226,0.7); }
 
 /* ═══════════════ CONTROLS ═══════════════ */
 .controls {
@@ -505,7 +505,7 @@ body { position: relative; }
   display: flex; gap: 8px; padding: 10px 14px;
   background: rgba(10,15,28,0.85);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(30,144,255,0.3);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 999px;
   z-index: 100;
 }
@@ -517,7 +517,7 @@ body { position: relative; }
   border-radius: 50%; transition: background 0.2s;
   display: flex; align-items: center; justify-content: center;
 }
-.ctrl-btn:hover { background: rgba(30,144,255,0.2); }
+.ctrl-btn:hover { background: rgba(229,228,226,0.2); }
 
 /* Close (exit deck) button — top-left, clean of slide content */
 .close-deck {
@@ -580,7 +580,7 @@ body { position: relative; }
   background: rgba(10,15,28,0.7);
   backdrop-filter: blur(10px);
   padding: 8px 14px;
-  border: 1px solid rgba(30,144,255,0.3);
+  border: 1px solid rgba(229,228,226,0.3);
   border-radius: 999px;
   z-index: 100;
   text-decoration: none;
@@ -593,7 +593,7 @@ body { position: relative; }
   border-radius: 24px;
   margin-bottom: 32px;
   animation: float 4s ease-in-out infinite;
-  box-shadow: 0 20px 60px rgba(30,144,255,0.4);
+  box-shadow: 0 20px 60px rgba(229,228,226,0.4);
 }
 @keyframes float {
   0%,100% { transform: translateY(0); }
@@ -733,10 +733,9 @@ body { position: relative; }
       <div class="agent-chip" style="--i:12"><img class="avatar" src="assets/avatars/holler.png" alt="Holler"><strong>Holler</strong><span>Social Media</span></div>
       <div class="agent-chip" style="--i:13"><img class="avatar" src="assets/avatars/ranger.png" alt="Ranger"><strong>Ranger</strong><span>Virtual Asst</span></div>
       <div class="agent-chip" style="--i:14"><img class="avatar" src="assets/avatars/pony.png" alt="Pony"><strong>Pony</strong><span>Email Marketer</span></div>
-      <div class="agent-chip" style="--i:15"><img class="avatar" src="assets/avatars/mender.png" alt="Mender"><strong>Mender</strong><span>Credit Repair</span></div>
-      <div class="agent-chip" style="--i:16"><img class="avatar" src="assets/avatars/ledger.png" alt="Ledger"><strong>Ledger</strong><span>Tax Filing</span></div>
-      <div class="agent-chip" style="--i:17"><img class="avatar" src="assets/avatars/bullhorn.png" alt="Bullhorn"><strong>Bullhorn</strong><span>Ad Manager</span></div>
-      <div class="agent-chip" style="--i:18"><img class="avatar" src="assets/avatars/rooster.png" alt="Rooster"><strong>Rooster</strong><span>Daily Motivator</span></div>
+      <div class="agent-chip" style="--i:15"><img class="avatar" src="assets/avatars/ledger.png" alt="Ledger"><strong>Ledger</strong><span>Tax Filing</span></div>
+      <div class="agent-chip" style="--i:16"><img class="avatar" src="assets/avatars/bullhorn.png" alt="Bullhorn"><strong>Bullhorn</strong><span>Ad Manager</span></div>
+      <div class="agent-chip" style="--i:17"><img class="avatar" src="assets/avatars/rooster.png" alt="Rooster"><strong>Rooster</strong><span>Daily Motivator</span></div>
     </div>
   </div>
 
@@ -796,12 +795,11 @@ body { position: relative; }
       <div class="pack-card" style="--i:1"><div class="pack-emoji">🏗️</div><div class="pack-name">Construction PM</div><div class="pack-tag">Daily field reports, WIP tracking, project health</div></div>
       <div class="pack-card" style="--i:2"><div class="pack-emoji">🌿</div><div class="pack-name">Landscaper</div><div class="pack-tag">Routes, estimates, crews, seasonal services</div></div>
       <div class="pack-card" style="--i:3"><div class="pack-emoji">🔧</div><div class="pack-name">HVAC / Plumbing</div><div class="pack-tag">Dispatch, service tickets, maintenance contracts</div></div>
-      <div class="pack-card" style="--i:4"><div class="pack-emoji">💳</div><div class="pack-name">Credit Repair</div><div class="pack-tag">Disputes, client tracking, bureau responses</div></div>
-      <div class="pack-card" style="--i:5"><div class="pack-emoji">🍽️</div><div class="pack-name">Restaurant Owner</div><div class="pack-tag">Inventory, shifts, reviews, menu engineering</div></div>
-      <div class="pack-card" style="--i:6"><div class="pack-emoji">🎬</div><div class="pack-name">Content Creator</div><div class="pack-tag">Hooks, scripts, batch posting, brand deals</div></div>
-      <div class="pack-card" style="--i:7"><div class="pack-emoji">🧭</div><div class="pack-name">Life Coach</div><div class="pack-tag">Client intake, session notes, programs, accountability</div></div>
-      <div class="pack-card" style="--i:8"><div class="pack-emoji">💰</div><div class="pack-name">Grant Hunter</div><div class="pack-tag">Find grants, write proposals, track applications</div><div class="pack-flag">Silver+</div></div>
-      <div class="pack-card" style="--i:9"><div class="pack-emoji">⚙️</div><div class="pack-name">Operator</div><div class="pack-tag">Books, taxes, vendors, tenants, Monday/Notion sync, background checks</div><div class="pack-flag">Silver+ · Flagship</div></div>
+      <div class="pack-card" style="--i:4"><div class="pack-emoji">🍽️</div><div class="pack-name">Restaurant Owner</div><div class="pack-tag">Inventory, shifts, reviews, menu engineering</div></div>
+      <div class="pack-card" style="--i:5"><div class="pack-emoji">🎬</div><div class="pack-name">Content Creator</div><div class="pack-tag">Hooks, scripts, batch posting, brand deals</div></div>
+      <div class="pack-card" style="--i:6"><div class="pack-emoji">🧭</div><div class="pack-name">Life Coach</div><div class="pack-tag">Client intake, session notes, programs, accountability</div></div>
+      <div class="pack-card" style="--i:7"><div class="pack-emoji">💰</div><div class="pack-name">Grant Hunter</div><div class="pack-tag">Find grants, write proposals, track applications</div><div class="pack-flag">Silver+</div></div>
+      <div class="pack-card" style="--i:8"><div class="pack-emoji">⚙️</div><div class="pack-name">Operator</div><div class="pack-tag">Books, taxes, vendors, tenants, Monday/Notion sync, background checks</div><div class="pack-flag">Silver+ · Flagship</div></div>
     </div>
   </div>
 
