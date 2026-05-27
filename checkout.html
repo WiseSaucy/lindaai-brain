@@ -240,16 +240,26 @@
   </div>
 </footer>
 
+<!-- v1.7.1 (Boss47 2026-05-27): Paddle is the official payment processor.
+     Paddle.js loaded async; checkout opens as overlay (customer stays on this page).
+     Falls back to mailto if Paddle is not yet configured (price IDs empty). -->
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
+// Paddle configuration — fill these in from your Paddle dashboard after approval.
+// Paddle Dashboard → Settings → API & SDK → Default token  →  paste below
+const PADDLE_CLIENT_TOKEN = '';  // e.g. 'live_xxxxxxxxxxxxx' (or 'test_xxx' in sandbox)
+const PADDLE_ENVIRONMENT = 'production';  // 'production' or 'sandbox'
+
 // Tier catalog — single source of truth for the checkout page.
-// v1.7.1 (Boss47 2026-05-27): Gumroad SUSPENDED — Buy buttons now mailto support
-// with prefilled subject. New payment processor (Stripe / Whop / other) TBD.
+// PADDLE_PRICE_ID format: pri_01h... (one per tier from Paddle dashboard
+// → Catalog → Products → click tier → Prices → copy ID)
 const TIERS = {
   bronze: {
     name: 'Bronze',
     pill: 'pill-bronze',
     cardClass: 'tier-bronze',
     price: '$500',
+    paddle_price_id: '',  // fill from Paddle dashboard
     tagline: 'The essentials. Get started fast.',
     slug: 'kseyv',
     includes: [
@@ -266,6 +276,7 @@ const TIERS = {
     pill: 'pill-silver',
     cardClass: 'tier-silver',
     price: '$1,000',
+    paddle_price_id: '',  // fill from Paddle dashboard
     tagline: 'Scale your operation. 20 skills + Skill Picker.',
     slug: 'lhdorw',
     includes: [
@@ -282,6 +293,7 @@ const TIERS = {
     pill: 'pill-gold',
     cardClass: 'tier-gold',
     price: '$1,500',
+    paddle_price_id: '',  // fill from Paddle dashboard
     tagline: 'Real Estate Pro. Run your deal flow.',
     slug: 'ltfho',
     includes: [
@@ -298,6 +310,7 @@ const TIERS = {
     pill: 'pill-platinum',
     cardClass: 'tier-platinum',
     price: '$3,000',
+    paddle_price_id: '',  // fill from Paddle dashboard
     tagline: 'Full access. No compromises. Everything we use ourselves.',
     slug: 'bpigs',
     includes: [
@@ -314,6 +327,7 @@ const TIERS = {
     pill: 'pill-voice',
     cardClass: 'tier-bronze',
     price: '$19.99',
+    paddle_price_id: '',  // fill from Paddle dashboard
     tagline: 'Make Linda talk back. Add-on for Bronze / Silver / Gold (free with Platinum).',
     slug: 'guyxzl',
     includes: [
@@ -353,17 +367,48 @@ const TIERS = {
   });
 
   const btn = document.getElementById('checkout-button');
-  // v1.7.1: while a new payment processor is being wired, route purchase
-  // intent through a mailto with the tier prefilled so Boss47 can manually
-  // invoice via Stripe/Whop/wire/etc. and ship the customer-baked zip.
-  const subject = encodeURIComponent(`LindaAI ${tier.name} — purchase request`);
-  const body = encodeURIComponent(
-    `Howdy! I'd like to buy LindaAI ${tier.name} (${tier.price}).\n\n` +
-    `Please send me the invoice / payment link.\n\n` +
-    `Name:\nBusiness:\nBest email for zip delivery:\n`
-  );
-  btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
-  btn.textContent = `Email to Buy — ${tier.price}`;
+
+  // Initialize Paddle.js if client token is configured
+  let paddleReady = false;
+  if (PADDLE_CLIENT_TOKEN && typeof Paddle !== 'undefined') {
+    try {
+      if (PADDLE_ENVIRONMENT === 'sandbox') {
+        Paddle.Environment.set('sandbox');
+      }
+      Paddle.Setup({ token: PADDLE_CLIENT_TOKEN });
+      paddleReady = true;
+    } catch (e) {
+      console.warn('Paddle init failed:', e);
+    }
+  }
+
+  if (paddleReady && tier.paddle_price_id) {
+    // Paddle overlay checkout — customer stays on this page, Paddle modal pops up
+    btn.href = '#';
+    btn.textContent = `Buy ${tier.name} — ${tier.price}`;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      Paddle.Checkout.open({
+        items: [{ priceId: tier.paddle_price_id, quantity: 1 }],
+        settings: {
+          displayMode: 'overlay',
+          theme: 'dark',
+          successUrl: window.location.origin + '/thank-you.html?tier=' + key,
+        },
+      });
+    });
+  } else {
+    // Fallback — Paddle not yet configured. Customer emails support for manual invoice.
+    // 🐎 Pony + 🩺 Doc invoice them via Paddle Invoice → ship customer-baked zip.
+    const subject = encodeURIComponent(`LindaAI ${tier.name} — purchase request`);
+    const body = encodeURIComponent(
+      `Howdy! I'd like to buy LindaAI ${tier.name} (${tier.price}).\n\n` +
+      `Please send me the Paddle invoice link.\n\n` +
+      `Name:\nBusiness:\nBest email for zip delivery:\n`
+    );
+    btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
+    btn.textContent = `Email to Buy — ${tier.price}`;
+  }
 })();
 </script>
 </body>
