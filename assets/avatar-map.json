@@ -8,7 +8,7 @@
     "sheriff":    {"role": "Inbox Sentinel",       "png": "sheriff.png"},
     "doc":        {"role": "Customer Support",     "png": "doc.png"},
     "drawl":      {"role": "Copywriter",           "png": "drawl.png"},
-    "wrangler":   {"role": "Business Development", "png": "Wrangler.png"},
+    "wrangler":   {"role": "Business Development", "png": "wrangler.png"},
     "tally":      {"role": "Data Analyst",         "png": "tally.png"},
     "mercantile": {"role": "Ecommerce",            "png": "mercantile.png"},
     "closer":     {"role": "Sales Manager",        "png": "closer.png"},
@@ -18,10 +18,10 @@
     "holler":     {"role": "Social Media",         "png": "holler.png"},
     "ranger":     {"role": "Virtual Assistant",    "png": "ranger.png"},
     "pony":       {"role": "Email Marketer",       "png": "pony.png"},
-    "mender":     {"role": "Credit Repair",        "png": "mender.png"},
-    "ledger":     {"role": "Tax & Finance",        "png": "ledger.png"},
     "bullhorn":   {"role": "Ad Manager",           "png": "bullhorn.png"},
-    "rooster":    {"role": "Daily Motivator",      "png": "rooster.png"}
+    "rooster":    {"role": "Daily Motivator",      "png": "rooster.png"},
+    "sentry":     {"role": "Compliance Watchdog",  "png": "sentry.png"},
+    "audit-auditor": {"role": "Quality Auditor",   "png": "audit-auditor.png"}
   },
   "skill_to_agent": {
     "morning-briefing":         "ranger",
