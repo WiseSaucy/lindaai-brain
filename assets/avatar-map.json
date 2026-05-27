@@ -74,9 +74,9 @@
     "grant-budget-builder":     "ledger",
     "grant-eligibility":        "wrangler",
     "sam-gov-setup":            "wrangler",
-    "linda-license-manager":    "doc",
+    "license-manager":          "doc",
     "kajabi-scraper":           "compass",
-    "lindaai-update":           "doc",
+    "update-manager":           "doc",
     "gumroad-upload":           "mercantile"
   }
 }
