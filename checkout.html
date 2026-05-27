@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LindaAI — Secure Checkout</title>
-<meta name="description" content="LindaAI Secure Checkout — review your tier and continue to Gumroad to complete purchase.">
+<meta name="description" content="LindaAI Secure Checkout — review your tier and email support to complete purchase.">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -202,13 +202,13 @@
       </a>
 
       <div class="checkout-trust">
-        <span>Secure Gumroad checkout</span>
+        <span>Secure checkout — email support to complete</span>
         <span>Instant license delivery</span>
         <span>Lifetime access</span>
       </div>
 
       <p class="checkout-fineprint">
-        You'll be redirected to Gumroad's secure payment page to complete your purchase.
+        Email support@send.lindaai-brain.com with your tier choice — you'll get an invoice + payment link within 1 business day, then your customer-baked LindaAI zip arrives the moment payment clears.
         Your license key will be emailed to you within seconds of payment.<br>
         Questions? <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a><br>
         <span style="opacity:0.7;">Digital product · All sales final · Pay once, own forever</span>
@@ -234,7 +234,7 @@
       <a href="mailto:support@send.lindaai-brain.com">Support</a>
     </div>
     <div class="footer-legal">
-      <p>© 2024–2026 LindaAI — Built by Linda</p>
+      <p>© 2022-2026 Daniel Wise · LindaAI</p>
       <p>LindaAI-Brain.com · <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a></p>
     </div>
   </div>
@@ -242,8 +242,8 @@
 
 <script>
 // Tier catalog — single source of truth for the checkout page.
-// Slugs verified live against Gumroad dashboard (2026-05-06) — using auto-generated hashes.
-// Boss47: to swap to pretty URLs, set custom_url on each Gumroad product, then update slugs here.
+// v1.7.1 (Boss47 2026-05-27): Gumroad SUSPENDED — Buy buttons now mailto support
+// with prefilled subject. New payment processor (Stripe / Whop / other) TBD.
 const TIERS = {
   bronze: {
     name: 'Bronze',
@@ -353,7 +353,17 @@ const TIERS = {
   });
 
   const btn = document.getElementById('checkout-button');
-  btn.href = `https://wisecertified.gumroad.com/l/${tier.slug}?wanted=true`;
+  // v1.7.1: while a new payment processor is being wired, route purchase
+  // intent through a mailto with the tier prefilled so Boss47 can manually
+  // invoice via Stripe/Whop/wire/etc. and ship the customer-baked zip.
+  const subject = encodeURIComponent(`LindaAI ${tier.name} — purchase request`);
+  const body = encodeURIComponent(
+    `Howdy! I'd like to buy LindaAI ${tier.name} (${tier.price}).\n\n` +
+    `Please send me the invoice / payment link.\n\n` +
+    `Name:\nBusiness:\nBest email for zip delivery:\n`
+  );
+  btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
+  btn.textContent = `Email to Buy — ${tier.price}`;
 })();
 </script>
 </body>
