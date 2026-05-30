@@ -59,9 +59,10 @@ body { position: relative; }
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  padding: 40px; text-align: center;
+  padding: 40px 40px 130px 40px; text-align: center;
   opacity: 0; visibility: hidden;
   transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow-y: auto;
   transform: translateY(20px);
 }
 .slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -644,8 +645,9 @@ body { position: relative; }
   .pack-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Hide branding pill when pitch is embedded in iframe (homepage preview) */
-html.embedded .branding { display: none !important; }
+/* Hide branding pill + close-deck button when pitch is embedded in iframe (homepage preview) */
+html.embedded .branding,
+html.embedded .close-deck { display: none !important; }
 </style>
 <script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
 </head>
