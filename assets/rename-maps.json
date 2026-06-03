@@ -48,7 +48,6 @@
     "license-manager": "linda-licenses",
     "kajabi-scraper": "linda-kajabi",
     "update-manager": "linda-sync",
-    "gumroad-upload": "linda-gumroad",
     "voice": "linda-voice",
     "telegram-setup": "linda-telegram-setup",
     "discord-setup": "linda-discord-setup",
@@ -102,7 +101,6 @@
     "license-manager": "license-ledger",
     "kajabi-scraper": "kajabi-raid",
     "update-manager": "sync",
-    "gumroad-upload": "storefront",
     "telegram-setup": "phone-line",
     "discord-setup": "campfire",
     "iron-horse": "iron-horse"
