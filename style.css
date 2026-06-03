@@ -1130,3 +1130,19 @@ p, h1, h2, h3, h4, h5, h6, span, a, li {
   .stat-num { font-size: 22px !important; }
   .hero-stats { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   OVERFLOW HARDENING — kill border/word bleed on mobile (Boss47 2026-06-03)
+   Root causes: grid/flex children default to min-width:auto (won't shrink
+   below content), + media iframe/img not clamped.
+   ════════════════════════════════════════════════════════════════ */
+img, iframe, video, svg, table, pre { max-width: 100% !important; }
+.steps > *, .packs-grid > *, .agents-grid > *,
+.tiers > *, .hero-stats > *, .container > * { min-width: 0; }
+.step, .pack-card, .agent, .tier-card, .stat { min-width: 0; overflow-wrap: anywhere; }
+
+@media (max-width: 768px) {
+  .video-section > div { max-width: 100% !important; width: 100% !important; box-sizing: border-box; }
+  .video-section iframe { width: 100% !important; max-width: 100% !important; }
+  .section-heading, .hero-title, .hero-subtitle { overflow-wrap: break-word; }
+}
