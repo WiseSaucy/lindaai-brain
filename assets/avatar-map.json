@@ -76,7 +76,6 @@
     "sam-gov-setup":            "wrangler",
     "license-manager":          "doc",
     "kajabi-scraper":           "compass",
-    "update-manager":           "doc",
-    "gumroad-upload":           "mercantile"
+    "update-manager":           "doc"
   }
 }
