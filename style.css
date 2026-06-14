@@ -137,6 +137,24 @@ body::after {
 }
 .nav-links a:hover { color: var(--accent-bright); }
 
+/* ── Legal dropdown in nav ─────────────────────────────── */
+.nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+.nav-dd-toggle { color: var(--text-body); font-size: 15px; font-weight: 500; cursor: pointer; user-select: none; transition: color 0.2s; }
+.nav-dd-toggle::after { content: " \25BE"; font-size: 0.8em; opacity: 0.85; }
+.nav-dropdown:hover .nav-dd-toggle, .nav-dropdown:focus-within .nav-dd-toggle { color: var(--accent-bright); }
+.nav-dd-menu {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm); padding: 6px 0; min-width: 195px;
+  display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.5); z-index: 200;
+}
+.nav-dropdown:hover .nav-dd-menu, .nav-dropdown:focus-within .nav-dd-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dd-menu a { padding: 9px 18px; font-size: 14px; font-weight: 500; white-space: nowrap; color: var(--text-body); }
+.nav-dd-menu a:hover { background: var(--bg-elevated); color: var(--accent-bright); }
+
 @media (max-width: 700px) {
   /* Logo on top, tabs centered + wrapping below — always within borders */
   .nav-inner { flex-direction: column; align-items: stretch; gap: 8px; }
@@ -148,6 +166,7 @@ body::after {
   .nav-links a.btn,
   .nav-links a:nth-child(1),
   .nav-links a:nth-child(3) { display: none; }
+  .nav-dropdown { display: none; } /* legal links live in the footer on mobile */
 }
 @media (max-width: 380px) {
   /* tiny phones: trim to the 3 core find-it tabs so nothing clips */
