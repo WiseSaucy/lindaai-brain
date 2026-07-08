@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-murqsc0CSXkUm88KStu4ub+CksxgHZh/BhYlq5xjZ+Y='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>LindaAI — Your AI Operating System</title>
 <meta name="description" content="LindaAI — The AI Operating System for business owners. 95+ skills across 10 industry packs, 18+ AI agents, voice personalities, mobile bridges. One payment, lifetime access.">
 <meta property="og:title" content="LindaAI — Your AI Operating System">
@@ -148,7 +149,7 @@
       <div class="trial-badge">FREE 30-DAY TRIAL</div>
       <h2 class="section-heading" style="margin-top:8px;">Try LindaAI Free for 30 Days</h2>
       <p class="section-sub">No credit card. No commitment. Pick your industry pack, run it on your real work for a full month, and see what LindaAI feels like in your business. Upgrade anytime within 30 days to lock it in.</p>
-      <form id="trial-form" class="trial-form" onsubmit="return submitTrial(event)">
+      <form id="trial-form" class="trial-form">
         <input type="text" id="trial-name" placeholder="Your name" required maxlength="80">
         <input type="email" id="trial-email" placeholder="your@email.com" required maxlength="120">
         <button type="submit" class="btn btn-primary btn-lg" id="trial-btn">Start My Free Trial →</button>
@@ -584,6 +585,8 @@ async function submitTrial(e) {
   }
   return false;
 }
+
+document.getElementById('trial-form').addEventListener('submit', submitTrial);
 </script>
 </body>
 </html>
