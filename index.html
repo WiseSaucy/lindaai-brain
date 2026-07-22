@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-murqsc0CSXkUm88KStu4ub+CksxgHZh/BhYlq5xjZ+Y='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>LindaAI — Your AI Operating System</title>
-<meta name="description" content="LindaAI — The AI Operating System for business owners. 95+ skills across 8 industry packs, 18+ AI agents, voice personalities, mobile bridges. One payment, lifetime access.">
+<meta name="description" content="LindaAI — The AI Operating System for business owners. 115 skills across 8 industry packs, 18 specialist AI agents, voice personalities, Discord mobile bridge. One payment, lifetime access.">
 <meta property="og:title" content="LindaAI — Your AI Operating System">
-<meta property="og:description" content="Built for business owners who want results — not complexity. 95+ skills, 18+ AI agents, voice, Discord bridge.">
+<meta property="og:description" content="Built for business owners who want results — not complexity. 115 skills, 18 AI agents, voice, Discord bridge.">
 <meta property="og:image" content="https://lindaai-brain.com/assets/social-cover.png">
 <meta property="og:url" content="https://lindaai-brain.com/">
 <meta property="og:type" content="website">
@@ -56,13 +56,13 @@
     <h1 class="hero-title">LindaAI</h1>
     <div class="hero-divider"></div>
     <p class="hero-subtitle">Built for Business Owners Who Want<br><span class="accent">Results — Not Complexity</span></p>
-    <p class="hero-text">Unzip your LindaAI folder. Open it in Claude Code. Type <strong>"Run LindaAI"</strong>. That's it. Get 95+ AI skills across 8 industry packs, 18 specialist agents, voice personalities, and mobile access. One payment. Lifetime access.</p>
+    <p class="hero-text">Unzip your LindaAI folder. Open it in Claude Code. Type <strong>"Run LindaAI"</strong>. That's it. Get 115 AI skills across 8 industry packs, 18 specialist agents, voice personalities, and mobile access. One payment. Lifetime access.</p>
     <div class="hero-actions">
       <a href="#trial" class="btn btn-primary">Try Free for 30 Days</a>
       <a href="#tiers" class="btn btn-secondary">See Pricing</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">95+</span><span class="stat-label">Skills</span></div>
+      <div class="stat"><span class="stat-num">115</span><span class="stat-label">Skills</span></div>
       <div class="stat"><span class="stat-num">8</span><span class="stat-label">Industry Packs</span></div>
       <div class="stat"><span class="stat-num">18</span><span class="stat-label">AI Agents</span></div>
       <div class="stat"><span class="stat-num">6</span><span class="stat-label">Voices</span></div>
@@ -108,9 +108,121 @@
       <div class="step">
         <div class="step-num">4</div>
         <h3>Type "Run LindaAI"</h3>
-        <p>LindaAI walks you through pack pick + skill setup. Then any command or natural ask works — 95+ skills ready, 18+ agents waiting, voice optional.</p>
+        <p>LindaAI walks you through pack pick + skill setup. Then any command or natural ask works — your tier's skills ready, your crew of agents waiting (4 to 18 by tier), voice optional.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LINDA VS OTHER AIs — REAL EXAMPLES ═══════════════════════ -->
+<style>
+  .vs-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1100px; margin:40px auto 0; align-items:stretch; }
+  .vs-card { border-radius:16px; overflow:hidden; border:1px solid var(--border-soft, rgba(229,228,226,0.25)); background:var(--bg-card, #0d0d0d); display:flex; flex-direction:column; }
+  .vs-card.vs-them { opacity:0.75; }
+  .vs-card.vs-linda { border-color:var(--accent-blue, #e5e4e2); box-shadow:0 16px 48px rgba(229,228,226,0.18); }
+  .vs-head { display:flex; align-items:center; gap:10px; padding:12px 18px; border-bottom:1px solid var(--border-soft, rgba(229,228,226,0.2)); font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted, #a0a0a0); }
+  .vs-card.vs-linda .vs-head { color:var(--accent-bright, #fafafa); }
+  .vs-dots span { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; background:#3a3a3a; }
+  .vs-card.vs-linda .vs-dots span:nth-child(1){ background:#ff5f57; } .vs-card.vs-linda .vs-dots span:nth-child(2){ background:#febc2e; } .vs-card.vs-linda .vs-dots span:nth-child(3){ background:#28c840; }
+  .vs-body { padding:20px 22px; font-size:14px; line-height:1.65; color:var(--text-body, #d6d5d3); flex:1; }
+  .vs-ask { font-family:'Courier New', monospace; font-size:13.5px; color:var(--accent-bright, #fafafa); background:rgba(229,228,226,0.07); border:1px solid rgba(229,228,226,0.18); border-radius:10px; padding:10px 14px; margin-bottom:16px; overflow-wrap:break-word; }
+  .vs-generic p { color:#9a9a9a; margin-bottom:10px; }
+  .vs-fade { color:#6d6d6d; font-style:italic; }
+  .vs-out { font-family:'Courier New', monospace; font-size:13px; line-height:1.7; overflow-wrap:break-word; }
+  .vs-out .ln { display:block; }
+  .vs-out .hl { color:var(--accent-bright, #fafafa); font-weight:700; }
+  .vs-out .dim { color:#8f8f8f; }
+  .vs-out .good { color:#7ee787; }
+  .vs-out .warn { color:#ffa657; }
+  .vs-tag { display:inline-block; margin-top:14px; padding:5px 12px; border-radius:999px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; border:1px solid var(--border-soft, rgba(229,228,226,0.25)); color:var(--text-muted, #a0a0a0); }
+  .vs-mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1100px; margin:24px auto 0; }
+  .vs-diff { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; max-width:1000px; margin:36px auto 0; }
+  .vs-diff span { padding:9px 16px; border:1px solid var(--border-soft, rgba(229,228,226,0.25)); border-radius:999px; font-size:13.5px; color:var(--text-body, #d6d5d3); background:rgba(229,228,226,0.05); }
+  .vs-note { text-align:center; color:var(--text-muted, #8f8f8f); font-size:12.5px; margin-top:22px; }
+  @media (max-width: 800px) {
+    .vs-grid, .vs-mini-grid { grid-template-columns:1fr; }
+    .vs-out { font-size:12px; }
+  }
+</style>
+<section id="linda-vs" class="section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:18px;">
+      <span style="display:inline-block; padding:6px 16px; border:1px solid var(--accent-blue, #e5e4e2); border-radius:999px; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent-bright, #fafafa);">See The Difference</span>
+    </div>
+    <h2 class="section-heading">Other AIs Answer Questions.<br>Linda Runs The Business.</h2>
+    <p class="section-sub">Same question, side by side. A chatbot gives you a list. Linda gives you an underwritten answer, a next move, and a saved file.</p>
+
+    <div class="vs-grid">
+      <div class="vs-card vs-them">
+        <div class="vs-head">🤖 A generic AI chatbot</div>
+        <div class="vs-body vs-generic">
+          <div class="vs-ask">Should I buy this 42-space property for $1.8M? Lot rent is $385, 36 spaces occupied.</div>
+          <p>Great question! Purchasing commercial real estate can be a rewarding investment. Here are some factors to consider:</p>
+          <p>1. <strong>Location</strong> — research the local market…<br>2. <strong>Financing</strong> — explore your loan options…<br>3. <strong>Condition</strong> — consider an inspection…<br>4. <strong>Market trends</strong> — vacancy rates vary…</p>
+          <p class="vs-fade">…7 more generic tips. No math. No verdict. Forgotten the moment you close the tab.</p>
+          <span class="vs-tag">Advice</span>
+        </div>
+      </div>
+      <div class="vs-card vs-linda">
+        <div class="vs-head"><span class="vs-dots"><span></span><span></span><span></span></span> LindaAI</div>
+        <div class="vs-body">
+          <div class="vs-ask">/linda-deals 42-space property, asking $1.8M, lot rent $385, 36 occupied, city water/sewer</div>
+          <div class="vs-out">
+            <span class="ln">🤠 <span class="hl">Bandit</span> (Deal Hunter) — ran your numbers, Boss:</span>
+            <span class="ln">&nbsp;</span>
+            <span class="ln"><span class="dim">Income:</span> 36 × $385 × 12 = <span class="hl">$166,320 GSI</span></span>
+            <span class="ln"><span class="dim">Conservative (50% exp):</span> NOI $83,160 → <span class="warn">$1.04M</span> @ 8% cap</span>
+            <span class="ln"><span class="dim">Base (45% exp):</span> NOI $91,476 → <span class="warn">$1.14M</span> @ 8% cap</span>
+            <span class="ln"><span class="dim">Upside (40% exp):</span> NOI $99,792 → <span class="warn">$1.25M</span> @ 8% cap</span>
+            <span class="ln">&nbsp;</span>
+            <span class="ln">⚠️ <span class="hl">Asking $1.8M ≈ $660K over base value.</span></span>
+            <span class="ln"><span class="dim">After infill + $425 rents + submetering:</span> NOI $139,230 → <span class="good">$1.86M @ 7.5%</span> — the value shows up after the work, not at the ask.</span>
+            <span class="ln">&nbsp;</span>
+            <span class="ln">🎯 <span class="good">Verdict: open at $1.10–1.15M or ride on.</span> Want the LOI? Type <span class="hl">/linda-loi</span></span>
+            <span class="ln">💾 <span class="dim">Saved to brain/deals/ — I'll remember this one.</span></span>
+          </div>
+          <span class="vs-tag" style="border-color:var(--accent-blue, #e5e4e2); color:var(--accent-bright, #fafafa);">A decision + a next move</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="vs-mini-grid">
+      <div class="vs-card vs-linda">
+        <div class="vs-head"><span class="vs-dots"><span></span><span></span><span></span></span> 7:00 AM — every morning</div>
+        <div class="vs-body">
+          <div class="vs-ask">/linda-brief</div>
+          <div class="vs-out">
+            <span class="ln">🪖 <span class="hl">Ranger</span> — mornin', Boss. Three things today:</span>
+            <span class="ln">1. <span class="warn">$8,400 quote to the Hendersons is 3 days cold</span> — want me to draft the follow-up?</span>
+            <span class="ln">2. Two tune-ups booked: 9:30a Maple St · 1:00p Ridgeline Dr</span>
+            <span class="ln">3. Supplier invoice due Friday — $1,120, drafted and ready to send</span>
+            <span class="ln"><span class="dim">Pulled from YOUR brain folder. She knows your business — because she remembers it.</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="vs-card vs-linda">
+        <div class="vs-head"><span class="vs-dots"><span></span><span></span><span></span></span> While you slept</div>
+        <div class="vs-body">
+          <div class="vs-ask">"Linda, headless on" — then go live your life</div>
+          <div class="vs-out">
+            <span class="ln">🤖 <span class="hl">Autopilot report</span> — 3 tasks done overnight:</span>
+            <span class="ln"><span class="good">✓</span> Drafted 5 social posts for the week</span>
+            <span class="ln"><span class="good">✓</span> Research: top 3 CRMs compared, table ready</span>
+            <span class="ln"><span class="good">✓</span> Follow-up email drafted — <span class="hl">waiting on YOUR approval</span></span>
+            <span class="ln"><span class="dim">Linda works alone but never ships alone. You stay the boss.</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vs-diff">
+      <span>🤠 A named specialist team — not one chatbot</span>
+      <span>🧠 Remembers your business between sessions</span>
+      <span>🌙 Works in the background while you're away</span>
+      <span>📄 Ships real files — quotes, LOIs, invoices, posts</span>
+      <span>💻 Runs locally in your folder — yours forever</span>
+    </div>
+    <p class="vs-note">Sample outputs shown with fictional demo data — this is the real format, voice, and math LindaAI produces.</p>
   </div>
 </section>
 
@@ -121,7 +233,7 @@
       <span style="display:inline-block; padding:6px 16px; border:1px solid var(--accent-blue, #e5e4e2); border-radius:999px; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent-bright, #fafafa);">Pack + Pick</span>
     </div>
     <h2 class="section-heading">Built For Your Industry</h2>
-    <p class="section-sub">8 industry packs. Pick the one that fits your business — then swap up to 12 skills with any others at your tier. Platinum unlocks every pack at once.</p>
+    <p class="section-sub">8 industry packs come bundled in every tier. Activate the ones that fit: <strong>Bronze picks 1, Silver 2, Gold 4, Platinum all 8</strong>. Swap skills anytime with your Skill Picker.</p>
 
     <div class="packs-grid">
       <div class="pack-card"><div class="pack-emoji">🏡</div><h3>Real Estate Pro</h3><p>Hunt, underwrite, market, and close deals. Property research, rent comps, BRRRR, LOI, dealpacks.</p><span class="pack-tier">Bronze+</span></div>
@@ -170,21 +282,23 @@
         <div class="tier-badge tier-bronze">Bronze</div>
         <div class="tier-price">$500</div>
         <p class="tier-tagline">The essentials. Get started.</p>
-        <div class="tier-summary"><strong>10 skills</strong> · 1 agent (Rooster)</div>
+        <div class="tier-summary"><strong>13 skills</strong> · 4 agents (Ranger, Sheriff, Inkslinger, Rooster)</div>
         <ul class="tier-skills">
           <li>/linda-brief — daily CEO briefing</li>
-          <li>/linda-write — email drafter</li>
+          <li>/linda-mail — email drafter</li>
           <li>/linda-followup — track every commitment</li>
-          <li>/linda-triage — inbox triage</li>
+          <li>/linda-inbox — inbox triage</li>
           <li>/linda-capture — brain dump</li>
           <li>/linda-invoice — invoices in seconds</li>
-          <li>/linda-content — batch social posts</li>
+          <li>/linda-posts — batch social posts</li>
           <li>/linda-leads — pipeline + CRM</li>
           <li>/linda-pulse — project status</li>
-          <li>/linda-recap — weekly review</li>
+          <li>/linda-weekly — weekly review</li>
         </ul>
         <ul class="tier-extras">
-          <li>🎯 Pick any 10 of 15 essentials (custom-fit)</li>
+          <li>📦 Activate 1 of 8 industry packs</li>
+          <li>💬 Discord mobile bridge</li>
+          <li>🎯 13 essentials included, custom-fit to your business</li>
           <li>✓ Cross-platform (Mac/Win/Linux)</li>
           <li>✓ Auto-updates via /linda-sync</li>
           <li>✓ Persistent brain folder</li>
@@ -196,14 +310,14 @@
         <div class="tier-badge tier-silver">Silver</div>
         <div class="tier-price">$1,000</div>
         <p class="tier-tagline">Scale your operation.</p>
-        <div class="tier-summary"><strong>20 skills</strong> · 1 agent · Skill Picker</div>
+        <div class="tier-summary"><strong>28 skills</strong> · 7 agents · Skill Picker</div>
         <ul class="tier-skills">
           <li><em>Everything in Bronze</em> +10:</li>
-          <li>/linda-spy — competitor analysis</li>
+          <li>/linda-compete — competitor analysis</li>
           <li>/linda-market — market research</li>
           <li>/linda-remix — content repurpose</li>
           <li>/linda-calendar — social calendar</li>
-          <li>/linda-meetingprep — pre-meeting brief</li>
+          <li>/linda-meeting — pre-meeting brief</li>
           <li>/linda-meetingnotes — meetings → actions</li>
           <li>/linda-onboard — client onboarding</li>
           <li>/linda-research — deep research</li>
@@ -211,6 +325,8 @@
           <li>/linda-sop — SOP builder</li>
         </ul>
         <ul class="tier-extras">
+          <li>📦 Activate 2 of 8 industry packs</li>
+          <li>💬 Discord mobile bridge</li>
           <li>🎯 Swap any 3 skills in 14 days</li>
         </ul>
         <a href="checkout.html?tier=silver" class="btn btn-tier">Get Silver</a>
@@ -221,14 +337,14 @@
         <div class="ribbon">Real Estate Pro</div>
         <div class="tier-price">$1,500</div>
         <p class="tier-tagline">Run your deal flow.</p>
-        <div class="tier-summary"><strong>32 skills</strong> · 1 agent · Mobile Bridges</div>
+        <div class="tier-summary"><strong>41 skills</strong> · 11 agents · Discord Bridge</div>
         <ul class="tier-skills">
           <li><em>Everything in Silver</em> +12:</li>
-          <li>/linda-deal — full deal analyzer</li>
-          <li>/linda-rent — rental analysis</li>
+          <li>/linda-deals — full deal analyzer</li>
+          <li>/linda-rents — rental analysis</li>
           <li>/linda-property — property research</li>
           <li>/linda-package — pro forma + 1-pager</li>
-          <li>/linda-seller — seller outreach</li>
+          <li>/linda-outreach — seller outreach</li>
           <li>/linda-calc — investment calculator</li>
           <li>/linda-negotiate — negotiation prep</li>
           <li>/linda-kpi — KPI dashboard</li>
@@ -237,6 +353,7 @@
           <li>/linda-loi — LOI Blaster ✉️</li>
         </ul>
         <ul class="tier-extras">
+          <li>📦 Activate 4 of 8 industry packs</li>
           <li>💬 Discord mobile bridge</li>
           <li>🎯 Swap any 5 skills in 14 days</li>
         </ul>
@@ -248,9 +365,9 @@
         <div class="ribbon ribbon-gold">Everything</div>
         <div class="tier-price">$3,000</div>
         <p class="tier-tagline">Full access. No compromises.</p>
-        <div class="tier-summary"><strong>95+ skills</strong> · <strong>18+ agents</strong> · Voice Pack</div>
+        <div class="tier-summary"><strong>115 skills</strong> · <strong>18 agents</strong> · Voice Pack</div>
         <ul class="tier-skills">
-          <li><em>Everything in Gold</em> +20:</li>
+          <li><em>Everything in Gold</em> — plus every pack skill pre-installed (115 total):</li>
           <li>/linda-swot — SWOT analysis</li>
           <li>/linda-contract — contract review</li>
           <li>/linda-airbnb — Airbnb underwriting</li>
@@ -268,6 +385,7 @@
         </ul>
         <ul class="tier-extras">
           <li>🤠 18 named AI agents (Bandit, Sheriff, Doc, Drawl…)</li>
+          <li>📦 All 8 industry packs activated</li>
           <li>🎤 Voice Pack FREE — Linda reads every response out loud (Country / Hip-Hop / Regular × M/F)</li>
           <li>💬 Discord mobile bridge</li>
           <li>🐓 Daily Rooster motivator</li>
@@ -295,7 +413,7 @@
 <section id="agents" class="section">
   <div class="container">
     <h2 class="section-heading">18 Specialist AI Agents</h2>
-    <p class="section-sub">Call any agent by name. They each have one job — and they're great at it. Platinum tier only.</p>
+    <p class="section-sub">Call any agent by name. They each have one job — and they're great at it. <strong>The full crew of 18 is Platinum only</strong> — Bronze rides with 3, Silver 6, Gold 10.</p>
     <div class="agents-grid">
       <div class="agent"><img class="agent-avatar" src="assets/avatars/bandit.png" alt="Bandit"><strong>Bandit</strong><span>Deal Hunter</span></div>
       <div class="agent"><img class="agent-avatar" src="assets/avatars/inkslinger.png" alt="Inkslinger"><strong>Inkslinger</strong><span>Content Machine</span></div>
@@ -335,8 +453,7 @@
       </div>
       <div class="feature">
         <div class="feature-icon">📱</div>
-        <h3>Mobile Bridge</h3>
-        <p>Chat with your LindaAI from Discord anywhere. Owner-locked for security. Takes 2 minutes to set up. Free forever — no Meta approval nonsense.</p>
+        On line 224 use 'Discord Bridge' (singular) instead of 'Mobile Bridges'. The feature-band copy on lines 338-339 is correct as-is (Discord-only) — no change needed there.
       </div>
       <div class="feature">
         <div class="feature-icon">🔄</div>
@@ -375,11 +492,11 @@
         <div class="response">🤠 Howdy! Welcome to LindaAI. Let's get you set up.</div>
         <div class="response">Step 1 — Pick your tier: [1]</div>
         <div class="response">Step 2 — Pick your pack: [2] 🏗️ Construction PM</div>
-        <div class="response">Step 3 — Keep all 12 skills? [y]</div>
-        <div class="response">✓ LindaAI installed. 95 skills ready. Yeeee Hawww!</div>
+        <div class="response">Step 3 — Keep all 13 skills? [y]</div>
+        <div class="response">✓ LindaAI installed. Your skills are ready. Yeeee Hawww!</div>
       </div>
     </div>
-    <p class="install-note">Works on <strong>macOS, Windows, and Linux</strong>. Requires Claude Code (free download from Anthropic). API usage typically under $20/month.</p>
+    <p class="install-note">Works on <strong>macOS, Windows, and Linux</strong>. Requires Claude Code (free download from Anthropic) and your existing Claude plan — most folks ride with Claude Pro.</p>
   </div>
 </section>
 
@@ -390,7 +507,7 @@
 
     <details class="faq">
       <summary>What is LindaAI?</summary>
-      <p>LindaAI is an AI Operating System for business owners. It's a collection of 95+ pre-built business skills across 8 industry packs, 18 specialist AI agents, voice personalities, and mobile bridges — all packaged to install into Claude Code with one command. Built by Linda for entrepreneurs who'd rather get results than configure software.</p>
+      <p>LindaAI is an AI Operating System for business owners. It's a collection of 115 pre-built business skills across 8 industry packs, 18 specialist AI agents, voice personalities, and a Discord mobile bridge — all packaged to install into Claude Code with one command. Built by Linda for entrepreneurs who'd rather get results than configure software.</p>
     </details>
 
     <details class="faq">
@@ -400,12 +517,12 @@
 
     <details class="faq">
       <summary>Do I need Claude Code?</summary>
-      <p>Yes. Claude Code is Anthropic's free desktop app. LindaAI runs inside it on your own Anthropic API key — typically under $20/month in API usage.</p>
+      <p>Yes. Claude Code is Anthropic's free desktop app. LindaAI runs inside it with the Claude plan you already have — no developer setup, no extra accounts.</p>
     </details>
 
     <details class="faq">
-      <summary>How much does the Claude API cost?</summary>
-      <p>LindaAI runs on your own Anthropic API key (pay-as-you-go). Most LindaAI users spend <strong>under $20/month</strong> on API usage even with heavy use. The Claude Code app itself is free; you only pay for the AI tokens you actually use. No subscription, no minimums.</p>
+      <summary>What does Claude cost to run LindaAI?</summary>
+      <p>LindaAI runs on the Claude plan you already have — most of our customers use <strong>Claude Pro ($20/month)</strong>. The Claude Code app itself is free, and there's no developer setup or pay-as-you-go tokens to wrangle. Your LindaAI purchase is one-time; Claude's plan is the only ongoing cost.</p>
     </details>
 
     <details class="faq">
