@@ -210,16 +210,15 @@
       </a>
 
       <div class="checkout-trust">
-        <span>Secure checkout — email support to complete</span>
+        <span id="trust-1">Secure checkout by Paddle</span>
         <span>Instant license delivery</span>
         <span>Lifetime access</span>
       </div>
 
       <p class="checkout-fineprint">
-        Email support@send.lindaai-brain.com with your tier choice — you'll get an invoice + payment link within 1 business day, then your customer-baked LindaAI zip arrives the moment payment clears.
-        Your license key will be emailed to you within seconds of payment.<br>
+        <span id="fineprint-main">Pay securely through Paddle — your license key and customer-baked LindaAI zip are emailed to you within seconds of payment.</span><br>
         Questions? <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a><br>
-        <span style="opacity:0.7;">Digital product · All sales final · Pay once, own forever</span>
+        <span style="opacity:0.7;">Digital product · <a href="/refund.html" style="color:inherit;">14-day money-back guarantee</a> · Pay once, own forever</span>
       </p>
     </div>
   </div>
@@ -308,7 +307,7 @@ const TIERS = {
     includes: [
       'Everything in Silver',
       '+12 RE / ops skills (deal analyzer, rents, property research, seller outreach, LOI Blaster)',
-      'Telegram + Discord mobile bridges',
+      'Discord mobile bridge — run Linda from your phone',
       'KPI dashboard + pipeline sync',
       'Skill Picker — swap any 5 skills within 14 days',
       'One payment · Lifetime access'
@@ -326,8 +325,9 @@ const TIERS = {
       'Everything in Gold',
       '95+ skills · 19 named AI agents (Bandit, Sheriff, Doc, Drawl, more)',
       'Voice Pack FREE — Linda reads every reply (Country / Hip-Hop / Regular × M/F)',
-      'Telegram + Discord bridges · Daily Rooster motivator',
-      'Grant suite (writer, finder, tracker, budget) + SAM.gov setup',
+      'Discord mobile bridge · Daily Rooster motivator',
+      'Headless autopilot — Linda works your queue in the background',
+      'Community skill sharing via /linda-share',
       'Priority support · One payment · Lifetime access'
     ]
   },
@@ -417,6 +417,11 @@ const TIERS = {
     );
     btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
     btn.textContent = `Email to Buy — ${tier.price}`;
+    // This tier isn't on instant checkout yet — switch the copy to the email flow.
+    const t1 = document.getElementById('trust-1');
+    const fp = document.getElementById('fineprint-main');
+    if (t1) t1.textContent = 'Secure checkout — email support to complete';
+    if (fp) fp.textContent = 'Email support@send.lindaai-brain.com with your tier choice and you’ll get a secure payment link, then your customer-baked LindaAI zip and license key arrive the moment payment clears.';
   }
 })();
 </script>
