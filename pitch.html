@@ -184,6 +184,35 @@ body { position: relative; }
   letter-spacing: 1.5px;
 }
 
+/* Demo terminal (show-don't-tell slide) */
+.demo-term {
+  max-width: 900px; width: 100%; margin: 8px auto 0;
+  border: 1px solid rgba(229,228,226,0.35); border-radius: 16px;
+  background: rgba(5,5,5,0.85); backdrop-filter: blur(10px);
+  overflow: hidden; text-align: left;
+  box-shadow: 0 20px 60px rgba(229,228,226,0.15);
+}
+.demo-term-head {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 16px; border-bottom: 1px solid rgba(229,228,226,0.2);
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+}
+.demo-term-head span { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.demo-term-head span:nth-child(1){ background:#ff5f57; } .demo-term-head span:nth-child(2){ background:#febc2e; } .demo-term-head span:nth-child(3){ background:#28c840; }
+.demo-term-body {
+  padding: 18px 22px; font-family: 'Courier New', monospace;
+  font-size: clamp(12px, 1.4vw, 15px); line-height: 1.8; color: var(--body);
+  overflow-wrap: break-word;
+}
+.demo-term-body .demo-ask {
+  color: var(--blue-bright); background: rgba(229,228,226,0.08);
+  border: 1px solid rgba(229,228,226,0.2); border-radius: 8px;
+  padding: 8px 12px; margin-bottom: 12px;
+}
+.demo-term-body b { color: var(--white); }
+.d-dim { color: #8f8f8f; }
+.d-good { color: #7ee787; }
+
 /* Feature row */
 .feature-row {
   display: grid;
@@ -682,17 +711,34 @@ html.embedded .close-deck { display: none !important; }
   <!-- SLIDE 3 — THE SOLUTION -->
   <div class="slide slide-content">
     <div class="eyebrow">The Solution</div>
-    <h2>One AI. <span class="accent">95+ skills.</span><br>Everything connected.</h2>
-    <div class="big-text">LindaAI installs into Claude Code with one command. Your skills, agents, voice, and mobile access — all in one operating system. Runs on your own Anthropic API key — typically under $20/month.</div>
+    <h2>One AI. <span class="accent">115 skills.</span><br>Everything connected.</h2>
+    <div class="big-text">LindaAI runs inside Claude Code — your skills, agents, voice, and mobile access, all in one operating system. Works with the Claude plan you already have.</div>
+  </div>
+
+  <!-- SLIDE 3.5 — SHOW, DON'T TELL -->
+  <div class="slide slide-content">
+    <div class="eyebrow">See The Difference</div>
+    <h2>Other AIs <span class="accent-purple">answer.</span> Linda <span class="accent">works.</span></h2>
+    <div class="demo-term">
+      <div class="demo-term-head"><span></span><span></span><span></span>&nbsp; LindaAI</div>
+      <div class="demo-term-body">
+        <div class="demo-ask">/linda-deals 42-space property, asking $1.8M, lot rent $385, 36 occupied</div>
+        <div>🤠 <b>Bandit</b> (Deal Hunter) — ran your numbers, Boss:</div>
+        <div><span class="d-dim">Income:</span> 36 × $385 × 12 = <b>$166,320 GSI</b> · <span class="d-dim">Base 45% exp:</span> NOI $91,476 → <b>$1.14M @ 8% cap</b></div>
+        <div>⚠️ <b>Asking $1.8M ≈ $660K over base value.</b> After infill + $425 rents: <span class="d-good">$1.86M @ 7.5%</span></div>
+        <div>🎯 <span class="d-good">Verdict: open at $1.10–1.15M or ride on.</span> Want the LOI? <b>/linda-loi</b> &nbsp;💾 <span class="d-dim">saved to brain/deals/</span></div>
+      </div>
+    </div>
+    <div class="big-text" style="font-size:clamp(18px,2.4vw,26px); margin-top:28px;">A chatbot gives you ten tips. Linda gives you the math, the verdict, the next move — <span class="accent">and she remembers the deal tomorrow.</span></div>
   </div>
 
   <!-- SLIDE 4 — STATS -->
   <div class="slide slide-content">
     <h2>What You Get</h2>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-big">95+</div><div class="stat-label">AI Skills</div></div>
+      <div class="stat-card"><div class="stat-big">115</div><div class="stat-label">AI Skills</div></div>
       <div class="stat-card"><div class="stat-big">8</div><div class="stat-label">Industry Packs</div></div>
-      <div class="stat-card"><div class="stat-big">18</div><div class="stat-label">Specialist Agents</div></div>
+      <div class="stat-card"><div class="stat-big">18</div><div class="stat-label">Agents (Platinum)</div></div>
       <div class="stat-card"><div class="stat-big">6</div><div class="stat-label">Voice Personalities</div></div>
     </div>
   </div>
@@ -722,7 +768,7 @@ html.embedded .close-deck { display: none !important; }
   <!-- SLIDE 6 — AGENTS -->
   <div class="slide slide-content">
     <div class="eyebrow">Platinum Exclusive</div>
-    <h2>17 <span class="accent">Specialist Agents</span></h2>
+    <h2>18 <span class="accent">Specialist Agents</span></h2>
     <div class="agents-showcase">
       <div class="agent-chip" style="--i:0"><img class="avatar" src="assets/avatars/bandit.png" alt="Bandit"><strong>Bandit</strong><span>Deal Hunter</span></div>
       <div class="agent-chip" style="--i:1"><img class="avatar" src="assets/avatars/inkslinger.png" alt="Inkslinger"><strong>Inkslinger</strong><span>Content Machine</span></div>
@@ -739,9 +785,11 @@ html.embedded .close-deck { display: none !important; }
       <div class="agent-chip" style="--i:12"><img class="avatar" src="assets/avatars/holler.png" alt="Holler"><strong>Holler</strong><span>Social Media</span></div>
       <div class="agent-chip" style="--i:13"><img class="avatar" src="assets/avatars/ranger.png" alt="Ranger"><strong>Ranger</strong><span>Virtual Asst</span></div>
       <div class="agent-chip" style="--i:14"><img class="avatar" src="assets/avatars/pony.png" alt="Pony"><strong>Pony</strong><span>Email Marketer</span></div>
+      <div class="agent-chip" style="--i:15"><img class="avatar" src="assets/avatars/forge.png" alt="Forge"><strong>Forge</strong><span>Engineer</span></div>
       <div class="agent-chip" style="--i:16"><img class="avatar" src="assets/avatars/bullhorn.png" alt="Bullhorn"><strong>Bullhorn</strong><span>Ad Manager</span></div>
       <div class="agent-chip" style="--i:17"><img class="avatar" src="assets/avatars/rooster.png" alt="Rooster"><strong>Rooster</strong><span>Daily Motivator</span></div>
     </div>
+    <p style="margin-top:16px;color:var(--gold);font-size:13px;font-weight:600">All 18 agents = Platinum only. Bronze rides with 4 · Silver 7 · Gold 11 — upgrade anytime to unlock the full crew.</p>
   </div>
 
   <!-- SLIDE 6.5 — COMMANDS & THEIR AVATARS -->
@@ -758,7 +806,7 @@ html.embedded .close-deck { display: none !important; }
       <div class="feat-card">
         <div class="feat-emoji">🎤</div>
         <h3>Voice Pack — Linda Talks Back</h3>
-        <p>Pick <strong>Country</strong>, <strong>Hip-Hop/Slang</strong>, or <strong>Regular</strong> (M/F). LindaAI <strong>reads every response out loud</strong> the second she answers — like an assistant in the room. Toggle with /voice. Pause/rewind/scrub controls.</p>
+        <p>Pick <strong>Country</strong>, <strong>Hip-Hop/Slang</strong>, or <strong>Regular</strong> (M/F). LindaAI <strong>reads every response out loud</strong> the second she answers — like an assistant in the room. Toggle with /voice. Pause/rewind/scrub controls. <em style="color:var(--gold)">FREE with Platinum · $19.99 add-on on Bronze/Silver/Gold.</em></p>
       </div>
       <div class="feat-card">
         <div class="feat-emoji">💬</div>
@@ -779,8 +827,8 @@ html.embedded .close-deck { display: none !important; }
         <div class="out">🤠 Howdy! Welcome to LindaAI. Let's get you set up.</div>
         <div class="cmd">Step 1 — Pick your tier: [1]</div>
         <div class="cmd">Step 2 — Pick your pack: [2] 🏗️ Construction PM</div>
-        <div class="cmd">Step 3 — Keep all 12 skills? [y]</div>
-        <div class="out">✓ LindaAI installed. 95 skills ready. Yeeee Hawww!</div>
+        <div class="cmd">Step 3 — Keep all 13 skills? [y]</div>
+        <div class="out">✓ LindaAI installed. Your tier's skills ready. Yeeee Hawww!</div>
       </div>
     </div>
   </div>
@@ -789,7 +837,7 @@ html.embedded .close-deck { display: none !important; }
   <div class="slide slide-content">
     <div class="eyebrow">Built For Your Industry</div>
     <h2>Pick Your <span class="accent">Pack</span></h2>
-    <div class="big-text" style="font-size:clamp(20px,2.4vw,26px); margin-bottom:20px;">8 industry packs. Pick the one that fits your business — swap skills anytime.</div>
+    <div class="big-text" style="font-size:clamp(20px,2.4vw,26px); margin-bottom:20px;">8 industry packs bundled in — activate 1 (Bronze), 2 (Silver), 4 (Gold), or all 8 (Platinum). Pick the pack that fits your business.</div>
     <div class="pack-grid">
       <div class="pack-card" style="--i:0"><div class="pack-emoji">🏡</div><div class="pack-name">Real Estate Pro</div><div class="pack-tag">Hunt, underwrite, market, and close deals</div></div>
       <div class="pack-card" style="--i:1"><div class="pack-emoji">🏗️</div><div class="pack-name">Construction PM</div><div class="pack-tag">Daily field reports, WIP tracking, project health</div></div>
@@ -809,45 +857,48 @@ html.embedded .close-deck { display: none !important; }
       <div class="tier-box">
         <h3>Bronze</h3>
         <div class="price">$500</div>
-        <p class="tier-blurb"><strong>10 skills</strong></p>
+        <p class="tier-blurb"><strong>13 skills · 4 agents</strong></p>
         <ul>
           <li>/linda-brief · daily briefing</li>
-          <li>/linda-write · email drafter</li>
+          <li>/linda-mail · email drafter</li>
           <li>/linda-followup · commitments</li>
-          <li>/linda-triage · inbox triage</li>
+          <li>/linda-inbox · inbox triage</li>
           <li>/linda-invoice · invoices</li>
-          <li>/linda-content · social posts</li>
+          <li>/linda-posts · social posts</li>
           <li>/linda-leads · CRM</li>
-          <li>/linda-recap · weekly review</li>
-          <li>+ 2 more · Auto-updates</li>
+          <li>/linda-weekly · weekly review</li>
+          <li>+ 4 more · 📦 Pick 1 of 8 packs · Auto-updates</li>
         </ul>
       </div>
       <div class="tier-box">
         <h3>Silver</h3>
         <div class="price">$1K</div>
-        <p class="tier-blurb"><strong>20 skills</strong> + Skill Picker</p>
+        <p class="tier-blurb"><strong>28 skills · 7 agents</strong> + Skill Picker</p>
         <ul>
           <li><em>Everything in Bronze</em> +10:</li>
-          <li>/linda-spy · competitor</li>
+          <li>/linda-compete · competitor</li>
           <li>/linda-market · research</li>
-          <li>/linda-meetingprep · briefs</li>
+          <li>/linda-meeting · briefs</li>
           <li>/linda-onboard · clients</li>
           <li>/linda-finance · snapshot</li>
           <li>/linda-sop · build SOPs</li>
+          <li>📦 Pick 2 of 8 packs</li>
+          <li>💬 Discord bridge</li>
           <li>🎯 Swap any 3 in 14 days</li>
         </ul>
       </div>
       <div class="tier-box">
         <h3>Gold</h3>
         <div class="price">$1.5K</div>
-        <p class="tier-blurb"><strong>32 skills</strong> + Mobile</p>
+        <p class="tier-blurb"><strong>41 skills · 11 agents</strong> + Mobile</p>
         <ul>
           <li><em>Everything in Silver</em> +12:</li>
-          <li>/linda-deal · deal analyzer</li>
-          <li>/linda-rent · rental analysis</li>
-          <li>/linda-seller · outreach</li>
+          <li>/linda-deals · deal analyzer</li>
+          <li>/linda-rents · rental analysis</li>
+          <li>/linda-outreach · outreach</li>
           <li>/linda-loi · LOI Blaster ✉️</li>
           <li>/linda-kpi · dashboard</li>
+          <li>📦 Pick 4 of 8 packs</li>
           <li>💬 Discord mobile bridge</li>
           <li>🎯 Swap any 5 in 14 days</li>
         </ul>
@@ -855,16 +906,16 @@ html.embedded .close-deck { display: none !important; }
       <div class="tier-box featured">
         <h3>Platinum ✦</h3>
         <div class="price">$3K</div>
-        <p class="tier-blurb"><strong>95+ skills · 17+ agents</strong></p>
+        <p class="tier-blurb"><strong>115 skills · 18 agents</strong></p>
         <ul>
-          <li><em>Everything in Gold</em> +20:</li>
+          <li><em>Everything in Gold</em> — all 8 packs, every pack skill pre-installed:</li>
           <li>/linda-mhp + /linda-diligence</li>
           <li>/linda-airbnb + /linda-coliving</li>
           <li>/linda-swot · /linda-contract</li>
           <li>/linda-headless · /linda-share</li>
-          <li>🤠 17 named AI agents</li>
+          <li>🤠 18 named AI agents</li>
           <li>🎤 Voice Pack FREE — reads every reply (Country/Hip-Hop/Regular × M/F)</li>
-          <li>📱 All bridges · ⚡ Priority</li>
+          <li>💬 Discord bridge · ⚡ Priority support</li>
         </ul>
       </div>
     </div>
