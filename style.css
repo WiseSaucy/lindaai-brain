@@ -191,6 +191,7 @@ body::after {
   color: #1a1a1a;
 }
 .btn:hover { transform: translateY(-1px); }
+.nav-links a.btn { color: #1a1a1a; } /* beat .nav-links a link color on nav buttons */
 .btn-sm { padding: 10px 20px; font-size: 14px; }
 .btn-lg { padding: 18px 40px; font-size: 17px; }
 .btn-primary {
