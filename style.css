@@ -161,16 +161,15 @@ body::after {
   .logo { justify-content: center; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 18px; width: 100%; }
   .nav-links a { font-size: 14px; white-space: nowrap; }
-  /* On phones, keep the nav to the 4 find-it tabs (Pricing · About · FAQ · Contact).
-     Drop the redundant Buy button + Free Trial (big hero CTA) + Agents (its own on-page section). */
+  /* On phones, trim the nav to the core find-it tabs. Pages mark their
+     droppable links with .nav-hide-sm / .nav-hide-xs so other pages keep theirs. */
   .nav-links a.btn,
-  .nav-links a:nth-child(1),
-  .nav-links a:nth-child(3) { display: none; }
+  .nav-links a.nav-hide-sm { display: none; }
   .nav-dropdown { display: none; } /* legal links live in the footer on mobile */
 }
 @media (max-width: 380px) {
-  /* tiny phones: trim to the 3 core find-it tabs so nothing clips */
-  .nav-links a:nth-child(5) { display: none; } /* FAQ */
+  /* tiny phones: trim further so nothing clips */
+  .nav-links a.nav-hide-xs { display: none; }
 }
 
 /* ═══════════════════ BUTTONS ═══════════════════ */
@@ -439,7 +438,7 @@ body::after {
   width: 44px;
   height: 44px;
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  color: white;
+  color: #0a0a0a;
   font-weight: 700;
   font-size: 18px;
   border-radius: 12px;
@@ -584,7 +583,7 @@ body::after {
   top: -12px;
   right: 20px;
   background: var(--accent-blue);
-  color: white;
+  color: #0a0a0a;
   padding: 4px 14px;
   border-radius: 999px;
   font-size: 11px;
@@ -891,8 +890,8 @@ body::after {
 }
 .trial-badge {
   display: inline-block;
-  background: linear-gradient(90deg, #e5e4e2, #e5e4e2);
-  color: #fff;
+  background: var(--platinum-soft);
+  color: #0a0a0a;
   padding: 8px 16px;
   border-radius: 999px;
   font-size: 13px;
@@ -1164,14 +1163,14 @@ p, h1, h2, h3, h4, h5, h6, span, a, li {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   OVERFLOW HARDENING — kill border/word bleed on mobile (Boss47 2026-06-03)
+   OVERFLOW HARDENING — kill border/word bleed on mobile
    Root causes: grid/flex children default to min-width:auto (won't shrink
    below content), + media iframe/img not clamped.
    ════════════════════════════════════════════════════════════════ */
 img, iframe, video, svg, table, pre { max-width: 100% !important; }
 .steps > *, .packs-grid > *, .agents-grid > *,
 .tiers > *, .hero-stats > *, .container > * { min-width: 0; }
-.step, .pack-card, .agent, .tier-card, .stat { min-width: 0; overflow-wrap: anywhere; }
+.step, .pack-card, .agent, .tier, .stat { min-width: 0; overflow-wrap: anywhere; }
 
 @media (max-width: 768px) {
   .video-section > div { max-width: 100% !important; width: 100% !important; box-sizing: border-box; }

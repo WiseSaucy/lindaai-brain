@@ -4,11 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LindaAI — Secure Checkout</title>
-<meta name="description" content="LindaAI Secure Checkout — review your tier and email support to complete purchase.">
+<meta name="description" content="LindaAI Secure Checkout — review your tier and pay securely through Paddle. One payment, lifetime access.">
+<meta property="og:title" content="LindaAI — Secure Checkout">
+<meta property="og:description" content="Review your LindaAI tier and pay securely through Paddle. One payment, lifetime access.">
+<meta property="og:image" content="https://lindaai-brain.com/assets/social-cover.png">
+<meta property="og:url" content="https://lindaai-brain.com/checkout.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LindaAI — Secure Checkout">
+<meta name="twitter:description" content="Review your LindaAI tier and pay securely through Paddle. One payment, lifetime access.">
+<meta name="twitter:image" content="https://lindaai-brain.com/assets/social-cover.png">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260614b">
+<link rel="stylesheet" href="style.css?v=20260801">
 <style>
   .checkout-wrap { padding: 80px 0 100px; min-height: calc(100vh - 200px); }
   .checkout-card {
@@ -17,13 +26,13 @@
     border: 1px solid var(--border-soft);
     border-radius: var(--radius-lg);
     padding: 48px 44px;
-    box-shadow: 0 20px 60px rgba(30,144,255,0.18);
+    box-shadow: 0 20px 60px rgba(229,228,226,0.12);
     position: relative;
   }
   .checkout-card.tier-bronze   { border-color: #92400e; }
   .checkout-card.tier-silver   { border-color: #9ca3af; }
-  .checkout-card.tier-gold     { border-color: #1e90ff; }
-  .checkout-card.tier-platinum { border-color: var(--accent-gold); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(30,144,255,0.06) 100%); }
+  .checkout-card.tier-gold     { border-color: #d4af37; }
+  .checkout-card.tier-platinum { border-color: var(--accent-gold); background: linear-gradient(180deg, var(--bg-card) 0%, rgba(229,228,226,0.06) 100%); }
   .checkout-eyebrow {
     display: inline-block;
     padding: 6px 14px;
@@ -76,7 +85,7 @@
     position: relative;
     color: var(--text-body);
     font-size: 15px;
-    border-bottom: 1px solid rgba(30,144,255,0.08);
+    border-bottom: 1px solid rgba(229,228,226,0.12);
   }
   .checkout-includes li:last-child { border-bottom: none; }
   .checkout-includes li::before {
@@ -89,17 +98,17 @@
     font-family: var(--font-display);
     font-size: 18px; font-weight: 700;
     color: #1a1a1a; text-align: center; text-decoration: none;
-    background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+    background: var(--platinum-soft);
     border: none; border-radius: var(--radius);
-    box-shadow: 0 12px 32px rgba(30,144,255,0.4);
+    box-shadow: 0 12px 32px rgba(229,228,226,0.35);
     transition: all 0.2s;
     cursor: pointer;
   }
-  .checkout-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(30,144,255,0.55); }
+  .checkout-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(229,228,226,0.5); }
   .checkout-card.tier-platinum .checkout-cta {
-    background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+    background: var(--platinum-shine);
     color: #1a1a1a;
-    box-shadow: 0 12px 32px rgba(212,160,23,0.45);
+    box-shadow: 0 12px 32px rgba(229,228,226,0.45);
   }
   .checkout-trust {
     display: flex; flex-wrap: wrap; gap: 18px;
@@ -151,8 +160,8 @@
   }
   .pill-silver   { background: #525252; color: #f5f5f5; }
   .pill-gold     { background: #a16207; color: #fef9c3; }
-  .pill-platinum { background: linear-gradient(135deg, #0a0f1c, #1e90ff); color: #ffffff; }
-  .pill-voice    { background: linear-gradient(135deg, #1e90ff, #1e90ff); color: white; }
+  .pill-platinum { background: var(--platinum-soft); color: #0a0a0a; }
+  .pill-voice    { background: #3a3a3a; color: #fafafa; border: 1px solid rgba(229,228,226,0.5); }
 </style>
 </head>
 <body>
@@ -211,14 +220,14 @@
 
       <div class="checkout-trust">
         <span id="trust-1">Secure checkout by Paddle</span>
-        <span>Instant license delivery</span>
+        <span>License delivered by email</span>
         <span>Lifetime access</span>
       </div>
 
       <p class="checkout-fineprint">
-        <span id="fineprint-main">Pay securely through Paddle — your license key and customer-baked LindaAI zip are emailed to you within seconds of payment.</span><br>
+        <span id="fineprint-main">Pay securely through Paddle — your license key and custom-baked LindaAI zip are emailed to you within minutes of payment.</span><br>
         Questions? <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a><br>
-        <span style="opacity:0.7;">Digital product · <a href="/refund.html" style="color:inherit;">14-day money-back guarantee</a> · Pay once, own forever</span>
+        <span style="opacity:0.7;">Digital product · <a href="refund.html" style="color:inherit;">14-day money-back guarantee</a> · Pay once, own forever</span>
       </p>
     </div>
   </div>
@@ -248,9 +257,6 @@
   </div>
 </footer>
 
-<!-- v1.7.1 (Boss47 2026-05-27): Paddle is the official payment processor.
-     Paddle.js loaded async; checkout opens as overlay (customer stays on this page).
-     Falls back to mailto if Paddle is not yet configured (price IDs empty). -->
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
 // Paddle configuration — fill these in from your Paddle dashboard after approval.
@@ -273,7 +279,7 @@ const TIERS = {
     includes: [
       '13 essential AI skills (briefing, email, follow-ups, invoicing, content, more)',
       '4 named AI agents — Ranger (right-hand), Sheriff (inbox), Inkslinger (content), Rooster (daily motivator)',
-      'Pick 1 of 8 industry packs (real estate, restaurant, HVAC, content, more)',
+      'Pick 1 of 7 industry packs (real estate, restaurant, HVAC, content, more)',
       'Discord mobile bridge — run Linda from your phone',
       'Cross-platform installer (Mac / Windows / Linux)',
       'Auto-updates via /linda-sync',
@@ -287,12 +293,12 @@ const TIERS = {
     cardClass: 'tier-silver',
     price: '$1,000',
     paddle_price_id: 'pri_01ky3qg8x6h40edv3kj47qfv91',
-    tagline: 'Scale your operation. 24 skills + Skill Picker.',
+    tagline: 'Scale your operation. 25 skills + Skill Picker.',
     slug: 'lhdorw',
     includes: [
       'Everything in Bronze',
       '+12 growth skills (competitor, market research, repurpose, deep research, SOPs)',
-      '7 named AI agents — adds Tally (data), Drawl (copy), Holler (social), Rooster (motivator)',
+      '7 named AI agents — adds Tally (data), Drawl (copy), Holler (social) to your Bronze crew',
       'Pick 2 of 8 industry packs',
       'Discord mobile bridge — run Linda from your phone',
       'Skill Picker — swap any 3 skills within 14 days',
@@ -312,7 +318,7 @@ const TIERS = {
     includes: [
       'Everything in Silver',
       '+10 RE / ops skills (deal analyzer, rents, property research, seller outreach, LOI Blaster)',
-      '11 named AI agents — adds Bandit (deals), Closer (sales), Wrangler (biz dev), Scout (hiring), Rooster',
+      '11 named AI agents — adds Bandit (deals), Closer (sales), Wrangler (biz dev), Scout (hiring)',
       'Pick 4 of 8 industry packs',
       'Discord mobile bridge — run Linda from your phone',
       'KPI dashboard + pipeline sync',
@@ -415,12 +421,11 @@ const TIERS = {
       });
     });
   } else {
-    // Fallback — Paddle not yet configured. Customer emails support for manual invoice.
-    // 🐎 Pony + 🩺 Doc invoice them via Paddle Invoice → ship customer-baked zip.
+    // Fallback — Paddle not configured for this tier yet; customer emails support for a payment link.
     const subject = encodeURIComponent(`LindaAI ${tier.name} — purchase request`);
     const body = encodeURIComponent(
       `Howdy! I'd like to buy LindaAI ${tier.name} (${tier.price}).\n\n` +
-      `Please send me the Paddle invoice link.\n\n` +
+      `Please send me the Paddle payment link.\n\n` +
       `Name:\nBusiness:\nBest email for zip delivery:\n`
     );
     btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
@@ -429,7 +434,7 @@ const TIERS = {
     const t1 = document.getElementById('trust-1');
     const fp = document.getElementById('fineprint-main');
     if (t1) t1.textContent = 'Secure checkout — email support to complete';
-    if (fp) fp.textContent = 'Email support@send.lindaai-brain.com with your tier choice and you’ll get a secure payment link, then your customer-baked LindaAI zip and license key arrive the moment payment clears.';
+    if (fp) fp.textContent = 'Email support@send.lindaai-brain.com with your tier choice and you’ll get a secure payment link, then your custom-baked LindaAI zip and license key arrive the moment payment clears.';
   }
 })();
 </script>
