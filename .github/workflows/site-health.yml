@@ -1,5 +1,8 @@
 name: site-health
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/lindaai-brain-issue-vfnk4o"]
 jobs:
   probe:
     runs-on: ubuntu-latest
