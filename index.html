@@ -678,7 +678,7 @@ async function submitTrial(e) {
       // Mark this browser as having claimed a trial — first line of defense
       try { localStorage.setItem('lindaai_trial_used', data.key); } catch(e) {}
       msg.className = 'trial-msg success';
-      const dl = data.download_url || 'https://github.com/WiseSaucy/lindaai-updates/releases/download/v1.5-trial/LindaAI-Bronze-v1.5.zip';
+      const dl = data.download_url || 'https://github.com/WiseSaucy/lindaai-updates/releases/download/v1.7-trial/LindaAI-Bronze-v1.7.zip';
       const top = data.already_had
         ? `🤠 You already have a trial key — we re-sent it to <strong>${email}</strong>.`
         : `🤠 Yeeee Hawww! Your 30-day trial key is on the way to <strong>${email}</strong>. Expires ${data.expires}.`;
