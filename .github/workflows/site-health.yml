@@ -1,0 +1,22 @@
+name: site-health
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe site and API endpoints
+        run: |
+          probe() {
+            echo "=== $1 ==="
+            curl -sS -o /dev/null -m 25 -w 'status=%{http_code} redirect=%{redirect_url} time=%{time_total}s\n' "$1" || echo "curl exit code $?"
+            curl -sSI -m 25 "$1" 2>&1 | head -25 || true
+            echo
+          }
+          probe https://lindaai-brain.com/
+          probe http://lindaai-brain.com/
+          probe https://www.lindaai-brain.com/
+          probe https://wisesaucy.github.io/lindaai-brain/
+          probe https://lindaai-api-production.up.railway.app/
+          probe https://lindaai-api-production.up.railway.app/health
+          echo "=== full redirect chain from apex ==="
+          curl -sSL -o /dev/null -m 40 -w 'final=%{url_effective} status=%{http_code} redirects=%{num_redirects}\n' https://lindaai-brain.com/ || echo "curl exit code $?"
