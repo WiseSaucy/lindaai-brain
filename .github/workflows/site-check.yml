@@ -1,0 +1,63 @@
+name: site-check
+on:
+  push:
+    branches: ["claude/lindaai-brain-issue-vfnk4o"]
+jobs:
+  cert-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect served certificate and HTTP status
+        run: |
+          for host in lindaai-brain.com www.lindaai-brain.com; do
+            echo "=== $host cert ==="
+            echo | timeout 20 openssl s_client -servername $host -connect $host:443 2>/dev/null | openssl x509 -noout -subject -issuer -dates 2>/dev/null || echo "TLS handshake failed"
+            echo "--- status (cert check bypassed) ---"
+            curl -sSk -o /dev/null -m 20 -w 'status=%{http_code}\n' "https://$host/" || echo "curl exit $?"
+            echo "--- status (strict) ---"
+            curl -sS -o /dev/null -m 20 -w 'status=%{http_code}\n' "https://$host/" || echo "curl exit $? (cert rejected = still broken for browsers)"
+          done
+  deck-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1 >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Audit deck slides for overflow at embed + mobile sizes
+        run: |
+          cat > audit.js <<'EOF'
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch();
+            for (const [label, w, h] of [['embed-desktop', 996, 880], ['embed-mobile', 375, 880], ['fullscreen', 1440, 900]]) {
+              const ctx = await browser.newContext({ viewport: { width: w, height: h }, ignoreHTTPSErrors: true });
+              const page = await ctx.newPage();
+              await page.goto('https://lindaai-brain.com/pitch.html', { waitUntil: 'networkidle', timeout: 45000 });
+              await page.evaluate(() => { if (typeof togglePlay === 'function' && autoPlay) togglePlay(); });
+              const total = await page.evaluate(() => document.querySelectorAll('.slide').length);
+              console.log(`\n=== ${label} ${w}x${h} — ${total} slides ===`);
+              for (let i = 0; i < total; i++) {
+                await page.evaluate((idx) => goTo(idx), i);
+                await page.waitForTimeout(900);
+                const r = await page.evaluate(() => {
+                  const s = document.querySelector('.slide.active');
+                  const title = (s.querySelector('h1,h2')?.textContent || '').trim().slice(0, 38);
+                  const vOver = Math.max(0, s.scrollHeight - s.clientHeight);
+                  let hOver = 0, worst = '';
+                  s.querySelectorAll('*').forEach(el => {
+                    const b = el.getBoundingClientRect();
+                    const over = Math.max(0, Math.round(b.right - window.innerWidth), Math.round(-b.left));
+                    if (over > hOver && b.width > 0) { hOver = over; worst = el.className || el.tagName; }
+                  });
+                  return { title, vOver, hOver, worst };
+                });
+                const flag = (r.vOver > 4 || r.hOver > 4) ? '  <-- OVERFLOW' : '';
+                console.log(`slide ${String(i + 1).padStart(2)} | ${r.title.padEnd(40)} | vScroll=${String(r.vOver).padStart(4)}px hClip=${String(r.hOver).padStart(3)}px ${r.worst && r.hOver > 4 ? '(' + String(r.worst).slice(0, 30) + ')' : ''}${flag}`);
+              }
+              await ctx.close();
+            }
+            await browser.close();
+          })();
+          EOF
+          node audit.js
