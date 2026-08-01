@@ -186,7 +186,11 @@ body::after {
   border: 1px solid transparent;
   text-align: center;
   letter-spacing: 0.2px;
+  /* Visible default so bare .btn never renders as plain text (Ranger QA) */
+  background: var(--platinum-soft);
+  color: #1a1a1a;
 }
+.btn:hover { transform: translateY(-1px); }
 .btn-sm { padding: 10px 20px; font-size: 14px; }
 .btn-lg { padding: 18px 40px; font-size: 17px; }
 .btn-primary {
