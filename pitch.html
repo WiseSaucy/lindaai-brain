@@ -689,6 +689,10 @@ body { position: relative; }
   .slide-title h2 { font-size: clamp(18px, 5vw, 26px); }
   .slide-final h2 { font-size: clamp(28px, 8vw, 42px); }
   .slide-count { font-size: 11px; }
+  /* Icon-only branding pill on narrow phones — the full text pill was wide
+     enough to collide with centered eyebrow badges like "See The Difference" */
+  .branding { top: 12px; right: 12px; padding: 8px; }
+  .branding span { display: none; }
 }
 @media (max-width: 768px) {
   .pack-grid { grid-template-columns: repeat(3, 1fr); }
@@ -742,7 +746,7 @@ html.embedded .close-deck { display: none !important; }
     <div class="demo-term">
       <div class="demo-term-head"><span></span><span></span><span></span>&nbsp; LindaAI</div>
       <div class="demo-term-body">
-        <div class="demo-ask">/linda-deals 42-space property, asking $1.8M, lot rent $385, 36 occupied</div>
+        <div class="demo-ask">/linda-deals 42-unit property, asking $1.8M, rent $385/unit, 36 occupied</div>
         <div>🤠 <b>Bandit</b> (Deal Hunter) — ran your numbers, Boss:</div>
         <div><span class="d-dim">Income:</span> 36 × $385 × 12 = <b>$166,320 GSI</b> · <span class="d-dim">Base 45% exp:</span> NOI $91,476 → <b>$1.14M @ 8% cap</b></div>
         <div>⚠️ <b>Asking $1.8M ≈ $660K over base value.</b> After infill + $425 rents + submetering: NOI $139,230 → <span class="d-good">$1.86M @ 7.5%</span></div>
