@@ -201,7 +201,73 @@ at 10–15%+ vs the ~1–5% platform norm, and Meta reads repeated violations as
 
 ---
 
-## 9. Quick pre-launch checklist
+## 9. Unit economics & ad spend targets
+
+Product economics (Aug 2026 pricing):
+
+| Product | Price | Cost to make+ship | Gross profit |
+|---|---|---|---|
+| Jar | $40 | ~$10 | ~$30 |
+| Capsules (60ct bottle) | $25 | ~$2.50–7 | ~$18–22 |
+| Jar + capsule bundle | ~$65 | ~$13–17 | ~$48–52 |
+
+**Strategy: lead with the jar, upsell capsules.** Jar photographs/videos better
+for ads (gel texture, smoothie pours) and has the bigger margin cushion against
+Meta's typical $20–40 CPA in this category. Capsules alone are too thin to lead
+with (~$20 profit ≈ typical CPA) — position them as the convenience add-on
+("no prep, take it on the go") at checkout. A bundle order tolerates a
+$30–35 CPA comfortably.
+
+**Breakage / reshipping (glass jars can break or get mishandled in transit):**
+
+- A reship is a **margin cost, not a new ad cost** — never re-attribute it to
+  CPA/CAC; it comes out of gross profit.
+- At a realistic 3–5% breakage rate, expected cost per jar order rises from
+  $10 to ~$10.30–10.50, so profit drops slightly to ~$29.50–29.70 — barely
+  moves break-even.
+- Budget a **$1–2/jar breakage reserve** for a safer effective break-even CPA
+  of **~$28** instead of the raw $30.
+- **Policy:** replace damaged jars free, no return required, ship
+  immediately — protects reviews and the Customer Feedback Score (§8), which
+  directly affects Meta delivery/account health.
+- Invest in sturdier packaging (padded mailer, jar-in-jar insert) — cheap
+  packaging is a false savings once reship costs and lost trust are counted.
+- Capsules don't break, so leaning on them as upsell/bundle also lowers your
+  overall breakage exposure.
+
+**CPA targets:**
+
+- Jar-only: healthy < **$20** (2x ROAS), workable up to **$28–30**, kill/fix
+  the ad above that.
+- Bundle: comfortable up to **$30–35** given ~$50 profit.
+- Capsules solo: not a lead product — margin too thin to advertise directly.
+
+---
+
+## 10. What we'll actually be doing on Facebook (the plan)
+
+1. **Foundation:** verify the business in Business Manager, 2FA on every admin,
+   install the Meta Pixel + Conversions API on the site, confirm Events Manager
+   category (watch for the health & wellness tracking restriction, §7).
+2. **Site prep:** dedicated product/landing pages for jar and bundle (not the
+   homepage, not Facebook/Instagram Shops), trust pages, FDA disclaimer, claims
+   scrubbed per §3/§6.
+3. **Creative:** compliant ad copy using the safe language and templates in
+   §4–§5 — jar-led, ritual/quality/nutrition-facts angles, capsule positioned
+   as the upsell.
+4. **Launch:** 1 campaign, 2–3 ads, Advantage+ placements (Facebook + Instagram
+   feed/Stories/Reels), **$20–50/day**, 2–4 soft warm-up ads before testing
+   anything edgier (§8).
+5. **Measure:** track against the CPA targets above using UTMs + store
+   analytics (not just Ads Manager, in case Purchase events are suppressed).
+6. **Iterate safely:** on a rejection, fix-and-resubmit once or appeal once —
+   never resubmit-spam; scale what's under target CPA, kill/rework what isn't;
+   watch Customer Feedback Score and ship damaged jars fast, no questions
+   asked.
+
+---
+
+## 11. Quick pre-launch checklist
 
 - [ ] Ad copy: no disease, blood-sugar, sexual, weight-loss, or detox claims
 - [ ] No "you + condition" phrasing, no negative self-perception, no pinched-fat imagery
