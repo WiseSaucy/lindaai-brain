@@ -144,6 +144,23 @@ conditions, not the viewer's body:
 - **Influencer/UGC ads:** anyone with a material connection must disclose
   (#ad), and their claims count as your claims (FTC endorsement rules).
 
+**This brand's specifics:**
+
+- **Domain:** wiseseamoss.com (as of this writing, the domain isn't
+  resolving — confirm DNS/hosting is live before starting Meta business
+  verification or running ads; Meta checks the live site).
+- **Platform: Shopify.** In Shopify admin, do **not** enable the Facebook &
+  Instagram sales channel's product sync/catalog for the sea moss listings —
+  that publishes to Facebook/Instagram Shops, which prohibits ingestible
+  supplements (see above). Keep the Meta channel app, if used at all, to
+  Pixel/Conversions API setup only — not catalog sync. Shopify's built-in
+  policy pages (Privacy/Terms/Refund) and Shopify Legal generator cover the
+  §6 trust-page requirement; still add the FDA disclaimer manually to the
+  product page and footer, since Shopify doesn't include it by default.
+- **Support email:** support@wiseseamoss.com. Using a domain-matched email
+  (not Gmail/Yahoo) is expected for Meta Business Manager verification and
+  general trust — set this up before verifying the business.
+
 ---
 
 ## 7. The tracking gotcha (why your Purchase optimization may break)
