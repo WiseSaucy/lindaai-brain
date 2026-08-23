@@ -285,7 +285,71 @@ $30–35 CPA comfortably.
 
 ---
 
-## 11. Quick pre-launch checklist
+## 11. Account setup — steps for you to complete
+
+Claude can't create these directly: Shopify needs a payment method, and Meta
+Business Manager needs identity/business-document verification tied to your
+own login. Claude *can* draft everything that goes into them (policy text,
+FDA disclaimer, product copy) — ask once each account exists.
+
+**Shopify:**
+1. shopify.com → start a store → connect the **wiseseamoss.com** domain
+   (confirm DNS/hosting is live first, per §6).
+2. Store details → set **support@wiseseamoss.com** as the store contact.
+3. Settings → Policies → generate Privacy/Terms/Refund pages, then add the
+   FDA disclaimer manually (Shopify doesn't include one by default).
+4. Settings → Payments → connect Shopify Payments or a processor (may need
+   business EIN/bank details).
+5. **Do not** enable the Facebook & Instagram sales channel's product/catalog
+   sync — that publishes to Shops, which bans ingestible supplements (§6).
+
+**Meta Business Manager:**
+1. business.facebook.com → Create Account, business name matching the domain.
+2. Use support@wiseseamoss.com as the primary business email; enable 2FA
+   before anything else.
+3. Business Settings → business verification → submit legal business docs.
+4. Add a Page, an ad account, and a payment method.
+5. Events Manager → connect the Pixel + Conversions API to Shopify (Shopify's
+   native Meta integration handles this — separate from catalog sync, which
+   stays off).
+
+---
+
+## 12. Bonus: expanding to TikTok
+
+Yes, sea moss can run on TikTok too — but TikTok has the strictest bar of the
+three platforms, so treat it as a **second channel once Facebook/Instagram is
+already profitable**, not a simultaneous launch.
+
+- **Supplements are a "restricted category" everywhere on TikTok** —
+  pre-approval is required before ads or listings go live, not a
+  review-after-submit like Meta.
+- **Outright banned** (any angle, no exceptions): weight-loss/appetite
+  suppressants, sexual-performance products, testosterone/muscle-gain
+  supplements. Sea moss itself is fine — your compliant claims strategy
+  (§3–§4) already avoids all of these categories.
+- **Documentation required for approval** (both Ads and Shop): product label
+  photos (front/back/Supplement Facts), a lab test report (TikTok-accredited
+  lab, or in-house + cGMP certificate under 21 CFR 111/117), and proof of FDA
+  food facility registration. This is a heavier upfront lift than Meta, which
+  doesn't require certification docs before you can advertise.
+- **Claim rules mirror Meta:** no disease/cure claims, no "clinically
+  proven"/"dermatologist tested" without documentation, FDA disclaimer
+  required on both the product label and the listing description.
+- **Two different asks — pick the lighter one first:**
+  - **TikTok Ads → your own Shopify site** (mirrors the Facebook setup):
+    apply for the Dietary Supplements ads category in TikTok Ads Manager,
+    submit the docs once, then run ads the same way as Meta.
+  - **TikTok Shop** (TikTok handles checkout/fulfillment natively): separate,
+    heavier qualification through TikTok Shop Seller Center, plus ongoing
+    compliance monitoring. Worth doing once you have a second channel's worth
+    of bandwidth — not on day one.
+
+Sources: [TikTok Dietary Supplements Requirements](https://seller-us.tiktok.com/university/essay?knowledge_id=1411277869713198&lang=en), [TikTok Ads for Supplements & Wellness Brands 2026](https://tikadtools.com/blog/tiktok-ads-supplements/), [How to Sell Dietary Supplements on TikTok Shop](https://qualitysmartsolutions.com/blog/selling-dietary-supplements-on-tiktok-shop-a-compliance-requirements-guide/), [TikTok Requirements for Responsible Health-Related Content](https://seller-us.tiktok.com/university/essay?knowledge_id=4545471832983342&lang=en)
+
+---
+
+## 13. Quick pre-launch checklist
 
 - [ ] Ad copy: no disease, blood-sugar, sexual, weight-loss, or detox claims
 - [ ] No "you + condition" phrasing, no negative self-perception, no pinched-fat imagery
