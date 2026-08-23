@@ -283,6 +283,23 @@ $30–35 CPA comfortably.
    watch Customer Feedback Score and ship damaged jars fast, no questions
    asked.
 
+**Using the existing customer base to scale faster (without tripping account
+trust):** an existing customer list is a real day-one advantage — upload it
+in Ads Manager as a **Custom Audience** for retargeting/exclusion, and build
+a **Lookalike Audience** from it to find similar buyers immediately, instead
+of starting from a cold audience. Layer this in from day one; it doesn't
+conflict with anything above.
+
+What *doesn't* speed up: the **ad account's** trust with Meta. A brand-new or
+long-dormant ad account with no spend history is exactly what gets flagged
+for review if budget jumps straight to scale-level spend — that's a pattern
+Meta's systems watch for independent of how good the product or audience is.
+"Correct" and "scale day one" aren't in tension on creative/audience/offer —
+they are on ad-account spend velocity. Recommended: run the $20–50/day
+warm-up for the first week even with a proven audience, then ramp budget
+~20–50% every 2–3 days once CPA is confirmed under target, rather than
+jumping straight to a large daily budget.
+
 ---
 
 ## 11. Account setup — steps for you to complete
