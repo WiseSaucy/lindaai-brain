@@ -350,6 +350,19 @@ already profitable**, not a simultaneous launch.
   lab, or in-house + cGMP certificate under 21 CFR 111/117), and proof of FDA
   food facility registration. This is a heavier upfront lift than Meta, which
   doesn't require certification docs before you can advertise.
+  **Where to get these:** cGMP facility certification and third-party lab
+  testing (identity, potency, contaminants) are paid services from NSF
+  International, USP, or the Natural Products Association (NPA) — check
+  current pricing on their sites directly. This is also worth doing even
+  before TikTok: a real "lab-tested for purity" claim (already in the §5 ad
+  templates) needs one of these behind it to be defensible.
+- **Personal nutrition certification (e.g. Certified Nutrition Specialist,
+  Precision Nutrition, NASM) is a different thing** — real paid credentials
+  exist ($400–1,500+ typically), and they're fine for founder-credibility
+  content ("formulated with input from a certified nutrition specialist").
+  They do **not**, however, unlock stronger product claims — what a supplement
+  ad is allowed to say is governed by FDA/FTC evidence rules and Meta/TikTok
+  ad policy, not by the marketer's personal credentials.
 - **Claim rules mirror Meta:** no disease/cure claims, no "clinically
   proven"/"dermatologist tested" without documentation, FDA disclaimer
   required on both the product label and the listing description.
