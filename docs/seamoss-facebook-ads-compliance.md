@@ -157,9 +157,10 @@ conditions, not the viewer's body:
   policy pages (Privacy/Terms/Refund) and Shopify Legal generator cover the
   §6 trust-page requirement; still add the FDA disclaimer manually to the
   product page and footer, since Shopify doesn't include it by default.
-- **Support email:** support@wiseseamoss.com. Using a domain-matched email
-  (not Gmail/Yahoo) is expected for Meta Business Manager verification and
-  general trust — set this up before verifying the business.
+- **Support email:** upgrading from wiseseamoss@gmail.com to
+  support@wiseseamoss.com. Using a domain-matched email (not Gmail/Yahoo) is
+  expected for Meta Business Manager verification and general trust — set
+  this up before verifying the business.
 
 ---
 
