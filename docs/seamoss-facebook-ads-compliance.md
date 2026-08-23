@@ -138,6 +138,14 @@ conditions, not the viewer's body:
 - **FDA disclaimer** on any page with structure/function claims: "These
   statements have not been evaluated by the Food and Drug Administration. This
   product is not intended to diagnose, treat, cure, or prevent any disease."
+  **Why this matters:** sea moss, like every dietary supplement, is not and
+  cannot be "FDA approved" — that status only applies to drugs. Supplements
+  are legally a separate category (DSHEA), and this disclaimer is the
+  required, compliant way to sell one. Never state or imply FDA approval
+  anywhere in ads or on the site — that itself would be a violation, worse
+  than any claim in §3. (FDA *food facility registration* and *cGMP
+  certification*, referenced in §12, are unrelated to "approval" — they
+  register/audit the manufacturer, not the product.)
 - **Don't list sea moss in Facebook/Instagram Shops.** Meta's commerce policy
   prohibits ingestible supplements as shop listings — run ads to your own
   website instead. A rejected catalog can drag down the whole commerce account.
