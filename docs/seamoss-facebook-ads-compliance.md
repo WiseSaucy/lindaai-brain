@@ -79,7 +79,13 @@ conditions, not the viewer's body:
   "beauty from within", "supports skin and hair from the inside" — keep it
   support-language, never treatment language
 - **Origin & quality:** "wildcrafted in St. Lucia", "small-batch", "no
-  additives, no gels from powder", "lab-tested for purity"
+  additives, no gels from powder", "lab-tested for purity" — **only use
+  "wildcrafted" (or any specific origin claim) if you can actually verify it
+  with your supplier.** It's a factual, checkable claim (wild-harvested vs.
+  farmed/pool-grown), not a soft wellness claim — FTC truth-in-advertising
+  rules require it to be true, and it's a well-known scrutiny point in this
+  niche specifically. Unverified, drop it and use "ocean-sourced" (if true)
+  or skip origin and lean on nutrition-facts/ritual angles instead.
 - **Ritual & taste:** recipes, smoothie content, how-to-use videos, texture
   shots, unboxings
 - **Brand story:** founder story, sourcing trips, community — this content
@@ -109,7 +115,8 @@ conditions, not the viewer's body:
 > moss, small-batch, nothing added. It's the easiest habit I've kept all year."
 > Headline: "Your new morning ritual"
 
-**2. Quality/origin angle**
+**2. Quality/origin angle** *(only use "wildcrafted"/sourcing specifics you've
+verified with your supplier — see §4)*
 > Primary text: "Not all sea moss is equal. Ours is wildcrafted in ocean water,
 > never pool-grown, lab-tested, and shipped fresh weekly. Taste the
 > difference real sourcing makes."
