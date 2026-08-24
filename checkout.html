@@ -175,7 +175,7 @@
     <div class="nav-links">
       <a href="index.html#tiers">Tiers</a>
       <a href="index.html#faq">FAQ</a>
-      <a href="mailto:support@send.lindaai-brain.com">Support</a>
+      <a href="mailto:support@lindaai-brain.com">Support</a>
       <div class="nav-dropdown">
         <a class="nav-dd-toggle" tabindex="0">Legal</a>
         <div class="nav-dd-menu">
@@ -225,7 +225,7 @@
 
       <p class="checkout-fineprint">
         <span id="fineprint-main">Pay securely through Paddle — your license key and custom-baked LindaAI zip are emailed to you within minutes of payment.</span><br>
-        Questions? <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a><br>
+        Questions? <a href="mailto:support@lindaai-brain.com">support@lindaai-brain.com</a><br>
         <span style="opacity:0.7;">Digital product · <a href="refund.html" style="color:inherit;">14-day money-back guarantee</a> · Pay once, own forever</span>
       </p>
     </div>
@@ -246,12 +246,12 @@
       <a href="index.html#tiers">Tiers</a>
       <a href="index.html#agents">Agents</a>
       <a href="index.html#faq">FAQ</a>
-      <a href="mailto:support@send.lindaai-brain.com">Support</a>
+      <a href="mailto:support@lindaai-brain.com">Support</a>
     </div>
     <div class="footer-legal">
       <p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="refund.html">Refund Policy</a></p>
       <p>© 2022-2026 Daniel Wise · LindaAI</p>
-      <p>LindaAI-Brain.com · <a href="mailto:support@send.lindaai-brain.com">support@send.lindaai-brain.com</a></p>
+      <p>LindaAI-Brain.com · <a href="mailto:support@lindaai-brain.com">support@lindaai-brain.com</a></p>
     </div>
   </div>
 </footer>
@@ -414,13 +414,13 @@ const TIERS = {
       `Please send me the Paddle payment link.\n\n` +
       `Name:\nBusiness:\nBest email for zip delivery:\n`
     );
-    btn.href = `mailto:support@send.lindaai-brain.com?subject=${subject}&body=${body}`;
+    btn.href = `mailto:support@lindaai-brain.com?subject=${subject}&body=${body}`;
     btn.textContent = `Email to Buy — ${tier.price}`;
     // This tier isn't on instant checkout yet — switch the copy to the email flow.
     const t1 = document.getElementById('trust-1');
     const fp = document.getElementById('fineprint-main');
     if (t1) t1.textContent = 'Secure checkout — email support to complete';
-    if (fp) fp.textContent = 'Email support@send.lindaai-brain.com with your tier choice and you’ll get a secure payment link, then your custom-baked LindaAI zip and license key arrive the moment payment clears.';
+    if (fp) fp.textContent = 'Email support@lindaai-brain.com with your tier choice and you’ll get a secure payment link, then your custom-baked LindaAI zip and license key arrive the moment payment clears.';
   }
 })();
 </script>
