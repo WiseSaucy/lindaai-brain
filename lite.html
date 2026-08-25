@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-RpbGUSmtphj3vrOdh0ueyMaq95t81aXs+TRiaIYbLns='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-yAPsC2kB83rnl1vJ5YCXYwztZ3i8veKed85ImuAX+vQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>Linda Lite — Free AI Deal Hunter for Real Estate | LindaAI</title>
 <meta name="description" content="Linda Lite: a free AI deal hunter for real estate. Bandit + 5 working skills — hunt deals, underwrite them, research any address, write seller outreach. $0 on a free ChatGPT account.">
 <meta property="og:title" content="Linda Lite — Free AI Deal Hunter for Real Estate">
 <meta property="og:description" content="🤠 Bandit rides free: hunt deals, underwrite them, research addresses, write outreach. $0 to start.">
 <meta property="og:image" content="https://lindaai-brain.com/assets/social-cover.png">
-<meta property="og:url" content="https://lindaai-brain.com/lite">
+<meta property="og:url" content="https://lindaai-brain.com/lite.html">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@
 </div>
 
 <div class="lite-upsell">
-  <p><strong>Like how Bandit rides?</strong> Full LindaAI brings the whole 17-agent crew, 50+ skills, and 8 industry packs, powered by Anthropic's Claude.</p>
+  <p><strong>Like how Bandit rides?</strong> Full LindaAI brings the whole 18-agent crew, 115 skills across 8 industry packs, powered by Anthropic's Claude.</p>
   <a href="index.html#trial" class="btn btn-primary">Try Full LindaAI Free for 30 Days</a>
 </div>
 
@@ -131,11 +131,11 @@ async function submitLite(e) {
     const data = await res.json();
     if (data.success) {
       msg.className = 'trial-msg success';
-      msg.innerHTML = '🤠 Yeeee Hawww! Check your inbox — your Linda Lite download link is riding to <strong>' + email.replace(/</g,'&lt;') + '</strong>. (Give it a minute, and peek in spam if it wanders.)';
+      msg.innerHTML = '🤠 Yeeee Hawww! Check your inbox — your Linda Lite download link is riding to <strong>' + email.replace(/[<>&"']/g,'') + '</strong>. (Give it a minute, and peek in spam if it wanders.)';
       btn.textContent = 'Sent ✓';
     } else {
       msg.className = 'trial-msg error';
-      msg.textContent = data.detail || 'Something went sideways — try again or email support@lindaai-brain.com.';
+      msg.textContent = (typeof data.detail === 'string' && data.detail) || 'Something went sideways — try again or email support@lindaai-brain.com.';
       btn.disabled = false;
       btn.textContent = 'Send Me Linda Lite →';
     }
