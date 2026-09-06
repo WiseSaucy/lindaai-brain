@@ -1,0 +1,432 @@
+{
+  "_comment": "Industry library for the Colorado no-website campaign. `match` regexes run against the SOS entity name / trade name (case-insensitive). `ticket` is the typical job value tier used by score_leads.py (3 = high, 1 = low). Copy avoids credential claims (licensed, insured, years in business, awards) because a preview site must not assert things we have not verified — the auditor flags those words.",
+  "industries": {
+    "plumbing": {
+      "label": "Plumbing",
+      "match": ["plumb", "rooter", "drain", "sewer", "water heater"],
+      "ticket": 3,
+      "tagline": "Drains, water heaters, repipes, and the leaks you can't find.",
+      "hero": "Plumbing help for {city} homes and businesses",
+      "cta": "Request a quote",
+      "services": [
+        ["Drain cleaning", "Slow sinks, backed-up tubs, and main-line clogs cleared with the right tool for the job."],
+        ["Water heaters", "Repair, replacement, and tank-to-tankless conversions sized for your household."],
+        ["Leak detection & repair", "Find the source before it finds your drywall, then fix it properly."],
+        ["Fixture installation", "Faucets, toilets, disposals, and shower valves installed and tested."],
+        ["Sewer line service", "Camera inspection, spot repair, and full replacement options explained in plain English."],
+        ["Winterization", "Hose bibs, exposed lines, and vacant properties protected before the first Front Range freeze."]
+      ],
+      "faq": [
+        ["How do I get a quote?", "Call or text with a short description of the problem and a photo if you have one. We'll confirm a visit time and give pricing before any work begins."],
+        ["Do you handle emergencies?", "Contact us and we'll tell you honestly how soon we can be there. If it can't wait, we'll say so and point you to a shutoff you can use in the meantime."],
+        ["Which areas do you serve?", "{city} and the surrounding communities. If you're outside that area, ask; we'll let you know."],
+        ["Will you explain the options before doing the work?", "Yes. You'll get the repair-versus-replace picture, the price for each, and our recommendation, then you decide."],
+        ["How should I prepare for the visit?", "Clear a path to the fixture or utility area, and know where your main water shutoff is. That's it."]
+      ],
+      "palette": {"primary": "#12304a", "accent": "#b8642a", "ink": "#1b1f24", "paper": "#f6f3ee", "muted": "#6b7078", "panel": "#ebe6de"},
+      "fonts": {"display": "Bricolage Grotesque", "body": "Source Sans 3", "display_weights": "600;800", "body_weights": "400;600"}
+    },
+    "hvac": {
+      "label": "Heating & Cooling",
+      "match": ["hvac", "heating", "cooling", "furnace", "air condition", "a/c", "mechanical"],
+      "ticket": 3,
+      "tagline": "Furnaces, AC, and indoor air that feels right in every season.",
+      "hero": "Heating and cooling service in {city}",
+      "cta": "Schedule service",
+      "services": [
+        ["Furnace repair & tune-ups", "Diagnostics, cleaning, and repairs so the heat is there on the first cold night."],
+        ["Air conditioning", "Repair, replacement, and efficiency upgrades for Colorado summers."],
+        ["New system installation", "Right-sized equipment, clean install, and a walkthrough of how to run it."],
+        ["Thermostats & controls", "Smart thermostats installed and paired with your system."],
+        ["Indoor air quality", "Filtration, humidification, and duct cleaning options explained without the upsell."],
+        ["Seasonal maintenance", "Spring and fall checks that catch small problems while they're still small."]
+      ],
+      "faq": [
+        ["How quickly can you come out?", "Call or text and we'll give you a real window. During the first cold snap and first heat wave, expect it to be busier."],
+        ["Should I repair or replace?", "We'll show you the age, condition, and repair cost side by side with a replacement estimate, and tell you what we'd do in your house."],
+        ["Do you offer maintenance plans?", "Ask us. If we offer one, you'll see exactly what's included and what it costs before you decide."],
+        ["What areas do you serve?", "{city} and nearby communities. If you're on the edge of the map, reach out and we'll confirm."],
+        ["What size system do I need?", "It depends on your square footage, insulation, windows, and sun exposure. We measure rather than guess."]
+      ],
+      "palette": {"primary": "#263544", "accent": "#e0592b", "ink": "#1d242c", "paper": "#f5f7fa", "muted": "#66717f", "panel": "#e8edf3"},
+      "fonts": {"display": "Archivo", "body": "Public Sans", "display_weights": "600;800", "body_weights": "400;600"}
+    },
+    "electrical": {
+      "label": "Electrical",
+      "match": ["electric", "wiring", "lighting"],
+      "ticket": 3,
+      "tagline": "Panels, outlets, lighting, and EV chargers done right the first time.",
+      "hero": "Electrical work for {city} homes and shops",
+      "cta": "Get an estimate",
+      "services": [
+        ["Panel upgrades", "More capacity for today's kitchens, hot tubs, and EV chargers."],
+        ["EV charger installation", "Level 2 chargers installed where you park, with the circuit to back it."],
+        ["Lighting", "Interior, exterior, and landscape lighting design and installation."],
+        ["Outlets & switches", "Additions, GFCI updates, USB outlets, and troubleshooting dead circuits."],
+        ["Ceiling fans & fixtures", "Mounted, balanced, and wired to the switch you actually want."],
+        ["Troubleshooting", "Tripping breakers, flickering lights, and warm outlets diagnosed safely."]
+      ],
+      "faq": [
+        ["Do I need a permit?", "Many electrical jobs in Colorado do. We'll tell you which ones and handle the paperwork where we can."],
+        ["How is pricing set?", "Small jobs are usually flat-rate; larger projects get a written estimate after a look at the panel and the site."],
+        ["Can you add a circuit for my EV?", "Usually yes. We check your panel's spare capacity first and tell you if an upgrade is needed."],
+        ["What areas do you cover?", "{city} and the surrounding area. Ask if you're unsure."],
+        ["Is my old wiring a problem?", "Not always. We inspect, explain what we find, and only recommend replacing what needs it."]
+      ],
+      "palette": {"primary": "#23262b", "accent": "#f2b02e", "ink": "#1c1e22", "paper": "#fbfaf6", "muted": "#6a6c70", "panel": "#efede6"},
+      "fonts": {"display": "Oswald", "body": "Karla", "display_weights": "500;700", "body_weights": "400;700"}
+    },
+    "roofing": {
+      "label": "Roofing",
+      "match": ["roof", "gutter", "shingle"],
+      "ticket": 3,
+      "tagline": "Hail-season inspections, repairs, and full replacements.",
+      "hero": "Roofing and gutters in {city}",
+      "cta": "Book an inspection",
+      "services": [
+        ["Roof inspections", "Photo documentation of what's up there, especially after hail."],
+        ["Repairs", "Missing shingles, flashing, vents, and leaks fixed before the next storm."],
+        ["Full replacement", "Tear-off, deck check, underlayment, and new roofing installed cleanly."],
+        ["Gutters & downspouts", "Seamless gutters, guards, and drainage that moves water away from the foundation."],
+        ["Insurance claim support", "Meet the adjuster, document the damage, and explain the scope."],
+        ["Emergency tarping", "Temporary protection when a storm opens up your roof."]
+      ],
+      "faq": [
+        ["How do I know if I have hail damage?", "You often can't from the ground. Ask for an inspection; you'll get photos and a straight answer."],
+        ["Do you work with insurance?", "Ask us about your specific claim. We can document damage and walk through the scope with you."],
+        ["How long does a replacement take?", "Most homes take one to three days depending on size, pitch, and weather."],
+        ["What areas do you serve?", "{city} and the surrounding communities."],
+        ["Can you just fix a small leak?", "Yes. Not every roof needs replacing, and we'll say so when a repair is the right call."]
+      ],
+      "palette": {"primary": "#3b3f45", "accent": "#8c3b2b", "ink": "#24262a", "paper": "#f4f1ec", "muted": "#6f6a64", "panel": "#e9e4dc"},
+      "fonts": {"display": "Barlow Condensed", "body": "Barlow", "display_weights": "600;800", "body_weights": "400;600"}
+    },
+    "landscaping": {
+      "label": "Landscaping & Lawn Care",
+      "match": ["landscap", "lawn", "yard", "turf", "sod", "sprinkler", "irrigation", "snow", "mow"],
+      "ticket": 2,
+      "tagline": "Mowing, beds, sprinklers, and snow, kept up all year.",
+      "hero": "Lawn care and landscaping in {city}",
+      "cta": "Get a quote",
+      "services": [
+        ["Weekly mowing & edging", "Consistent cuts on a schedule you can count on."],
+        ["Spring & fall cleanups", "Leaves, beds, and pruning handled before and after the season."],
+        ["Sprinkler service", "Startups, blowouts, head replacement, and controller programming."],
+        ["Planting & beds", "Xeric and traditional plantings suited to the Front Range climate."],
+        ["Mulch, rock & sod", "Delivered and installed, with the prep work that makes it last."],
+        ["Snow removal", "Driveways, walks, and small lots cleared for the season."]
+      ],
+      "faq": [
+        ["How much is weekly mowing?", "It depends on lot size, terrain, and how often you want service. Send your address and we'll quote it."],
+        ["Do you do one-time cleanups?", "Yes. Spring and fall cleanups are available without a recurring contract."],
+        ["When should I schedule a sprinkler blowout?", "Before the first hard freeze, usually early to mid October along the Front Range. Book early."],
+        ["What areas do you serve?", "{city} and nearby neighborhoods."],
+        ["Do you offer snow removal?", "Ask about seasonal availability and pricing for your driveway or lot."]
+      ],
+      "palette": {"primary": "#2f5d3a", "accent": "#d9a441", "ink": "#1f2a1c", "paper": "#f7f6f0", "muted": "#66705f", "panel": "#e9ecdf"},
+      "fonts": {"display": "Fraunces", "body": "Nunito Sans", "display_weights": "600;800", "body_weights": "400;700"}
+    },
+    "cleaning": {
+      "label": "Cleaning Services",
+      "match": ["clean", "maid", "janitor", "housekeep"],
+      "ticket": 2,
+      "tagline": "Recurring, deep, and move-out cleans you can schedule in a text.",
+      "hero": "House and office cleaning in {city}",
+      "cta": "Book a clean",
+      "services": [
+        ["Recurring cleaning", "Weekly, biweekly, or monthly visits with a consistent checklist."],
+        ["Deep cleaning", "Baseboards, inside appliances, grout, and the spots regular visits skip."],
+        ["Move-in / move-out", "Empty-home cleans built for deposits and closing dates."],
+        ["Office cleaning", "After-hours service for small offices and studios."],
+        ["Post-construction", "Dust, debris, and window film removed after a remodel."],
+        ["Add-ons", "Inside fridge, oven, windows, and laundry on request."]
+      ],
+      "faq": [
+        ["How is pricing set?", "By home size, condition, and frequency. Share bedrooms, bathrooms, and square footage for a quote."],
+        ["Do I need to be home?", "No. Many clients provide a code or key arrangement. Tell us what you're comfortable with."],
+        ["Do you bring supplies?", "Ask us. If you prefer specific products for allergies or pets, let us know."],
+        ["What areas do you serve?", "{city} and the surrounding area."],
+        ["Can I skip or reschedule?", "Yes, with notice. We'll share the exact policy when you book."]
+      ],
+      "palette": {"primary": "#1f8a9f", "accent": "#f0a35b", "ink": "#1e2b30", "paper": "#ffffff", "muted": "#5f7378", "panel": "#e6f3f5"},
+      "fonts": {"display": "Quicksand", "body": "Mulish", "display_weights": "600;700", "body_weights": "400;700"}
+    },
+    "painting": {
+      "label": "Painting",
+      "match": ["paint", "drywall", "stain"],
+      "ticket": 2,
+      "tagline": "Interior and exterior painting with clean lines and cleaner job sites.",
+      "hero": "Painting services in {city}",
+      "cta": "Request an estimate",
+      "services": [
+        ["Interior painting", "Walls, ceilings, trim, and doors with proper prep and masking."],
+        ["Exterior painting", "Siding, stucco, and trim finished to handle Colorado sun and hail."],
+        ["Cabinet refinishing", "Sprayed finishes that make a kitchen look new without replacing it."],
+        ["Deck & fence staining", "Cleaned, brightened, and sealed."],
+        ["Drywall repair", "Patches, texture matching, and water-damage repair before paint."],
+        ["Color consultation", "Samples on your walls, not just on a chip."]
+      ],
+      "faq": [
+        ["How do you price a job?", "By surface area, prep needed, and finish. You'll get a written estimate after a walkthrough or good photos."],
+        ["Do you move furniture?", "Ask us. Typically we move and cover larger pieces and ask that small items be cleared."],
+        ["What paint do you use?", "We'll recommend a product for your surfaces and budget and tell you exactly what's going on the wall."],
+        ["What areas do you serve?", "{city} and nearby communities."],
+        ["How long does an exterior take?", "Most single-family exteriors take two to five days, weather permitting."]
+      ],
+      "palette": {"primary": "#5b3a6e", "accent": "#d89b2c", "ink": "#221c26", "paper": "#f8f5f1", "muted": "#736a78", "panel": "#efe8f0"},
+      "fonts": {"display": "DM Serif Display", "body": "DM Sans", "display_weights": "400", "body_weights": "400;600"}
+    },
+    "remodeling": {
+      "label": "Remodeling & General Contracting",
+      "match": ["remodel", "construct", "contract", "builder", "renovat", "carpentr", "tile", "flooring", "kitchen", "bath", "deck", "fenc", "concrete"],
+      "ticket": 3,
+      "tagline": "Kitchens, baths, basements, and additions managed start to finish.",
+      "hero": "Remodeling and construction in {city}",
+      "cta": "Start a project",
+      "services": [
+        ["Kitchen remodels", "Layout, cabinets, counters, and lighting coordinated under one schedule."],
+        ["Bathroom remodels", "Tile, plumbing fixtures, vanities, and ventilation done in order."],
+        ["Basement finishing", "Egress, framing, electrical, and finishes to code."],
+        ["Decks & outdoor living", "Composite and wood decks, pergolas, and railings."],
+        ["Flooring & tile", "Hardwood, LVP, and tile installed level and tight."],
+        ["Repairs & small projects", "The punch list nobody else wants to schedule."]
+      ],
+      "faq": [
+        ["How do estimates work?", "A walkthrough, then a written scope and price. Changes along the way are priced in writing before they happen."],
+        ["Do you pull permits?", "Where required, yes. We'll tell you which parts of your project need one."],
+        ["How long will my project take?", "Depends on scope and material lead times. You'll get a schedule up front and updates as it moves."],
+        ["What areas do you serve?", "{city} and the surrounding area."],
+        ["Can I live in the house during the remodel?", "Usually, with planning. We'll talk through dust control, water shutoffs, and daily start and stop times."]
+      ],
+      "palette": {"primary": "#4a3527", "accent": "#b98a3c", "ink": "#211b16", "paper": "#f6f2ec", "muted": "#736659", "panel": "#ebe4da"},
+      "fonts": {"display": "Playfair Display", "body": "Work Sans", "display_weights": "600;700", "body_weights": "400;600"}
+    },
+    "auto": {
+      "label": "Auto Services",
+      "match": ["auto", "automotive", "detail", "tire", "mechanic", "car wash", "towing", "collision", "body shop", "wrap", "tint"],
+      "ticket": 2,
+      "tagline": "Detailing, maintenance, and repairs that keep your vehicle looking and running right.",
+      "hero": "Auto services in {city}",
+      "cta": "Book an appointment",
+      "services": [
+        ["Full detailing", "Interior and exterior, from carpet extraction to paint decontamination."],
+        ["Paint correction", "Swirls and light scratches polished out, then protected."],
+        ["Ceramic coating", "Long-term protection with easier washes and deeper gloss."],
+        ["Interior restoration", "Stains, odors, leather conditioning, and headliner care."],
+        ["Fleet & dealer services", "Recurring packages for work trucks and lots."],
+        ["Mobile service", "We come to your driveway or office parking lot."]
+      ],
+      "faq": [
+        ["How long does a full detail take?", "Typically three to six hours depending on vehicle size and condition."],
+        ["Do you come to me?", "Ask about mobile availability in your area. We need access to the vehicle and, ideally, a water spigot and outlet."],
+        ["What's the difference between wax and ceramic coating?", "Wax lasts weeks; a coating lasts years. We'll explain what makes sense for how you use the vehicle."],
+        ["What areas do you serve?", "{city} and the surrounding area."],
+        ["Can you remove pet hair and odors?", "Yes, with the right process. Tell us about it when you book so we allow time."]
+      ],
+      "palette": {"primary": "#1c1e22", "accent": "#19b3c4", "ink": "#16181c", "paper": "#f3f5f7", "muted": "#606870", "panel": "#e4e9ee"},
+      "fonts": {"display": "Chakra Petch", "body": "IBM Plex Sans", "display_weights": "600;700", "body_weights": "400;600"}
+    },
+    "salon": {
+      "label": "Salon & Barber",
+      "match": ["salon", "barber", "hair", "nails", "lash", "brow", "beauty", "spa", "esthetic", "skin"],
+      "ticket": 1,
+      "tagline": "Cuts, color, and care by appointment.",
+      "hero": "{name} in {city}",
+      "cta": "Book an appointment",
+      "services": [
+        ["Haircuts", "Consultation first, then a cut that works with how you actually style it."],
+        ["Color", "Balayage, highlights, gray coverage, and color correction."],
+        ["Beard & grooming", "Line-ups, hot towel shaves, and beard shaping."],
+        ["Treatments", "Conditioning, smoothing, and scalp care."],
+        ["Styling", "Blowouts and event styling."],
+        ["Kids & family", "Ask about family scheduling."]
+      ],
+      "faq": [
+        ["How do I book?", "Call, text, or message us with the service you want and a couple of times that work."],
+        ["Do you take walk-ins?", "Ask. Availability varies by day; booking ahead is the surest way to get your time."],
+        ["How should I prepare for a color appointment?", "Come with clean, dry hair unless we tell you otherwise, and bring reference photos."],
+        ["What areas are you in?", "{city}. Address and parking details are on the contact page."],
+        ["What is your cancellation policy?", "We'll share it when you book. Please give as much notice as you can."]
+      ],
+      "palette": {"primary": "#171412", "accent": "#b76e79", "ink": "#1a1615", "paper": "#f9f5f2", "muted": "#7a6f6c", "panel": "#f1e9e5"},
+      "fonts": {"display": "Cormorant Garamond", "body": "Jost", "display_weights": "600;700", "body_weights": "400;500"}
+    },
+    "food": {
+      "label": "Restaurant & Food",
+      "match": ["restaurant", "cafe", "café", "coffee", "taco", "grill", "bbq", "barbecue", "bakery", "catering", "food truck", "kitchen", "pizza", "burger", "bistro", "cantina", "taqueria"],
+      "ticket": 1,
+      "tagline": "Menu, hours, and how to order, all in one place.",
+      "hero": "{name}",
+      "cta": "See the menu",
+      "services": [
+        ["Menu", "Current dishes and prices, updated when the kitchen changes them."],
+        ["Hours & location", "Where to find us and when we're open."],
+        ["Catering", "Trays and packages for offices, parties, and events."],
+        ["Takeout & pickup", "Call ahead and it's ready when you arrive."],
+        ["Private events", "Ask about hosting groups."],
+        ["Gift cards", "Available in person."]
+      ],
+      "faq": [
+        ["What are your hours?", "See the contact page for current hours. Holiday hours may differ."],
+        ["Do you cater?", "Ask us about catering menus and lead times."],
+        ["Do you have vegetarian or gluten-free options?", "Ask our staff; we'll tell you exactly what's in each dish."],
+        ["Where do I park?", "Parking details are on the contact page."],
+        ["Can I place a large order?", "Yes, with notice. Call ahead for anything over a few plates."]
+      ],
+      "palette": {"primary": "#b5271b", "accent": "#e0a71d", "ink": "#2a1a12", "paper": "#fff8ee", "muted": "#7d6a5c", "panel": "#f8ead6"},
+      "fonts": {"display": "Rozha One", "body": "Hind", "display_weights": "400", "body_weights": "400;600"}
+    },
+    "fitness": {
+      "label": "Fitness & Wellness",
+      "match": ["fitness", "gym", "yoga", "pilates", "crossfit", "training", "trainer", "massage", "wellness", "chiro", "physical therapy"],
+      "ticket": 1,
+      "tagline": "Classes, sessions, and a schedule you can actually find.",
+      "hero": "{name} in {city}",
+      "cta": "Book a session",
+      "services": [
+        ["Personal training", "One-on-one sessions built around your goals and schedule."],
+        ["Group classes", "Small classes with coaching, not crowds."],
+        ["Programs", "Multi-week plans with check-ins."],
+        ["Assessments", "A starting point measured, not guessed."],
+        ["Recovery", "Mobility and recovery sessions."],
+        ["Memberships", "Ask about options and pricing."]
+      ],
+      "faq": [
+        ["How do I start?", "Reach out and book an intro session. We'll talk goals, history, and schedule."],
+        ["Do I need experience?", "No. Everything scales to where you are today."],
+        ["What should I bring?", "Comfortable clothes, water, and any medical notes we should know about."],
+        ["Where are you located?", "{city}. Address and parking are on the contact page."],
+        ["What are your cancellation terms?", "We'll share them when you book."]
+      ],
+      "palette": {"primary": "#101418", "accent": "#b5e33d", "ink": "#12161a", "paper": "#f4f6f3", "muted": "#5e6660", "panel": "#e6eae3"},
+      "fonts": {"display": "Bebas Neue", "body": "Manrope", "display_weights": "400", "body_weights": "400;700"}
+    },
+    "pets": {
+      "label": "Pet Services",
+      "match": ["pet", "dog", "groom", "kennel", "canine", "paws", "veterinar"],
+      "ticket": 1,
+      "tagline": "Grooming, walking, and boarding from people who like your dog as much as you do.",
+      "hero": "Pet care in {city}",
+      "cta": "Book a visit",
+      "services": [
+        ["Grooming", "Bath, brush, trim, nails, and ears."],
+        ["Dog walking", "Scheduled walks with a report after each one."],
+        ["Boarding & daycare", "Ask about availability and what to bring."],
+        ["Nail trims", "Quick visits between full grooms."],
+        ["Puppy intros", "Gentle first grooming experiences."],
+        ["Special needs", "Senior and anxious pets handled with extra time."]
+      ],
+      "faq": [
+        ["How do I book?", "Call or text with your pet's breed, size, and what you need."],
+        ["Do you require vaccinations?", "Ask us about requirements before your first visit."],
+        ["How long does grooming take?", "Usually two to four hours depending on size and coat."],
+        ["What areas do you serve?", "{city} and nearby."],
+        ["My dog is nervous. Can you help?", "Tell us in advance and we'll plan a slower, calmer visit."]
+      ],
+      "palette": {"primary": "#6a4a2f", "accent": "#6db3d8", "ink": "#2a2019", "paper": "#fdf9f3", "muted": "#7a6d62", "panel": "#f3ebdf"},
+      "fonts": {"display": "Baloo 2", "body": "Nunito", "display_weights": "700;800", "body_weights": "400;700"}
+    },
+    "moving": {
+      "label": "Moving & Junk Removal",
+      "match": ["moving", "movers", "junk", "haul", "removal", "delivery", "courier", "transport", "logistics", "trucking"],
+      "ticket": 2,
+      "tagline": "Local moves, hauling, and cleanouts scheduled around your day.",
+      "hero": "Moving and hauling in {city}",
+      "cta": "Get a quote",
+      "services": [
+        ["Local moving", "Apartments, homes, and offices moved with padding and care."],
+        ["Junk removal", "Furniture, appliances, and debris hauled and sorted for donation or recycling."],
+        ["Labor only", "Loading and unloading your rental truck or container."],
+        ["Estate & garage cleanouts", "Whole-space cleanouts done in a day."],
+        ["Single-item pickup", "That one couch or fridge."],
+        ["Small deliveries", "Store pickups delivered to your door."]
+      ],
+      "faq": [
+        ["How is a move priced?", "Usually hourly with a minimum, based on crew size and truck. Send details and we'll quote it."],
+        ["How far ahead should I book?", "As early as you can, especially at month-end."],
+        ["Do you take appliances and mattresses?", "Ask. Most items are fine; a few have disposal fees."],
+        ["What areas do you serve?", "{city} and the metro area."],
+        ["Are you available on weekends?", "Ask about availability; weekends fill fast."]
+      ],
+      "palette": {"primary": "#1d2f5b", "accent": "#f28c28", "ink": "#182034", "paper": "#f5f6f8", "muted": "#66708a", "panel": "#e7eaf1"},
+      "fonts": {"display": "Anton", "body": "Roboto", "display_weights": "400", "body_weights": "400;700"}
+    },
+    "handyman": {
+      "label": "Handyman & Property Services",
+      "match": ["handyman", "handy", "repair", "maintenance", "property service", "home service", "pressure wash", "power wash", "window", "garage door", "locksmith", "welding", "fabricat"],
+      "ticket": 2,
+      "tagline": "The to-do list, done.",
+      "hero": "Handyman services in {city}",
+      "cta": "Send your list",
+      "services": [
+        ["Repairs", "Doors, drywall, trim, caulk, and the drawer that never closed right."],
+        ["Assembly & mounting", "Furniture, TVs, shelves, and curtain rods, level and secure."],
+        ["Fixture swaps", "Faucets, light fixtures, fans, and toilets."],
+        ["Exterior touch-ups", "Fence boards, gates, deck boards, and pressure washing."],
+        ["Rental turnovers", "Punch lists between tenants."],
+        ["Small projects", "If it takes a day or less, it's probably on the list."]
+      ],
+      "faq": [
+        ["How do you charge?", "Typically hourly with a minimum, or a flat price for defined projects. Send your list and photos for a quote."],
+        ["Can you do several small things in one visit?", "Yes, that's the best way to use the time."],
+        ["Do you supply materials?", "Ask. We can pick up materials or work with what you've bought."],
+        ["What areas do you serve?", "{city} and surrounding communities."],
+        ["Do you do work that needs a permit?", "We'll tell you honestly when a job needs a licensed trade and help you find one."]
+      ],
+      "palette": {"primary": "#2e4a3c", "accent": "#e0b03a", "ink": "#1c2621", "paper": "#f7f5ef", "muted": "#6a7068", "panel": "#ebe9df"},
+      "fonts": {"display": "Rubik", "body": "Rubik", "display_weights": "700;800", "body_weights": "400;500"}
+    },
+    "tree": {
+      "label": "Tree Service",
+      "match": ["tree", "arbor", "stump"],
+      "ticket": 3,
+      "tagline": "Trimming, removals, and stump grinding done safely.",
+      "hero": "Tree service in {city}",
+      "cta": "Request an estimate",
+      "services": [
+        ["Trimming & pruning", "Structure, clearance, and health cuts made at the right time of year."],
+        ["Tree removal", "Controlled removals near houses, lines, and fences."],
+        ["Stump grinding", "Stumps ground below grade and backfilled."],
+        ["Storm damage", "Hanging limbs and downed trees cleared."],
+        ["Emerald ash borer", "Assessment and options for ash trees."],
+        ["Debris hauling", "Everything chipped and hauled."]
+      ],
+      "faq": [
+        ["How do estimates work?", "Free on-site look in most cases. You'll get a written price by tree or by job."],
+        ["When is the best time to prune?", "Depends on the species. We'll tell you when scheduling."],
+        ["Do you handle trees near power lines?", "Ask. Some line-adjacent work must go through the utility."],
+        ["What areas do you serve?", "{city} and nearby."],
+        ["Do you haul away the wood?", "Yes by default. If you want firewood or chips left behind, say so."]
+      ],
+      "palette": {"primary": "#4b3621", "accent": "#5f8f3e", "ink": "#1f1a14", "paper": "#f6f4ee", "muted": "#736a5e", "panel": "#ebe7dd"},
+      "fonts": {"display": "Alfa Slab One", "body": "Lato", "display_weights": "400", "body_weights": "400;700"}
+    },
+    "generic": {
+      "label": "Local Business",
+      "match": [],
+      "ticket": 1,
+      "tagline": "What we do, where we are, and how to reach us.",
+      "hero": "{name} in {city}",
+      "cta": "Contact us",
+      "services": [
+        ["What we offer", "A clear list of services with plain-language descriptions."],
+        ["How it works", "Reach out, we'll confirm details, then schedule."],
+        ["Pricing", "Ask for a quote. We'll explain what affects the price."],
+        ["Service area", "{city} and the surrounding area."],
+        ["Hours", "Current hours are on the contact page."],
+        ["Questions", "The FAQ covers the common ones; call or text for the rest."]
+      ],
+      "faq": [
+        ["How do I get in touch?", "Call, text, or email. Details are on the contact page."],
+        ["What areas do you serve?", "{city} and nearby communities."],
+        ["How do I get a quote?", "Describe what you need and we'll follow up with pricing."],
+        ["What are your hours?", "See the contact page."],
+        ["Do you take cards?", "Ask us about accepted payment methods."]
+      ],
+      "palette": {"primary": "#2c3e6b", "accent": "#e2704a", "ink": "#1c2233", "paper": "#f7f7f5", "muted": "#6a7185", "panel": "#e9eaee"},
+      "fonts": {"display": "Outfit", "body": "Nunito Sans", "display_weights": "600;700", "body_weights": "400;700"}
+    }
+  },
+  "exclude_match": ["holdings", "investments", "capital", "trust", "properties llc", "realty", "real estate", "rentals", "ventures", "enterprises llc", "consulting", "software", "technolog", "solutions", "partners", "fund", "foundation", "church", "ministr", "association", "hoa", "homeowners", "insurance", "mortgage", "lending", "law", "attorney", "legal", "cpa", "accounting", "tax", "medical", "clinic", "dental", "pharma", "health", "hospice", "home care", "child care", "daycare", "preschool", "school", "academy", "cannabis", "dispensary", "marijuana", "hemp", "cbd", "vape", "smoke", "liquor", "firearm", "gun", "ammo", "pawn", "bail", "crypto", "forex", "trading llc", "oil", "gas", "mining", "energy", "series"],
+  "target_cities": ["Denver", "Aurora", "Lakewood", "Arvada", "Westminster", "Thornton", "Centennial", "Littleton", "Englewood", "Wheat Ridge", "Golden", "Broomfield", "Northglenn", "Commerce City", "Brighton", "Parker", "Castle Rock", "Highlands Ranch", "Lone Tree", "Colorado Springs", "Fountain", "Monument", "Pueblo", "Fort Collins", "Loveland", "Greeley", "Windsor", "Longmont", "Boulder", "Louisville", "Lafayette", "Erie", "Grand Junction", "Durango", "Montrose", "Canon City", "Sterling", "Fort Morgan"]
+}

@@ -1,0 +1,26 @@
+{
+  "_comment": "Who is making the offer. Every field here is used in demo-site footers, disclaimers, and email templates. Fill POSTAL_ADDRESS before any email goes out — CAN-SPAM requires a valid physical postal address in every commercial email, and audit_site.py fails the email templates until it is set.",
+  "legal_name": "LindaAI Brain LLC",
+  "offer_name": "LindaAI Sites",
+  "state_of_formation": "Colorado",
+  "contact_email": "support@lindaai-brain.com",
+  "outreach_from_name": "Daniel at LindaAI",
+  "outreach_reply_to": "support@lindaai-brain.com",
+  "website": "https://lindaai-brain.com",
+  "postal_address": "POSTAL_ADDRESS",
+  "preview_base_url": "https://lindaai-brain.com/sites",
+  "pilot": {
+    "target_pilot_deals": 3,
+    "setup_fee_usd": 497,
+    "monthly_care_usd": 49,
+    "one_time_transfer_usd": 997,
+    "domain_included_first_year": true
+  },
+  "sending": {
+    "max_new_contacts_per_day": 25,
+    "min_days_between_touches": 4,
+    "max_touches": 3,
+    "quiet_hours_local": ["20:00", "08:00"],
+    "send_days": ["Tue", "Wed", "Thu"]
+  }
+}

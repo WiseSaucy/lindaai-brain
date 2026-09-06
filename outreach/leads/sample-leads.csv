@@ -1,0 +1,4 @@
+entity_id,legal_name,name,industry,entity_type,status,form_date,address1,address2,city,state,zip,phone,email,has_website,website_url,review_count,sample,hours
+SAMPLE-0001,FRONT RANGE ROOTER & PLUMBING LLC,Front Range Rooter & Plumbing,plumbing,Limited Liability Company,Good Standing,2024-03-12,7410 Ralston Rd,,Arvada,CO,80002,(303) 555-0142,hello@example.com,no,,14,true,"Mon–Fri 7am–6pm; Sat 8am–2pm; Sun closed"
+SAMPLE-0002,MILE HIGH LAWN & SNOW LLC,Mile High Lawn & Snow,landscaping,Limited Liability Company,Good Standing,2022-09-30,1550 S Chambers Rd,,Aurora,CO,80017,(720) 555-0187,hello@example.com,no,,31,true,"Mon–Sat 7am–7pm; Sun closed"
+SAMPLE-0003,PIKES PEAK MOBILE DETAILING LLC,Pikes Peak Mobile Detailing,auto,Limited Liability Company,Good Standing,2023-06-05,2320 E Platte Ave,,Colorado Springs,CO,80909,(719) 555-0119,hello@example.com,no,,22,true,"Mon–Sat 8am–6pm by appointment; Sun closed"

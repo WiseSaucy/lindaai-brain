@@ -1,0 +1,8 @@
+# outreach pipeline working data — never commit lead lists to this public repo
+outreach/leads/0*_*.csv
+outreach/leads/build_queue.json
+outreach/leads/suppression.csv
+outreach/leads/handoffs.csv
+outreach/reports/*.json
+__pycache__/
+*.pyc
