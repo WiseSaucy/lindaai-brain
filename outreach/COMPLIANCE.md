@@ -34,12 +34,21 @@ human only, never to numbers on the National Do Not Call list, and never before 
   writing.** Registering "theirbusiness.com" on spec is textbook bad-faith registration.
 - Previews live under a domain we own: `lindaai-brain.com/sites/<slug>/` (or a neutral
   `previews.<ourdomain>` subdomain). Never on a look-alike domain.
-- At signing, the domain is registered **in the client's name** (registrant = their business,
-  their email as account owner) through a registrar that supports easy account moves
-  (Cloudflare Registrar, Porkbun, Namecheap). If we must buy it first for speed, we initiate a
-  registrar "push"/account change to the client within 7 days and never charge markup on it.
-- Handoff = transfer of registrar account or domain push + DNS + hosting login + source zip.
-  Document it in `leads/handoffs.csv`.
+- Registrar is **Namecheap**. At signing, the domain is registered with the client's business as
+  registrant. Two ways, in order of preference:
+  1. Client creates a free Namecheap account (2 minutes) and we register the domain there, or
+     they register it themselves and share DNS access.
+  2. We register it in the LindaAI Namecheap account and use **Namecheap → Domain List → Manage
+     → Sharing & Transfer → "Change Ownership" (push)** to move it to the client's Namecheap
+     username. A push is free, instant, and is not a registrar transfer, so the ICANN 60-day
+     lock does not apply. Do it within 7 days of registration; never charge markup on the domain.
+- Never a registrar-to-registrar transfer at handoff (60-day lock, auth codes, 5–7 day wait).
+  If a client later wants to move away from Namecheap, that is their call and their process.
+- Handoff = domain pushed to the client's Namecheap account + DNS pointed at their hosting +
+  hosting login + source zip. Record it in `leads/handoffs.csv`.
+- Namecheap API automation (optional, Phase 5): requires API access enabled on the account
+  ($50 balance or 20+ domains), the office Mac's public IP whitelisted, and `NAMECHEAP_API_USER`
+  / `NAMECHEAP_API_KEY` set on the office machine only. The API is blocked from cloud sessions.
 
 ## 5. Takedown SLA
 Any of: "remove", "stop", "unsubscribe", "not interested", "who authorized this", a lawyer's

@@ -69,8 +69,9 @@ office Mac (or after the allowlist is widened). A weekly Routine is scheduled to
   preview costs ~$0.60 each and has no CAN-SPAM footprint).
 
 ## What "transfer" means here
-1. Client signs, pays. 2. Domain registered in **their** name (or pushed to their registrar
-account within 7 days). 3. Site rebuilt with `--mode final` (banner off, indexable, JSON-LD,
+1. Client signs, pays. 2. Domain registered at **Namecheap** in **their** name, or registered in our
+Namecheap account and pushed to their Namecheap username ("Change Ownership", free, instant, no
+60-day lock) within 7 days. 3. Site rebuilt with `--mode final` (banner off, indexable, JSON-LD,
 contact form), deployed to their domain on Cloudflare Pages/Netlify under an account they own.
 4. Logins, source zip, and a one-page "how to change things" handed over. 5. Care plan clients get
 edits through the support inbox; one-time clients get 30 days of fixes.
