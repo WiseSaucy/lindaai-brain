@@ -1,7 +1,6 @@
 name: site-check
 on:
-  push:
-    branches: ["claude/lindaai-brain-issue-vfnk4o"]
+  workflow_dispatch:
 jobs:
   cert-probe:
     runs-on: ubuntu-latest
