@@ -1,5 +1,5 @@
 {
-  "_comment": "Customer skill-name map used by the site's command grid.",
+  "_comment": "Customer skill-name map for the pitch deck command grid. Derived from the current tier build: only skills that ship in a tier zip AND have an avatar on the grid.",
   "customer": {
     "morning-briefing": "linda-brief",
     "email-drafter": "linda-mail",
@@ -39,9 +39,7 @@
     "airbnb-underwriting": "linda-airbnb",
     "coliving-underwriting": "linda-coliving",
     "voice-to-contract": "linda-voicedeal",
-    "license-manager": "linda-licenses",
     "update-manager": "linda-sync",
-    "voice": "linda-voice",
     "discord-setup": "linda-discord-setup",
     "iron-horse": "linda-loi"
   }
