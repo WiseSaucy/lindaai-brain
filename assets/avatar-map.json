@@ -113,7 +113,6 @@
     "airbnb-underwriting": "bandit",
     "coliving-underwriting": "bandit",
     "voice-to-contract": "drawl",
-    "license-manager": "doc",
     "update-manager": "doc"
   }
 }
