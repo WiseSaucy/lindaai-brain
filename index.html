@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Zmw2IZ7XJ2epyJtB/Q4papY6Ljui0CTeFe/U+db5Zkw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-18Y/MXXOZW2xSLXp24ao3iX/Wo3ZT8ImCXUHvnPMeX8='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://lindaai-api-production.up.railway.app; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>LindaAI — Your AI Operating System</title>
 <meta name="description" content="LindaAI — The AI Operating System for business owners. 115 skills across 8 industry packs, 18 specialist AI agents, voice personalities, Discord mobile bridge. One payment, lifetime access.">
 <meta property="og:title" content="LindaAI — Your AI Operating System">
@@ -687,8 +687,8 @@ async function submitTrial(e) {
         <div style="background:rgba(229,228,226,0.10);border:1px solid rgba(229,228,226,0.4);border-radius:10px;padding:18px;margin-top:8px;">
           <div style="font-size:14px;color:#a0a8c0;margin-bottom:10px;">Your license key:</div>
           <div style="font-family:'Courier New',monospace;font-size:16px;font-weight:700;color:#4da3ff;letter-spacing:1px;margin-bottom:18px;">${data.key}</div>
-          ${dl ? `<a href="${dl}" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#e5e4e2,#c8c9c7);color:#1a1a1a;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(229,228,226,0.35);">📦 Download LindaAI Trial (10 MB)</a>` : `<div style="font-size:15px;color:#e5e4e2;line-height:1.5;">${data.already_had ? 'Your download link is in the email we just re-sent — check Promotions/Spam too.' : 'Your personalized LindaAI zip is being baked right now and will land in your inbox within a couple of minutes — check Promotions/Spam too.'} Nothing after 10 minutes? Email <a href="mailto:support@lindaai-brain.com" style="color:#4da3ff;">support@lindaai-brain.com</a>.</div>`}
-          <div style="font-size:13px;color:#94a3b8;margin-top:12px;">Mac/Linux: double-click <code>install.command</code> · Windows: double-click <code>install.bat</code></div>
+          ${dl ? `<a href="${dl}" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#e5e4e2,#c8c9c7);color:#1a1a1a;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(229,228,226,0.35);">📦 Download LindaAI Trial (10 MB)</a>` : `<div style="font-size:15px;color:#e5e4e2;line-height:1.5;">${data.already_had ? 'Check your first LindaAI email for the download link — it is still good. Can\'t find it? Search your inbox for LindaAI, including Promotions/Spam.' : 'Your personalized LindaAI zip is being baked right now and will land in your inbox within a couple of minutes — check Promotions/Spam too.'} Nothing after 10 minutes? Email <a href="mailto:support@lindaai-brain.com" style="color:#4da3ff;">support@lindaai-brain.com</a>.</div>`}
+          <div style="font-size:13px;color:#94a3b8;margin-top:12px;">Mac/Linux: double-click <code>Start-LindaAI.command</code> · Windows: double-click <code>Start-LindaAI.bat</code></div>
         </div>`;
       btn.textContent = 'Trial sent ✓';
     } else {
